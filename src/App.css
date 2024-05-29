@@ -1,24 +1,14 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-  padding: 0;
   min-width: 320px;
   min-height: 100svh;
   max-width: 100svw;
-}
-
-body {
   margin: 0;
   padding: 0;
   background-color: #1f2023;
@@ -28,19 +18,32 @@ body {
   align-items: center;
 }
 
+body {
+  width: 100%;
+}
+
 main,
 section {
-  min-height: 100svh;
-  margin-top: 50px;
+  width: 100%;
   text-align: center;
-  width: 100svw;
-  max-width: 1280px;
+  min-height: 30svh;
+  height: fit-content;
+  padding-bottom: 80px;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
+}
+
+main *,
+section * {
+  max-width: 1280px;
 }
 
 li {
   list-style-type: circle;
+}
+a {
+  font-style: italic;
+  text-decoration: underline;
+  font-weight: bold;
 }

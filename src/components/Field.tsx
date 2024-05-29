@@ -1,7 +1,7 @@
 export default function Field() {
   return (
-    <section>
-      <p className="font-bold text-lg text-pretty">Fields</p>
+    <section className="bg-darkBg2">
+      <p className="font-bold leading-loose my-4 text-lg text-pretty">Fields</p>
       <div className="w-full flex flex-col lg:flex-row gap-5 lg:gap-10 ">
         <div className="w-full lg:w-1/2 flex flex-col items-center justify-start ">
           <h2 className="font-bold text-3xl mt-2 tracking-wide">

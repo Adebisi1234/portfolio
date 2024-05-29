@@ -18,8 +18,8 @@ function App() {
       <Header />
       <Main />
       <Field />
-      <Skills />
       <Projects />
+      <Skills />
       <Works />
       <About />
       <Contact />
