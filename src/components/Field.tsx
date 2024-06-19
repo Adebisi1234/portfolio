@@ -33,18 +33,21 @@ const fields = [
 export default function Field() {
   return (
     <section className="bg-darkBg2">
-      <p className="font-bold leading-loose my-4 text-lg text-pretty">Fields</p>
-      <div className="w-full flex flex-col lg:flex-row gap-5 lg:gap-10 ">
-        {fields.map((field) => (
+      <h6 className="text-textGold text-2xl font-semibold mt-4 mb-3 leading-6">
+        Fields
+      </h6>
+      <div className="w-full flex flex-col lg:flex-row gap-5 lg:gap-10 mb-5">
+        {fields.map((field, i) => (
           <div
             className={`w-full lg:w-1/${fields.length} flex flex-col items-center justify-start`}
+            key={i}
           >
-            <h2 className="font-bold text-3xl mt-2 tracking-wide">
+            <h5 className="font-bold text-2xl mt-2 tracking-wide">
               {field.name}
-            </h2>
-            <ul className="text-start p-0 m-0 font-bold mt-4">
-              {field.lists.map((list) => (
-                <li>{list}</li>
+            </h5>
+            <ul className="p-0 m-0 mt-4 *:list-none">
+              {field.lists.map((list, i) => (
+                <li key={i}>{list}</li>
               ))}
             </ul>
           </div>

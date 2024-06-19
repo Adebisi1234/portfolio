@@ -3,15 +3,16 @@ import ProjectComp, { ProjectType } from "./projects/ProjectComp";
 const projects: Omit<ProjectType, "id">[] = [
   {
     name: "Blackboard",
+    github: "https://github.com/adebisi1234/blackboard",
     desc: "A very fast, collaborative and efficient drawing board",
     features: [
       "Freehand to Shape - Using ML",
       "Real-time Collaboration",
       "Save to Image",
-      "Customization",
+      "Easy customization",
     ],
     link: "https://myblackboard.vercel.app",
-    images: [""],
+    images: ["", "", "", ""],
     video: "",
     badges: [
       { name: "ML", color: "#a52a2a" },
@@ -29,7 +30,7 @@ const projects: Omit<ProjectType, "id">[] = [
   //     "Customization",
   //   ],
   //   link: "",
-  //   images: [""],
+  //   images: ["", "", "", ""],
   //   video: "",
   //   badges: [
   //     { name: "ML/AI", color: "#a52a2a" },
@@ -38,6 +39,7 @@ const projects: Omit<ProjectType, "id">[] = [
   // },
   {
     name: "Re-cached",
+    github: "https://github.com/adebisi1234/recached",
     desc: "A fast in-memory storage like redis",
     features: [
       "Very Fast storage and retrieval",
@@ -45,22 +47,24 @@ const projects: Omit<ProjectType, "id">[] = [
       "Built a thread pool",
       "Data stored is persisted",
     ],
-    link: "",
-    images: [""],
-    video: "",
+    // link: "",
+    // images: ["", "", "", ""],
+    // video: "",
     badges: [{ name: "Network", color: "#dcbb57" }],
   },
   {
     name: "Buy Something",
+    github: "https://github.com/adebisi1234/buyomething",
     desc: "A simple, efficient E-commerce store ",
     features: ["Wishlist products ", "Buy products", "Cart", "Persistency"],
     link: "https://buysomething.vercel.app",
-    images: [""],
+    images: ["", "", "", ""],
     video: "",
     badges: [{ name: "Web", color: "#008000" }],
   },
   {
-    name: "Xitter",
+    name: "Xitterr",
+    github: "https://github.com/adebisi1234/twitter_clone",
     desc: "A full stack clone of twitter, built during the rage to find alternative to twitter",
     features: [
       "Create Posts, Comments, Likes and Retweet",
@@ -69,7 +73,7 @@ const projects: Omit<ProjectType, "id">[] = [
       "Customization",
     ],
     link: "https://xitterr.vercel.app",
-    images: [""],
+    images: ["", "", "", ""],
     video: "",
     badges: [{ name: "Web", color: "#008000" }],
   },
@@ -82,6 +86,9 @@ const renderedProjects = projects.map((project, i) => (
 export default function Projects() {
   return (
     <section className="flex flex-col gap-5 bg-darkBg ">
+      <h6 className="text-textGoldLight text-2xl font-semibold mt-4 leading-6">
+        Projects
+      </h6>
       {renderedProjects}
     </section>
   );

@@ -6,8 +6,13 @@ export default function Header() {
           Tobiloba
         </a>
 
-        <button className="pl-6 pr-8 py-2 text-sm flex rounded-xl bg-darkBgL border border-gray-700">
-          Resume
+        <button className="pl-6 pr-8 py-2 text-sm flex rounded-xl hover:bg-darkBgL bg-darkBgXl border border-gray-700">
+          <a
+            href="https://drive.google.com/file/d/1Odzu9Nil8eBWXJRgfy53kVeDQxFTvpva/view?usp=drive_link"
+            download={true}
+          >
+            Resume
+          </a>
         </button>
       </div>
     </nav>
