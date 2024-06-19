@@ -1,3 +1,3 @@
 export default function Contact() {
-  return <section>Contact</section>;
+  return <section className="bg-darkBg2">Contact</section>;
 }
