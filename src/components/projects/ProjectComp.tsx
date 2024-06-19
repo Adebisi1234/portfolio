@@ -23,6 +23,7 @@ export default function ProjectComp(prop: ProjectType) {
   const badges = prop.badges?.map((badge, i) => (
     <Badge key={i} name={badge.name} color={badge.color} />
   ));
+  const showcase = [prop.link, prop.video, prop.images];
   return (
     <>
       <div className="flex flex-col items-center justify-between w-full gap-5 lg:flex-row text-start my-10">

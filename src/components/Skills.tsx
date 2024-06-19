@@ -1,4 +1,3 @@
 export default function Skills() {
-    return <section>Skills</section>;
-  }
-  
+  return <section className="bg-darkBg2">Skills</section>;
+}
