@@ -71,9 +71,13 @@ const experiencesComp = experiences.map((experience, i) => {
             }`}
           >
             <div className="w-11/12 mx-auto sm:w-4/5 md:w-3/4 lg:w-unset">
-              <h3 className="mt-6 mb-8 text-4xl font-bold lg:text-5xl ">
+              <h3 className="mt-6 text-4xl font-bold lg:text-5xl ">
                 {experience.name}
               </h3>
+              <div className="my-4 flex justify-between w-full">
+                <p>{experience.position}</p>
+                <p>{experience.date}</p>
+              </div>
 
               <p className="mb-5 leading-loose text-darkGray">
                 {experience.desc}
