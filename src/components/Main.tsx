@@ -16,17 +16,17 @@ export default function Main() {
           className="size-40 rounded-full object-cover"
         />
       </div>
-      <div className="flex flex-col flex-wrap text-sm font-semibold sm:text-base xl:text-lg whitespace-break-spaces">
-        <p className="flex-shrink mt-2">
+      <div className="flex flex-col flex-wrap text-sm font-semibold sm:text-base xl:text-lg">
+        <p className="py-2">
           There isn't much to say, I'm a computer geek
         </p>
         <p>and I'm glad I can make a career out of doing what I love</p>
-        <p className="mt-2">
+        <p className="py-2">
           I'm willing to try my hand at anything tech, except for design{" "}
           <i>blehh...</i>
         </p>
         <p>Respect to all designers out there tho...</p>
-        <p className="mt-2 mb-4 font-bold bg-gradient-to-r from-green-200 via-green-400 to-green-500 bg-clip-text">
+        <p className="pt-2 mb-4 font-bold bg-gradient-to-r from-green-200 via-green-400 to-green-500 bg-clip-text">
           With the introductions out of the way, let me showcase my skills...
         </p>
       </div>
