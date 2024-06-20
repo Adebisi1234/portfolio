@@ -13,11 +13,7 @@ export default function Footer() {
           Reach me using the below links <i>again!!! :)</i>
         </p>
         <div className="flex gap-1 mb-5 links size-fit">
-          <a
-            href="mailto:ti.adebisi@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="mailto:ti.adebisi@gmail.com">
             <div className="size-10 bg-darkBg hover:bg-darkBg2 border border-gray-500 rounded-xl *:size-6 flex justify-center items-center">
               <Email />
             </div>
@@ -32,7 +28,7 @@ export default function Footer() {
             </div>
           </a>
           <a
-            href="http://www.linkedin.com/tobiloba-adebisi"
+            href="http://www.linkedin.com/in/tobiloba-adebisi"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -44,7 +40,7 @@ export default function Footer() {
             href="https://drive.google.com/file/d/1Odzu9Nil8eBWXJRgfy53kVeDQxFTvpva/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
-            download={true}
+            download={"Tobiloba Adebisi Cv"}
           >
             <div className="size-10 bg-darkBg hover:bg-darkBg2 border border-gray-500 rounded-xl *:size-6 flex justify-center items-center">
               <Resume />

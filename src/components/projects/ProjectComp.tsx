@@ -27,19 +27,19 @@ export default function ProjectComp(prop: ProjectType) {
     <Badge key={i} name={badge.name} color={badge.color} />
   ));
   const showcase = [];
-  typeof prop.link !== "undefined" &&
-    showcase.push({ url: prop.link, name: "Minimized V." });
-  typeof prop.video !== "undefined" &&
-    showcase.push({ url: prop.video, name: "video" });
   typeof prop.images !== "undefined" &&
     showcase.push({ images: prop.images, name: "images" });
+  typeof prop.video !== "undefined" &&
+    showcase.push({ url: prop.video, name: "video" });
+  typeof prop.link !== "undefined" &&
+    showcase.push({ url: prop.link, name: "Minimized V." });
 
   const [showcaseIndex, setShowcaseIndex] = useState(0);
   const [loading, setLoading] = useState(false);
 
   return (
     <>
-      <div className="flex flex-col items-center justify-between w-full gap-5 lg:flex-row text-start my-10">
+      <div className="flex flex-col items-center justify-between w-full gap-5 my-10 lg:flex-row text-start">
         <div className="flex flex-wrap  2xl:w-[1450px] xl:w-[1300px] w-11/12 mx-auto md:pl-4 xl:pr-16 xl:pl-16">
           <div
             className={`w-full mt-12 mb-12 lg:w-1/2 lg:mb-0 ${
@@ -47,7 +47,38 @@ export default function ProjectComp(prop: ProjectType) {
             }`}
           >
             <div className="w-11/12 mx-auto sm:w-4/5 md:w-3/4 lg:w-unset">
-              <div className="flex gap-4 text-sm font-bold badge">{badges}</div>
+              <div className="flex justify-between items-center">
+                <div className="flex gap-4 text-sm font-bold badge">
+                  {badges}
+                </div>
+                {!(prop.link || prop.images || prop.video) && (
+                  <div className="flex items-center justify-center gap-2">
+                    {" "}
+                    {prop.github && (
+                      <a
+                        href={prop.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <button className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
+                          <Github />
+                        </button>
+                      </a>
+                    )}
+                    {prop.link && (
+                      <a
+                        href={prop.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <button className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
+                          <ExternalLink />
+                        </button>
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
               <h3 className="mt-6 mb-8 text-4xl font-bold lg:text-5xl ">
                 {prop.name}
               </h3>
@@ -58,55 +89,61 @@ export default function ProjectComp(prop: ProjectType) {
               <ul className="mb-6 text-base font-semibold">{features}</ul>
             </div>
           </div>
-          <div
-            className={`w-full mt-12 mb-12 lg:w-1/2 lg:mb-0 ${
-              prop.id % 2 !== 0 ? "lg:order-1" : ""
-            }`}
-          >
-            <div className="flex justify-between w-[600px] my-3 max-w-full">
-              <div className="flex gap-1 justify-center items-center">
-                {showcase.length > 1 ? (
-                  <>
-                    <div className="flex py-2 justify-center items-center pl-6 pr-8 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL w-[150px]">
-                      {showcase[showcaseIndex].name}
-                    </div>
-                    <button
-                      className="flex p-2 h-full items-center justify-center text-sm text-white border border-gray-700 rounded-xl bg-darkBgL"
-                      onClick={() => {
-                        setShowcaseIndex(
-                          (prev) => (prev + 1) % showcase.length
-                        );
-                        setLoading(true);
-                      }}
+          {(prop.link || prop.images || prop.video) && (
+            <div
+              className={`w-full mt-12 mb-12 lg:w-1/2 lg:mb-0 ${
+                prop.id % 2 !== 0 ? "lg:order-1" : ""
+              }`}
+            >
+              <div className="flex justify-between w-[600px] my-3 max-w-full">
+                <div className="flex items-center justify-center gap-1">
+                  {showcase.length > 1 ? (
+                    <>
+                      <div className="flex py-2 justify-center items-center pl-6 pr-8 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL w-[150px]">
+                        {showcase[showcaseIndex].name}
+                      </div>
+                      <button
+                        className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL"
+                        onClick={() => {
+                          setShowcaseIndex(
+                            (prev) => (prev + 1) % showcase.length
+                          );
+                          setLoading(true);
+                        }}
+                      >
+                        <NextShowcase />
+                      </button>
+                    </>
+                  ) : (
+                    <div></div>
+                  )}
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  {prop.github && (
+                    <a
+                      href={prop.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      <NextShowcase />
-                    </button>
-                  </>
-                ) : (
-                  <div></div>
-                )}
-              </div>
-              <div className="flex gap-2 justify-center items-center">
-                {prop.github && (
-                  <button className="flex p-2 h-full items-center justify-center text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
-                    <Github />{" "}
-                  </button>
-                )}
-                {prop.link && (
-                  <button className="flex p-2 h-full items-center justify-center text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
+                      <button className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
+                        <Github />
+                      </button>
+                    </a>
+                  )}
+                  {prop.link && (
                     <a
                       href={prop.link}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {" "}
-                      <ExternalLink />
+                      <button className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
+                        <ExternalLink />
+                      </button>
                     </a>
-                  </button>
-                )}
+                  )}
+                </div>
               </div>
-            </div>
-            {(prop.link || prop.images || prop.video) && (
+
               <div
                 className={`bg-darkBg2 h-[400px] w-[600px] max-w-full ${
                   loading && "animate-pulse"
@@ -139,12 +176,14 @@ export default function ProjectComp(prop: ProjectType) {
                         : "none",
                   }}
                   autoPlay
+                  loop
+                  controls
                   preload="eager"
-                  className="max-w-full size-full object-fill"
+                  className="object-fill max-w-full size-full"
                   onCanPlay={() => loading && setLoading(false)}
                 ></video>
                 <div
-                  className="overflow-x-scroll size-full max-w-full flex snap-both snap-center snap-mandatory"
+                  className="flex max-w-full overflow-x-scroll size-full snap-both snap-center snap-mandatory"
                   style={{
                     display:
                       showcase[showcaseIndex].name === "images"
@@ -156,7 +195,7 @@ export default function ProjectComp(prop: ProjectType) {
                     <img
                       src={image}
                       alt="Showcase screenshot"
-                      className="size-full snap-center snap-mandatory snap-both min-w-full"
+                      className="min-w-full size-full object-contain snap-center snap-mandatory snap-both"
                       key={i}
                       loading="eager"
                       onLoad={() => loading && setLoading(false)}
@@ -164,8 +203,8 @@ export default function ProjectComp(prop: ProjectType) {
                   ))}
                 </div>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
       <Hr />

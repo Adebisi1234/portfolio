@@ -9,11 +9,20 @@ const projects: Omit<ProjectType, "id">[] = [
       "Freehand to Shape - Using ML",
       "Real-time Collaboration",
       "Save to Image",
+      "Zoom and Minimap",
+      "Persistency",
       "Easy customization",
     ],
     link: "https://myblackboard.vercel.app",
-    images: ["", "", "", ""],
-    video: "",
+    images: [
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851607/blackboard_screenshot1_g4trqc.jpg",
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851606/blackboard_screenshot2_ros5lz.jpg",
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851605/blackboard_screenshot3_blregp.jpg",
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851631/blackboard_screenshot4_ah2bbt.jpg",
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851629/blackboard_screenshot5_fxj963.jpg",
+    ],
+    video:
+      "https://res.cloudinary.com/de4vooekftest/video/upload/v1718852902/blackboard_showcase_a7ukkl.mp4",
     badges: [
       { name: "ML", color: "#a52a2a" },
       { name: "Web", color: "#008000" },
@@ -58,13 +67,21 @@ const projects: Omit<ProjectType, "id">[] = [
     desc: "A simple, efficient E-commerce store ",
     features: ["Wishlist products ", "Buy products", "Cart", "Persistency"],
     link: "https://buysomething.vercel.app",
-    images: ["", "", "", ""],
-    video: "",
+    images: [
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851602/buysomething_screenshot1_amnnqa.jpg",
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851601/buysomething_screenshot2_ldtroy.jpg",
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851626/buysomething_screenshot3_pcxfjk.jpg",
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851597/buysomething_screenshot4_dn8ajp.jpg",
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851622/buysomething_screenshot5_hzhehd.jpg",
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851593/buysomething_screenshot6_fuamu8.jpg",
+    ],
+    video:
+      "https://res.cloudinary.com/de4vooekftest/video/upload/v1718852880/ecommerce_showcase_uva5tv.mp4",
     badges: [{ name: "Web", color: "#008000" }],
   },
   {
     name: "Xitterr",
-    github: "https://github.com/adebisi1234/twitter_clone",
+    github: "https://github.com/adebisi1234/twitter_project",
     desc: "A full stack clone of twitter, built during the rage to find alternative to twitter",
     features: [
       "Create Posts, Comments, Likes and Retweet",
@@ -73,8 +90,18 @@ const projects: Omit<ProjectType, "id">[] = [
       "Customization",
     ],
     link: "https://xitterr.vercel.app",
-    images: ["", "", "", ""],
-    video: "",
+    images: [
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851620/xitterr_screenshot1_mevids.jpg",
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851619/xitterr_screenshot2_gbt3g1.jpg",
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851618/xitterr_screenshot3_r4fy9a.jpg",
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851616/xitterr_screenshot4_nziqti.jpg",
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851614/xitterr_screenshot5_wthdka.jpg",
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718852910/xitterr_screenshot7_dste8m.jpg",
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718852553/xitterr_screenshot8_t02z0d.jpg",
+      "https://res.cloudinary.com/de4vooekftest/image/upload/v1718852909/xitterr_screenshot9_idjtby.jpg",
+    ],
+    video:
+      "https://res.cloudinary.com/de4vooekftest/video/upload/v1718851297/xitterr_showcase_ck77ad.mp4",
     badges: [{ name: "Web", color: "#008000" }],
   },
 ];
@@ -86,7 +113,7 @@ const renderedProjects = projects.map((project, i) => (
 export default function Projects() {
   return (
     <section className="flex flex-col gap-5 bg-darkBg ">
-      <h6 className="text-textGoldLight text-2xl font-semibold mt-4 leading-6">
+      <h6 className="mt-4 text-2xl font-semibold leading-6 text-textGoldLight">
         Projects
       </h6>
       {renderedProjects}
