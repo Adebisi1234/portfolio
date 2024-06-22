@@ -114,7 +114,7 @@ const experiencesComp = experiences.map((experience, i) => {
               <img
                 src={experience.img}
                 alt="Showcase screenshot"
-                className="min-w-full size-full snap-center snap-mandatory snap-both"
+                className="min-w-full size-full snap-center snap-mandatory snap-both object-cover"
                 loading="eager"
               />
             </div>
