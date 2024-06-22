@@ -91,7 +91,7 @@ export default function ProjectComp(prop: ProjectType) {
           </div>
           {(prop.link || prop.images || prop.video) && (
             <div
-              className={`w-full mt-12 mb-12 lg:w-1/2 lg:mb-0 ${
+              className={`w-full mt-12 mb-12 lg:w-1/2 h-fit lg:mb-0 ${
                 prop.id % 2 !== 0 ? "lg:order-1" : ""
               }`}
             >
@@ -145,7 +145,7 @@ export default function ProjectComp(prop: ProjectType) {
               </div>
 
               <div
-                className={`bg-darkBg2 h-[400px] w-[600px] max-w-full ${
+                className={`bg-darkBg2 h-[400px] max-h-fit w-[600px] max-w-full ${
                   loading && "animate-pulse"
                 }`}
                 onMouseOver={() => setLoading(false)}
@@ -183,7 +183,7 @@ export default function ProjectComp(prop: ProjectType) {
                   onCanPlay={() => loading && setLoading(false)}
                 ></video>
                 <div
-                  className="flex max-w-full overflow-x-scroll size-full snap-both snap-center snap-mandatory"
+                  className="flex max-w-full overflow-x-scroll size-full snap-both snap-center snap-mandatory h-fit"
                   style={{
                     display:
                       showcase[showcaseIndex].name === "images"
