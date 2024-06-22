@@ -67,7 +67,7 @@ const experiencesComp = experiences.map((experience, i) => {
       <div className="flex flex-col items-center justify-between w-full gap-5 my-10 lg:flex-row text-start">
         <div className="flex flex-wrap 2xl:w-[1450px] xl:w-[1300px] w-11/12 mx-auto md:pl-4 xl:pr-16 xl:pl-16">
           <div
-            className={`w-full mt-12 mb-12 lg:w-1/2 lg:mb-0 ${
+            className={`w-full lg:my-12 my-6 lg:w-1/2 lg:mb-0 ${
               i % 2 !== 0 ? "lg:order-2" : ""
             }`}
           >
@@ -92,7 +92,7 @@ const experiencesComp = experiences.map((experience, i) => {
             </div>
           </div>
           <div
-            className={`w-full mt-12 mb-12 lg:w-1/2 lg:mb-0 ${
+            className={`w-full lg:my-12 my-6 lg:w-1/2 lg:mb-0 ${
               i % 2 !== 0 ? "lg:order-1" : ""
             }`}
           >
