@@ -95,7 +95,7 @@ export default function ProjectComp(prop: ProjectType) {
                 prop.id % 2 !== 0 ? "lg:order-1" : ""
               }`}
             >
-              <div className="flex justify-between w-[600px] my-3 max-w-full">
+              <div className="flex justify-between w-[600px] my-3 max-w-full h-fit">
                 <div className="flex items-center justify-center gap-1">
                   {showcase.length > 1 ? (
                     <>
@@ -145,7 +145,7 @@ export default function ProjectComp(prop: ProjectType) {
               </div>
 
               <div
-                className={`bg-darkBg2 h-[400px] max-h-fit w-[600px] max-w-full ${
+                className={`bg-darkBg2 h-fit max-h-[400px] w-[600px] max-w-full ${
                   loading && "animate-pulse"
                 }`}
                 onMouseOver={() => setLoading(false)}
