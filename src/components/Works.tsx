@@ -110,11 +110,11 @@ const experiencesComp = experiences.map((experience, i) => {
                 </button>
               )}
             </div>
-            <div className={`bg-darkBg2 h-[400px] w-[600px] max-w-full`}>
+            <div className={`bg-darkBg2 h-fit max-h-[400px] w-[600px] max-w-full`}>
               <img
                 src={experience.img}
                 alt="Showcase screenshot"
-                className="min-w-full size-full snap-center snap-mandatory snap-both object-cover"
+                className="min-w-full size-full snap-center snap-mandatory snap-both object-contain"
                 loading="eager"
               />
             </div>
