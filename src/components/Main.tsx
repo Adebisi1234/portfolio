@@ -2,7 +2,7 @@ export default function Main() {
   return (
     <main
       id="home"
-      className="flex flex-col items-center justify-center w-full pt-40 text-center bg-darkBg"
+      className="flex flex-col items-center justify-center w-full pt-[80px] lg:pt-40 text-center bg-darkBg"
     >
       <p className="text-base font-bold text-pretty ">Hello, I'm</p>
       <p className="text-lg font-bold text-pretty">Tobiloba Isaiah Adebisi</p>
