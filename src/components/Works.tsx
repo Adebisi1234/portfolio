@@ -1,3 +1,4 @@
+import { Fragment } from "react/jsx-runtime";
 import { ExternalLink } from "../assets/Svg";
 import Hr from "./Hr";
 
@@ -62,7 +63,7 @@ const experiences = [
 
 const experiencesComp = experiences.map((experience, i) => {
   return (
-    <>
+    <Fragment key={i}>
       <div className="flex flex-col items-center justify-between w-full gap-5 my-10 lg:flex-row text-start">
         <div className="flex flex-wrap 2xl:w-[1450px] xl:w-[1300px] w-11/12 mx-auto md:pl-4 xl:pr-16 xl:pl-16">
           <div
@@ -84,8 +85,8 @@ const experiencesComp = experiences.map((experience, i) => {
               </p>
 
               <ul className="mb-6 text-base font-semibold">
-                {experience.points.map((point) => (
-                  <li>{point}</li>
+                {experience.points.map((point, i) => (
+                  <li key={i}>{point}</li>
                 ))}
               </ul>
             </div>
@@ -121,7 +122,7 @@ const experiencesComp = experiences.map((experience, i) => {
         </div>
       </div>
       <Hr />
-    </>
+    </Fragment>
   );
 });
 

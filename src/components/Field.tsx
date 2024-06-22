@@ -45,7 +45,7 @@ export default function Field() {
             <h5 className="font-bold text-2xl mt-2 tracking-wide">
               {field.name}
             </h5>
-            <ul className="p-0 m-0 mt-4 *:list-none">
+            <ul className="p-0 m-0 mt-4 *:list-none *:mt-1">
               {field.lists.map((list, i) => (
                 <li key={i}>{list}</li>
               ))}

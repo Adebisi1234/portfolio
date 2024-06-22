@@ -7,7 +7,7 @@ export default function Skills() {
       <div className="flex flex-wrap gap-2 gap-y-4 w-full">
         <div className="min-w-[calc(50%_-_8px)] sm:min-w-[calc(33%_-_8px)] h-fit">
           <h5 className="font-bold text-2xl mt-2 tracking-wide">Frontend</h5>
-          <ul className="*:list-none text-center p-0 m-0 mt-4 mx-auto">
+          <ul className="*:list-none *:mt-1 text-center p-0 m-0 mt-4 mx-auto">
             <li>React</li>
             <li>Typescript</li>
             <li>Next.js</li>
@@ -20,7 +20,7 @@ export default function Skills() {
         </div>
         <div className="min-w-[calc(50%_-_8px)] sm:min-w-[calc(33%_-_8px)] h-fit">
           <h5 className="font-bold text-2xl mt-2 tracking-wide">Backend</h5>
-          <ul className="*:list-none text-center p-0 m-0 mt-4 mx-auto">
+          <ul className="*:list-none *:mt-1 text-center p-0 m-0 mt-4 mx-auto">
             <li>CronJob</li>
             <li>Node.js</li>
             <li>Express.js</li>
@@ -31,7 +31,7 @@ export default function Skills() {
         </div>
         <div className="min-w-[calc(50%_-_8px)] sm:min-w-[calc(33%_-_8px)] h-fit">
           <h5 className="font-bold text-2xl mt-2 tracking-wide">Testing</h5>
-          <ul className="*:list-none text-center p-0 m-0 mt-4 mx-auto">
+          <ul className="*:list-none *:mt-1 text-center p-0 m-0 mt-4 mx-auto">
             <li>Vitest</li>
             <li>Cypress</li>
             <li>Jest</li>
@@ -40,7 +40,7 @@ export default function Skills() {
 
         <div className="min-w-[calc(50%_-_8px)] sm:min-w-[calc(33%_-_8px)] h-fit">
           <h5 className="font-bold text-2xl mt-2 tracking-wide">Database</h5>
-          <ul className="*:list-none text-center p-0 m-0 mt-4 mx-auto">
+          <ul className="*:list-none *:mt-1 text-center p-0 m-0 mt-4 mx-auto">
             <li>Prisma</li>
             <li>Mongoose</li>
             <li>Sql</li>
@@ -58,7 +58,7 @@ export default function Skills() {
           <h5 className="font-bold text-2xl mt-2 tracking-wide">
             Cloud Provider
           </h5>
-          <ul className="*:list-none text-center p-0 m-0 mt-4 mx-auto">
+          <ul className="*:list-none *:mt-1 text-center p-0 m-0 mt-4 mx-auto">
             <li>AWS</li>
             <li>Azure</li>
             <li>Google Cloud Platform</li>
@@ -66,7 +66,7 @@ export default function Skills() {
         </div>
         <div className="min-w-[calc(50%_-_8px)] sm:min-w-[calc(33%_-_8px)] h-fit">
           <h5 className="font-bold text-2xl mt-2 tracking-wide">Others</h5>
-          <ul className="*:list-none text-center p-0 m-0 mt-4 mx-auto">
+          <ul className="*:list-none *:mt-1 text-center p-0 m-0 mt-4 mx-auto">
             <li>Docker</li>
             <li>C++</li>
             <li>Python</li>
