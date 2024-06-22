@@ -2,7 +2,7 @@ const fields = [
   {
     name: "Web Development",
     lists: [
-      "Fronted Development",
+      "Frontend Development",
       "Backend Development",
       "Testing",
       "CI/CD",
