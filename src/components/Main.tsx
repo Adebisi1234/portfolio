@@ -11,7 +11,7 @@ export default function Main() {
       </h1>
       <div className="my-10 size-fit flex justify-center items-center">
         <img
-          src="/me.jpg"
+          src="me.jpg"
           alt="my image"
           className="size-40 rounded-full object-cover"
         />
