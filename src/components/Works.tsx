@@ -30,7 +30,7 @@ const experiences = [
       "Sass",
       "Jest",
     ],
-    img: "/thevalley.jpg",
+    img: "thevalley.jpg",
   },
   {
     name: "Ticksevent",
@@ -56,7 +56,7 @@ const experiences = [
       "Docker",
       "AWS",
     ],
-    img: "/ticks.jpg",
+    img: "ticks.jpg",
     url: "https://tickevents.com",
   },
 ];
