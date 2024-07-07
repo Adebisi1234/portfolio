@@ -6,7 +6,6 @@ const experiences = [
     name: "The Valley",
     position: "Software Developer",
     date: "Jan 2024 - Present",
-    desc: "Work as a full-stack developer for the start-up",
     points: [
       "Built the site-wide search feature using typesense",
       "Worked on a user / company profile for the app",
@@ -36,9 +35,9 @@ const experiences = [
     name: "Ticksevent",
     position: "Software Developer",
     date: "Oct 2023 - Dec 2023",
-    desc: "Built the entire back-end of the event management platform",
+
     points: [
-      "Built the entire backend for the app",
+      "Built the entire back-end of the event management platform",
       "Integrated Paystack for payment processing",
       "Built the ML model for Discovering user-related Events",
       "Built the QR code generation components for tickets",
@@ -82,10 +81,6 @@ const experiencesComp = experiences.map((experience, i) => {
                 <p>{experience.date}</p>
               </div>
 
-              <p className="mb-5 leading-loose text-darkGray">
-                {experience.desc}
-              </p>
-
               <ul className="mb-6 text-base font-semibold">
                 {experience.points.map((point, i) => (
                   <li key={i}>{point}</li>
@@ -115,7 +110,7 @@ const experiencesComp = experiences.map((experience, i) => {
 
 export default function Works() {
   return (
-    <section>
+    <section className="bg-darkBg2">
       <h6 className="text-textGoldLight text-2xl font-semibold mt-4 mb-10 leading-6">
         Work Experiences
       </h6>

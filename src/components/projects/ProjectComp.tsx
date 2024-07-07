@@ -5,6 +5,7 @@ import { ExternalLink, Github } from "../../assets/Svg";
 export type ProjectType = {
   name: string;
   desc: string;
+  tools: string;
   features: string[];
   link?: string;
   github: string;
@@ -78,11 +79,14 @@ export default function ProjectComp(prop: ProjectType) {
                   </div>
                 )}
               </div>
-              <h3 className="mt-6 mb-8 text-4xl font-bold lg:text-5xl ">
+              <h3 className="my-6 text-4xl font-bold lg:text-5xl ">
                 {prop.name}
               </h3>
 
-              <p className="mb-5 leading-loose text-darkGray">{prop.desc}</p>
+              <p className="mb-2 leading-loose text-darkGray">{prop.desc}</p>
+              <p className="mb-4">
+                <strong>Tools:</strong> {prop.tools}
+              </p>
 
               <h5 className="mt-2 mb-3 font-bold text-left">Features</h5>
               <ul className="mb-6 text-base font-semibold">{features}</ul>

@@ -5,6 +5,7 @@ const projects: Omit<ProjectType, "id">[] = [
     name: "Blackboard",
     github: "https://github.com/adebisi1234/blackboard",
     desc: "A very fast, collaborative and efficient drawing board",
+    tools: "React • ws • zustand",
     features: [
       "Freehand to Shape - Using ML",
       "Real-time Collaboration",
@@ -31,6 +32,7 @@ const projects: Omit<ProjectType, "id">[] = [
   // {
   //   name: "Free City",
   //   desc: "An open world full of possibilities ",
+  //   tools: "",
   //   features: [
   //     "Racing - Against AI",
   //     "Multi-player",
@@ -50,6 +52,7 @@ const projects: Omit<ProjectType, "id">[] = [
     name: "Re-cached",
     github: "https://github.com/adebisi1234/recached",
     desc: "A fast in-memory storage like redis",
+    tools: "C++ • Socket API",
     features: [
       "Very Fast storage and retrieval",
       "Implemented and used complex DSA like hash table, heap",
@@ -65,7 +68,13 @@ const projects: Omit<ProjectType, "id">[] = [
     name: "Buy Something",
     github: "https://github.com/adebisi1234/buyomething",
     desc: "A simple, efficient E-commerce store ",
-    features: ["Wishlist products ", "Buy products", "Cart", "Persistency"],
+    tools: "React • Python • Paystack • Temporal",
+    features: [
+      "Wishlist products ",
+      "Buy products",
+      "Cart",
+      "Payment Gateway using paystack",
+    ],
     link: "https://buysomething.vercel.app",
     images: [
       "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851602/buysomething_screenshot1_amnnqa.jpg",
@@ -80,9 +89,10 @@ const projects: Omit<ProjectType, "id">[] = [
     badges: [{ name: "Web", color: "#008000" }],
   },
   {
-    name: "Xitterr",
+    name: "Heyyy",
     github: "https://github.com/adebisi1234/twitter_project",
-    desc: "A full stack clone of twitter, built during the rage to find alternative to twitter",
+    desc: "A social media app",
+    tools: "React • Socket.io • Node",
     features: [
       "Create Posts, Comments, Likes and Retweet",
       "Upload Media",

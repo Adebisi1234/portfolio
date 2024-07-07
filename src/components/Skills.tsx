@@ -64,7 +64,7 @@ export default function Skills() {
 
         <div className="w-full h-fit">
           <h5 className="font-bold text-2xl mt-2 flex gap-1 items-start justify-start text-start tracking-wide">
-            Cloud Provider
+            Cloud Technologies
           </h5>
           <ul className="*:list-none *:mt-1 text-start p-0 m-0 mt-4 mx-auto flex gap-1 items-start justify-start">
             <li>AWS,</li>

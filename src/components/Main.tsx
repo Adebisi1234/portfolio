@@ -21,10 +21,7 @@ export default function Main() {
           I'm proficient in building, testing and maintaining user-facing
           features,
         </p>
-        <p>
-          having worked within the small business E-commerce space averaging
-          100+ users a month
-        </p>
+        <p>having worked within the SMB and tech startup space</p>
         <p className="pt-2 mb-4 font-bold bg-gradient-to-r from-green-200 via-green-400 to-green-500 bg-clip-text">
           With the introductions out of the way, let me showcase my skills...
         </p>
