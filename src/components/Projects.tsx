@@ -55,7 +55,6 @@ const projects: Omit<ProjectType, "id">[] = [
     tools: "C++ • Socket API",
     features: [
       "Very Fast storage and retrieval",
-      "Implemented and used complex DSA like hash table, heap",
       "Built a thread pool",
       "Data stored is persisted",
     ],
@@ -97,7 +96,7 @@ const projects: Omit<ProjectType, "id">[] = [
       "Create Posts, Comments, Likes and Retweet",
       "Upload Media",
       "Follow feature",
-      "Customization",
+      "Theme customization",
     ],
     link: "https://xitterr.vercel.app",
     images: [
