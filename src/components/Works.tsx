@@ -29,7 +29,7 @@ const experiences = [
       "Sass",
       "Jest",
     ],
-    img: "/thevalley.jpg",
+    img: "thevalley.jpg",
     url: "https://www.thevalley.live",
   },
   {
