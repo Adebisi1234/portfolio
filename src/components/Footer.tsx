@@ -9,32 +9,29 @@ export default function Footer() {
         <h3 className="text-lg font-bold text-textGold">
           Tobiloba Isaiah Adebisi
         </h3>
-        <p>
-          Reach me using the below links <i>again!!! :)</i>
-        </p>
         <div className="flex gap-1 mb-5 links size-fit">
           <a href="mailto:ti.adebisi@gmail.com">
-            <div className="size-10 bg-darkBg hover:bg-darkBg2 border border-gray-500 rounded-xl *:size-6 flex justify-center items-center">
+            <button className="size-10 bg-darkBg  border border-gray-500 rounded-xl *:size-6 flex justify-center items-center">
               <Email />
-            </div>
+            </button>
           </a>
           <a
             href="http://www.github.com/adebisi1234"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div className="size-10 bg-darkBg hover:bg-darkBg2 border border-gray-500 rounded-xl *:size-6 flex justify-center items-center">
+            <button className="size-10 bg-darkBg  border border-gray-500 rounded-xl *:size-6 flex justify-center items-center">
               <Github />
-            </div>
+            </button>
           </a>
           <a
             href="http://www.linkedin.com/in/tobiloba-adebisi"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div className="size-10 bg-darkBg hover:bg-darkBg2 border border-gray-500 rounded-xl *:size-6 flex justify-center items-center">
+            <button className="size-10 bg-darkBg  border border-gray-500 rounded-xl *:size-6 flex justify-center items-center">
               <LinkedIn />
-            </div>
+            </button>
           </a>
           <a
             href="https://drive.google.com/file/d/1Odzu9Nil8eBWXJRgfy53kVeDQxFTvpva/view?usp=drive_link"
@@ -42,9 +39,9 @@ export default function Footer() {
             rel="noopener noreferrer"
             download={"Tobiloba Adebisi Cv"}
           >
-            <div className="size-10 bg-darkBg hover:bg-darkBg2 border border-gray-500 rounded-xl *:size-6 flex justify-center items-center">
+            <button className="size-10 bg-darkBg  border border-gray-500 rounded-xl *:size-6 flex justify-center items-center">
               <Resume />
-            </div>
+            </button>
           </a>
         </div>
       </div>

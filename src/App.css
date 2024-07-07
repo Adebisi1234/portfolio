@@ -60,3 +60,7 @@ a {
     padding: 0px 16px;
   }
 }
+
+button:hover {
+  background-color: #866504;
+}

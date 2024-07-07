@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Badge from "../Badge";
 import Hr from "../Hr";
-import { ExternalLink, Github, NextShowcase } from "../../assets/Svg";
+import { ExternalLink, Github } from "../../assets/Svg";
 export type ProjectType = {
   name: string;
   desc: string;
@@ -32,11 +32,10 @@ export default function ProjectComp(prop: ProjectType) {
   typeof prop.video !== "undefined" &&
     showcase.push({ url: prop.video, name: "video" });
   typeof prop.link !== "undefined" &&
-    showcase.push({ url: prop.link, name: "Minimized V." });
+    showcase.push({ url: prop.link, name: "min. version" });
 
   const [showcaseIndex, setShowcaseIndex] = useState(0);
   const [loading, setLoading] = useState(false);
-
   return (
     <>
       <div className="flex flex-col items-center justify-between w-full gap-5 my-10 lg:flex-row text-start">
@@ -89,122 +88,117 @@ export default function ProjectComp(prop: ProjectType) {
               <ul className="mb-6 text-base font-semibold">{features}</ul>
             </div>
           </div>
-          {(prop.link || prop.images || prop.video) && (
-            <div
-              className={`w-full mt-12 mb-12 lg:w-1/2 lg:mb-0 ${
-                prop.id % 2 !== 0 ? "lg:order-1" : ""
-              }`}
-            >
-              <div className="flex justify-between w-[600px] my-3 max-w-full">
-                <div className="flex items-center justify-center gap-1">
-                  {showcase.length > 1 ? (
-                    <>
-                      <div className="flex py-2 justify-center items-center pl-6 pr-8 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL w-[150px]">
-                        {showcase[showcaseIndex].name}
-                      </div>
-                      <button
-                        className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL"
-                        onClick={() => {
-                          setShowcaseIndex(
-                            (prev) => (prev + 1) % showcase.length
-                          );
-                          setLoading(true);
-                        }}
+          <div className={`w-full mt-12 mb-12 lg:w-1/2 lg:mb-0`}>
+            {(prop.link || prop.images || prop.video) && (
+              <>
+                <div className="flex justify-between w-[600px] my-3 max-w-full">
+                  <div className="flex items-center justify-center gap-1">
+                    {showcase.length > 1 ? (
+                      <>
+                        {showcase.map((index, i) => (
+                          <div
+                            key={i}
+                            className={`flex py-2 justify-center items-center px-2 text-sm text-white border border-gray-700 cursor-pointer rounded-xl bg-darkBgL ${
+                              showcaseIndex === i ? "bg-textGold" : ""
+                            } `}
+                            onClick={() => setShowcaseIndex(i)}
+                          >
+                            {index.name}
+                          </div>
+                        ))}
+                      </>
+                    ) : (
+                      <div></div>
+                    )}
+                  </div>
+                  <div className="flex items-center justify-center gap-2">
+                    {prop.github && (
+                      <a
+                        href={prop.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <NextShowcase />
-                      </button>
-                    </>
-                  ) : (
-                    <div></div>
-                  )}
+                        <button className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
+                          <Github />
+                        </button>
+                      </a>
+                    )}
+                    {prop.link && (
+                      <a
+                        href={prop.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <button className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
+                          <ExternalLink />
+                        </button>
+                      </a>
+                    )}
+                  </div>
                 </div>
-                <div className="flex items-center justify-center gap-2">
-                  {prop.github && (
-                    <a
-                      href={prop.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <button className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
-                        <Github />
-                      </button>
-                    </a>
-                  )}
-                  {prop.link && (
-                    <a
-                      href={prop.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <button className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
-                        <ExternalLink />
-                      </button>
-                    </a>
-                  )}
-                </div>
-              </div>
 
-              <div
-                className={`bg-darkBg2 h-[400px] w-[600px] max-w-full ${
-                  loading && "animate-pulse"
-                }`}
-                onMouseOver={() => setLoading(false)}
-              >
-                <iframe
-                  src={prop.link}
-                  width={600}
-                  height={400}
-                  className="max-w-full"
-                  allowFullScreen={true}
-                  style={{
-                    display:
-                      showcase[showcaseIndex].name === "Minimized V."
-                        ? "block"
-                        : "none",
-                  }}
-                  onLoad={() => loading && setLoading(false)}
-                  // allow="writeText"
-                >
-                  Loading a minimized instance of this project
-                </iframe>
-                <video
-                  src={showcase[showcaseIndex].url}
-                  style={{
-                    display:
-                      showcase[showcaseIndex].name === "video"
-                        ? "block"
-                        : "none",
-                  }}
-                  autoPlay
-                  loop
-                  controls
-                  preload="eager"
-                  className="object-fill max-w-full size-full"
-                  onCanPlay={() => loading && setLoading(false)}
-                ></video>
                 <div
-                  className="flex max-w-full overflow-x-scroll size-full snap-both snap-center snap-mandatory"
-                  style={{
-                    display:
-                      showcase[showcaseIndex].name === "images"
-                        ? "flex"
-                        : "none",
-                  }}
+                  className={`bg-darkBg2 h-[400px] w-[600px] max-w-full ${
+                    loading && "animate-pulse"
+                  }`}
+                  onMouseOver={() => setLoading(false)}
                 >
-                  {showcase[showcaseIndex].images?.map((image, i) => (
-                    <img
-                      src={image}
-                      alt="Showcase screenshot"
-                      className="min-w-full size-full object-contain snap-center snap-mandatory snap-both"
-                      key={i}
-                      loading="eager"
-                      onLoad={() => loading && setLoading(false)}
-                    />
-                  ))}
+                  <iframe
+                    src={prop.link}
+                    width={600}
+                    height={400}
+                    className="max-w-full"
+                    allowFullScreen={true}
+                    style={{
+                      display:
+                        showcase[showcaseIndex].name === "Minimized V."
+                          ? "block"
+                          : "none",
+                    }}
+                    onLoad={() => loading && setLoading(false)}
+                    // allow="writeText"
+                  >
+                    Loading a minimized instance of this project
+                  </iframe>
+                  <video
+                    src={showcase[showcaseIndex].url}
+                    style={{
+                      display:
+                        showcase[showcaseIndex].name === "video"
+                          ? "block"
+                          : "none",
+                    }}
+                    autoPlay
+                    loop
+                    controls
+                    preload="eager"
+                    className="object-fill max-w-full size-full"
+                    onCanPlay={() => loading && setLoading(false)}
+                  ></video>
+                  <div
+                    className="flex max-w-full overflow-x-scroll size-full snap-both snap-center snap-mandatory"
+                    style={{
+                      display:
+                        showcase[showcaseIndex].name === "images"
+                          ? "flex"
+                          : "none",
+                    }}
+                  >
+                    {showcase[showcaseIndex].images?.map((image, i) => (
+                      <img
+                        src={image}
+                        alt="Showcase screenshot"
+                        className="min-w-full size-full object-contain snap-center snap-mandatory snap-both"
+                        key={i}
+                        loading="eager"
+                        onLoad={() => loading && setLoading(false)}
+                      />
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </div>
-          )}
+              </>
+            )}
+          </div>
         </div>
       </div>
       <Hr />

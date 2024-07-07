@@ -9,23 +9,22 @@ export default function Main() {
       <h1 className="mt-2 text-4xl font-bold tracking-wide lg:text-7xl text-textGold">
         A Software Developer
       </h1>
-      <div className="my-10 size-fit flex justify-center items-center">
+      <div className="flex items-center justify-center my-10 size-fit">
         <img
-          src="/me.jpg"
+          src="me.jpg"
           alt="my image"
-          className="size-40 rounded-full object-cover"
+          className="object-cover rounded-full size-40"
         />
       </div>
       <div className="flex flex-col flex-wrap text-sm font-semibold sm:text-base xl:text-lg">
-        <p className="py-2">
-          There isn't much to say, I'm a computer geek
+        <p>
+          I'm proficient in building, testing and maintaining user-facing
+          features,
         </p>
-        <p>and I'm glad I can make a career out of doing what I love</p>
-        <p className="py-2">
-          I'm willing to try my hand at anything tech, except for design{" "}
-          <i>blehh...</i>
+        <p>
+          having worked within the small business E-commerce space averaging
+          100+ users a month
         </p>
-        <p>Respect to all designers out there tho...</p>
         <p className="pt-2 mb-4 font-bold bg-gradient-to-r from-green-200 via-green-400 to-green-500 bg-clip-text">
           With the introductions out of the way, let me showcase my skills...
         </p>

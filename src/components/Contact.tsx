@@ -10,7 +10,7 @@ export default function Contact() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="flex py-4 pl-12 pr-16 text-sm border border-gray-700 rounded-xl hover:bg-darkBgL bg-darkBgXl">
+          <button className="flex py-4 pl-12 pr-16 text-sm border border-gray-700 rounded-xl  bg-darkBgXl">
             Resume
           </button>
         </a>
@@ -19,7 +19,7 @@ export default function Contact() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="flex py-4 pl-12 pr-16 text-sm border border-gray-700 rounded-xl hover:bg-darkBgL bg-darkBgXl">
+          <button className="flex py-4 pl-12 pr-16 text-sm border border-gray-700 rounded-xl  bg-darkBgXl">
             Email
           </button>
         </a>
@@ -28,7 +28,7 @@ export default function Contact() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="flex py-4 pl-12 pr-16 text-sm border border-gray-700 rounded-xl hover:bg-darkBgL bg-darkBgXl">
+          <button className="flex py-4 pl-12 pr-16 text-sm border border-gray-700 rounded-xl  bg-darkBgXl">
             Github
           </button>
         </a>
@@ -37,22 +37,13 @@ export default function Contact() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="flex py-4 pl-12 pr-16 text-sm border border-gray-700 rounded-xl hover:bg-darkBgL bg-darkBgXl">
+          <button className="flex py-4 pl-12 pr-16 text-sm border border-gray-700 rounded-xl  bg-darkBgXl">
             LinkedIn
           </button>
         </a>{" "}
         <a href="tel:+2348114779597" target="_blank" rel="noopener noreferrer">
-          <button className="flex py-4 pl-12 pr-16 text-sm border border-gray-700 rounded-xl hover:bg-darkBgL bg-darkBgXl">
+          <button className="flex py-4 pl-12 pr-16 text-sm border border-gray-700 rounded-xl  bg-darkBgXl">
             Tel. Number
-          </button>
-        </a>
-        <a
-          href="https://drive.google.com/file/d/1Odzu9Nil8eBWXJRgfy53kVeDQxFTvpva/view?usp=drive_link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button className="flex py-4 pl-12 pr-16 text-sm border border-gray-700 rounded-xl hover:bg-darkBgL bg-darkBgXl">
-            Resume again :)
           </button>
         </a>
       </div>

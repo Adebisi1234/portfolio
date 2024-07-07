@@ -31,6 +31,7 @@ const experiences = [
       "Jest",
     ],
     img: "/thevalley.jpg",
+    url: "https://www.thevalley.live",
   },
   {
     name: "Ticksevent",
@@ -72,9 +73,11 @@ const experiencesComp = experiences.map((experience, i) => {
             }`}
           >
             <div className="w-11/12 mx-auto sm:w-4/5 md:w-3/4 lg:w-unset">
-              <h3 className="mt-6 text-4xl font-bold lg:text-5xl ">
-                {experience.name}
-              </h3>
+              <a href={experience.url}>
+                <h3 className="mt-6 text-4xl font-bold lg:text-5xl ">
+                  {experience.name}
+                </h3>
+              </a>
               <div className="my-4 flex justify-between w-full">
                 <p>{experience.position}</p>
                 <p>{experience.date}</p>
@@ -91,24 +94,8 @@ const experiencesComp = experiences.map((experience, i) => {
               </ul>
             </div>
           </div>
-          <div
-            className={`w-full mt-12 mb-12 lg:w-1/2 lg:mb-0 ${
-              i % 2 !== 0 ? "lg:order-1" : ""
-            }`}
-          >
+          <div className={`w-full mt-12 mb-12 lg:w-1/2 lg:mb-0`}>
             <div className="flex justify-between w-[600px] my-3 max-w-full">
-              {experience.url && (
-                <button className="flex items-center justify-center ml-auto h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
-                  <a
-                    href={experience.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {" "}
-                    <ExternalLink />
-                  </a>
-                </button>
-              )}
             </div>
             <div className={`bg-darkBg2 h-[400px] w-[600px] max-w-full`}>
               <img
@@ -130,7 +117,7 @@ export default function Works() {
   return (
     <section>
       <h6 className="text-textGoldLight text-2xl font-semibold mt-4 mb-10 leading-6">
-        Works
+        Work Experiences
       </h6>
       {experiencesComp}
     </section>
