@@ -1,5 +1,4 @@
 import { Fragment } from "react/jsx-runtime";
-import { ExternalLink } from "../assets/Svg";
 import Hr from "./Hr";
 
 const experiences = [
@@ -57,7 +56,7 @@ const experiences = [
       "Docker",
       "AWS",
     ],
-    img: "/ticks.jpg",
+    img: "ticks.jpg",
     url: "https://tickevents.com",
   },
 ];
@@ -68,7 +67,7 @@ const experiencesComp = experiences.map((experience, i) => {
       <div className="flex flex-col items-center justify-between w-full gap-5 my-10 lg:flex-row text-start">
         <div className="flex flex-wrap 2xl:w-[1450px] xl:w-[1300px] w-11/12 mx-auto md:pl-4 xl:pr-16 xl:pl-16">
           <div
-            className={`w-full mt-12 mb-12 lg:w-1/2 lg:mb-0 ${
+            className={`w-full lg:my-12 my-6 lg:w-1/2 lg:mb-0 ${
               i % 2 !== 0 ? "lg:order-2" : ""
             }`}
           >
@@ -95,13 +94,14 @@ const experiencesComp = experiences.map((experience, i) => {
             </div>
           </div>
           <div className={`w-full mt-12 mb-12 lg:w-1/2 lg:mb-0`}>
-            <div className="flex justify-between w-[600px] my-3 max-w-full">
-            </div>
-            <div className={`bg-darkBg2 h-[400px] w-[600px] max-w-full`}>
+            <div className="flex justify-between w-[600px] my-3 max-w-full"></div>
+            <div
+              className={`bg-darkBg2 h-fit max-h-[400px] w-[600px] max-w-full`}
+            >
               <img
                 src={experience.img}
                 alt="Showcase screenshot"
-                className="min-w-full size-full snap-center snap-mandatory snap-both"
+                className="min-w-full size-full snap-center snap-mandatory snap-both object-contain"
                 loading="eager"
               />
             </div>
