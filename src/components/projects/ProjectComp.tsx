@@ -32,8 +32,6 @@ export default function ProjectComp(prop: ProjectType) {
     showcase.push({ images: prop.images, name: "images" });
   typeof prop.video !== "undefined" &&
     showcase.push({ url: prop.video, name: "video" });
-  typeof prop.link !== "undefined" &&
-    showcase.push({ url: prop.link, name: "min. version" });
 
   const [showcaseIndex, setShowcaseIndex] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -95,7 +93,7 @@ export default function ProjectComp(prop: ProjectType) {
           <div className={`w-full mt-12 mb-12 lg:w-1/2 lg:mb-0`}>
             {(prop.link || prop.images || prop.video) && (
               <>
-                <div className="flex justify-between w-[600px] my-3 max-w-full">
+                <div className="flex justify-between w-[600px] my-3 max-w-full h-fit">
                   <div className="flex items-center justify-center gap-1">
                     {showcase.length > 1 ? (
                       <>
@@ -142,28 +140,11 @@ export default function ProjectComp(prop: ProjectType) {
                 </div>
 
                 <div
-                  className={`bg-darkBg2 h-[400px] w-[600px] max-w-full ${
+                  className={`bg-darkBg2 h-fit max-h-[400px] w-[600px] max-w-full ${
                     loading && "animate-pulse"
                   }`}
                   onMouseOver={() => setLoading(false)}
                 >
-                  <iframe
-                    src={prop.link}
-                    width={600}
-                    height={400}
-                    className="max-w-full"
-                    allowFullScreen={true}
-                    style={{
-                      display:
-                        showcase[showcaseIndex].name === "Minimized V."
-                          ? "block"
-                          : "none",
-                    }}
-                    onLoad={() => loading && setLoading(false)}
-                    // allow="writeText"
-                  >
-                    Loading a minimized instance of this project
-                  </iframe>
                   <video
                     src={showcase[showcaseIndex].url}
                     style={{
@@ -176,7 +157,7 @@ export default function ProjectComp(prop: ProjectType) {
                     loop
                     controls
                     preload="eager"
-                    className="object-fill max-w-full size-full"
+                    className="object-fill max-w-full w-full h-auto"
                     onCanPlay={() => loading && setLoading(false)}
                   ></video>
                   <div
@@ -191,6 +172,7 @@ export default function ProjectComp(prop: ProjectType) {
                     {showcase[showcaseIndex].images?.map((image, i) => (
                       <img
                         src={image}
+                        draggable="false"
                         alt="Showcase screenshot"
                         className="min-w-full size-full object-contain snap-center snap-mandatory snap-both"
                         key={i}

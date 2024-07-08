@@ -9,7 +9,7 @@ export default function Skills() {
           <h5 className="font-bold text-2xl mt-2 tracking-wide text-start">
             Frontend
           </h5>
-          <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto">
+          <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto flex-wrap">
             <li>React,</li>
             <li>Typescript,</li>
             <li>Next.js,</li>
@@ -24,7 +24,7 @@ export default function Skills() {
           <h5 className="font-bold text-2xl mt-2 tracking-wide text-start">
             Backend
           </h5>
-          <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto">
+          <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto flex-wrap">
             <li>CronJob,</li>
             <li>Node.js,</li>
             <li>Express.js,</li>
@@ -37,7 +37,7 @@ export default function Skills() {
           <h5 className="font-bold text-2xl mt-2 tracking-wide text-start">
             Testing
           </h5>
-          <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto">
+          <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto flex-wrap">
             <li>Vitest,</li>
             <li>Cypress,</li>
             <li>Jest,</li>
@@ -48,7 +48,7 @@ export default function Skills() {
           <h5 className="font-bold text-2xl mt-2 tracking-wide text-start">
             Database
           </h5>
-          <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto">
+          <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto flex-wrap">
             <li>Prisma,</li>
             <li>Mongoose,</li>
             <li>Sql,</li>
@@ -76,7 +76,7 @@ export default function Skills() {
           <h5 className="font-bold text-2xl mt-2 tracking-wide text-start">
             Others
           </h5>
-          <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto">
+          <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto flex-wrap">
             <li>Docker,</li>
             <li>C++,</li>
             <li>Python,</li>

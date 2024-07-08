@@ -4,7 +4,7 @@ export default function Contact() {
       <h6 className="mt-4 mb-10 text-2xl font-semibold leading-6 text-textGold">
         Contact
       </h6>
-      <div className="flex flex-wrap max-w-full gap-3">
+      <div className="flex flex-wrap max-w-full gap-3 items-center">
         <a
           href="https://drive.google.com/file/d/1Odzu9Nil8eBWXJRgfy53kVeDQxFTvpva/view?usp=drive_link"
           target="_blank"

@@ -8,8 +8,8 @@ const experiences = [
     date: "Jan 2024 - Present",
     points: [
       "Built the site-wide search feature using typesense",
-      "Worked on a user / company profile for the app",
       "Launched a email feature that's used to onboard new users",
+      "Worked on a user / company profile for the app",
       "Mentored peer developers on full-stack development and best practices",
     ],
     technologies: [

@@ -59,7 +59,7 @@ const projects: Omit<ProjectType, "id">[] = [
       "Data stored is persisted",
     ],
     // link: "",
-    // images: ["", "", "", ""],
+    images: ["recached.jpg"],
     // video: "",
     badges: [{ name: "Network", color: "#dcbb57" }],
   },
@@ -72,7 +72,7 @@ const projects: Omit<ProjectType, "id">[] = [
       "Wishlist products ",
       "Buy products",
       "Cart",
-      "Payment Gateway using paystack",
+      "Payment integration using paystack",
     ],
     link: "https://buysomething.vercel.app",
     images: [
