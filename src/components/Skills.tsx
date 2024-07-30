@@ -79,9 +79,7 @@ export default function Skills() {
           <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto flex-wrap">
             <li>Docker,</li>
             <li>C++,</li>
-            <li>Python,</li>
             <li>Temporal,</li>
-            <li>Git,</li>
             <li>Typesense | Algolia,</li>
             <li>Zod,</li>
           </ul>
