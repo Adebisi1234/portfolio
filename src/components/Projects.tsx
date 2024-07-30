@@ -13,6 +13,7 @@ const projects: Omit<ProjectType, "id">[] = [
       "Zoom and Minimap",
       "Persistency",
       "Easy customization",
+      "Available as a browser extension"
     ],
     link: "https://myblackboard.vercel.app",
     images: [

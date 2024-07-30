@@ -5,7 +5,7 @@ const experiences = [
   {
     name: "The Valley",
     position: "Software Developer",
-    date: "Jan 2024 - Present",
+    date: "Jun 2024 - Present",
     points: [
       "Built the site-wide search feature using typesense",
       "Launched a email feature that's used to onboard new users",
@@ -34,7 +34,7 @@ const experiences = [
   {
     name: "Ticksevent",
     position: "Software Developer",
-    date: "Oct 2023 - Dec 2023",
+    date: "April 2023 - May 2023",
 
     points: [
       "Built the entire back-end of the event management platform",
