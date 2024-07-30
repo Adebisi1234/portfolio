@@ -34,7 +34,7 @@ const experiences = [
   {
     name: "Ticksevent",
     position: "Software Developer",
-    date: "April 2023 - May 2023",
+    date: "April 2024 - May 2024",
 
     points: [
       "Built the entire back-end of the event management platform",
