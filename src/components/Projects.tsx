@@ -130,3 +130,16 @@ export default function Projects() {
     </section>
   );
 }
+/* The Blackboard project's primary goals are to provide a fast, collaborative, and efficient digital drawing board that caters to the needs of users who require real-time collaboration, intuitive drawing tools, and seamless integration into their workflow.
+
+To achieve these goals, the project has implemented the following key features:
+
+Freehand to Shape using ML: By leveraging machine learning technology, the Blackboard drawing tool can automatically recognize and convert freehand sketches into clean, geometric shapes. This feature enhances the user's drawing experience by allowing them to quickly create precise shapes without the need for manual precision.
+Real-time Collaboration: The Blackboard platform enables multiple users to work on the same drawing board simultaneously, allowing for seamless real-time collaboration. This feature enables teams to brainstorm, ideate, and iterate on designs in a shared, interactive environment.
+Save to Image: Users can save their drawings as image files, allowing them to easily incorporate their work into presentations, documents, or other digital assets.
+Zoom and Minimap: The Blackboard interface provides robust zooming and panning capabilities, as well as a minimap view, which enables users to navigate large, detailed drawings with ease.
+Persistency: The Blackboard platform ensures that user drawings are persistently stored, allowing users to return to their work at any time and continue their creative process.
+Easy Customization: The Blackboard interface is highly customizable, allowing users to tailor the tool to their specific needs and preferences.
+Browser Extension: The Blackboard project is available as a browser extension, providing users with seamless integration into their existing workflows and easy access to the drawing tool.
+The impact of the Blackboard project is that it empowers users, particularly those engaged in collaborative design, ideation, and brainstorming activities, to work more efficiently and effectively. By providing a fast, intuitive, and feature-rich drawing tool, the Blackboard project aims to improve productivity, enhance creativity, and foster better communication and collaboration among teams.
+*/
