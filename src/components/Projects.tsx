@@ -15,7 +15,7 @@ const projects: Omit<ProjectType, "id">[] = [
       "Easy customization",
       "Available as a browser extension"
     ],
-    link: "https://myblackboard.vercel.app",
+    link: "https://tobiloba.me/blackboard",
     images: [
       "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851607/blackboard_screenshot1_g4trqc.jpg",
       "https://res.cloudinary.com/de4vooekftest/image/upload/v1718851606/blackboard_screenshot2_ros5lz.jpg",
