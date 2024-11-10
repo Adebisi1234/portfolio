@@ -10,10 +10,11 @@ const experiences = [
       "Built the site-wide search feature using typesense",
       "Launched a email feature that's used to onboard new users",
       "Worked on a user / company profile for the app",
-      "Mentored peer developers on full-stack development and best practices",
+      "Built the site SEO-friendly blog with 100% audit score on lighthouse & Pagespeed.web.dev",
     ],
     technologies: [
       "React",
+      "Nextjs",
       "Node",
       "AdonisJs",
       "MySql",
@@ -29,7 +30,7 @@ const experiences = [
       "Jest",
     ],
     img: "thevalley.jpg",
-    url: "https://www.thevalley.live",
+    url: "https://app.thevalley.live",
   },
   {
     name: "Ticksevent",
