@@ -18,7 +18,6 @@ export default function Footer() {
           <a
             target="_blank"
             href="http://www.github.com/adebisi1234"
-            target="_blank"
             rel="noopener noreferrer"
           >
             <button className="size-10 bg-darkBg  border border-gray-500 rounded-xl *:size-6 flex justify-center items-center">
@@ -28,7 +27,6 @@ export default function Footer() {
           <a
             target="_blank"
             href="http://www.linkedin.com/in/tobiloba-adebisi"
-            target="_blank"
             rel="noopener noreferrer"
           >
             <button className="size-10 bg-darkBg  border border-gray-500 rounded-xl *:size-6 flex justify-center items-center">
@@ -38,7 +36,6 @@ export default function Footer() {
           <a
             target="_blank"
             href="https://drive.google.com/file/d/1Odzu9Nil8eBWXJRgfy53kVeDQxFTvpva/view?usp=drive_link"
-            target="_blank"
             rel="noopener noreferrer"
             download={"Tobiloba Adebisi Cv"}
           >
