@@ -10,12 +10,13 @@ export default function Footer() {
           Tobiloba Isaiah Adebisi
         </h3>
         <div className="flex gap-1 mb-5 links size-fit">
-          <a href="mailto:ti.adebisi@gmail.com">
+          <a target="_blank" href="mailto:ti.adebisi@gmail.com">
             <button className="size-10 bg-darkBg  border border-gray-500 rounded-xl *:size-6 flex justify-center items-center">
               <Email />
             </button>
           </a>
           <a
+            target="_blank"
             href="http://www.github.com/adebisi1234"
             target="_blank"
             rel="noopener noreferrer"
@@ -25,6 +26,7 @@ export default function Footer() {
             </button>
           </a>
           <a
+            target="_blank"
             href="http://www.linkedin.com/in/tobiloba-adebisi"
             target="_blank"
             rel="noopener noreferrer"
@@ -34,6 +36,7 @@ export default function Footer() {
             </button>
           </a>
           <a
+            target="_blank"
             href="https://drive.google.com/file/d/1Odzu9Nil8eBWXJRgfy53kVeDQxFTvpva/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
@@ -48,7 +51,10 @@ export default function Footer() {
       <Hr />
       <p className="mt-10 mb-2 text-sm">
         Design greatly inspired by{" "}
-        <a href="https://road-to-next.com">road to next</a> by Robin Wieruch.
+        <a target="_blank" href="https://road-to-next.com">
+          road to next
+        </a>{" "}
+        by Robin Wieruch.
       </p>
       <p className="text-sm">
         Copyright © {fullYear} Tobiloba Adebisi. All rights reserved.

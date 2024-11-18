@@ -21,7 +21,7 @@ function App() {
       <Works />
       <Projects />
       <Skills />
-      {/* <About /> */}
+      {/* <a target="_blank"bout /> */}
       <Contact />
       <Footer />
     </>

@@ -54,6 +54,7 @@ export default function ProjectComp(prop: ProjectType) {
                     {" "}
                     {prop.github && (
                       <a
+                        target="_blank"
                         href={prop.github}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -65,6 +66,7 @@ export default function ProjectComp(prop: ProjectType) {
                     )}
                     {prop.link && (
                       <a
+                        target="_blank"
                         href={prop.link}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -116,6 +118,7 @@ export default function ProjectComp(prop: ProjectType) {
                   <div className="flex items-center justify-center gap-2">
                     {prop.github && (
                       <a
+                        target="_blank"
                         href={prop.github}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -127,6 +130,7 @@ export default function ProjectComp(prop: ProjectType) {
                     )}
                     {prop.link && (
                       <a
+                        target="_blank"
                         href={prop.link}
                         target="_blank"
                         rel="noopener noreferrer"

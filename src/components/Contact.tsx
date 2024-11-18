@@ -6,6 +6,7 @@ export default function Contact() {
       </h6>
       <div className="flex flex-wrap max-w-full gap-3 items-center">
         <a
+          target="_blank"
           href="https://drive.google.com/file/d/1Odzu9Nil8eBWXJRgfy53kVeDQxFTvpva/view?usp=drive_link"
           target="_blank"
           rel="noopener noreferrer"
@@ -15,6 +16,7 @@ export default function Contact() {
           </button>
         </a>
         <a
+          target="_blank"
           href="mailto:ti.adebisi@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
@@ -24,6 +26,7 @@ export default function Contact() {
           </button>
         </a>
         <a
+          target="_blank"
           href="http://www.github.com/adebisi1234"
           target="_blank"
           rel="noopener noreferrer"
@@ -33,6 +36,7 @@ export default function Contact() {
           </button>
         </a>
         <a
+          target="_blank"
           href="http://www.linkedin.com/in/tobiloba-adebisi"
           target="_blank"
           rel="noopener noreferrer"
@@ -41,7 +45,12 @@ export default function Contact() {
             LinkedIn
           </button>
         </a>{" "}
-        <a href="tel:+2348114779597" target="_blank" rel="noopener noreferrer">
+        <a
+          target="_blank"
+          href="tel:+2348114779597"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <button className="flex py-4 pl-12 pr-16 text-sm border border-gray-700 rounded-xl  bg-darkBgXl">
             Tel. Number
           </button>

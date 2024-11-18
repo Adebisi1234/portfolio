@@ -7,6 +7,7 @@ export default function Header() {
         </a>
 
         <a
+          target="_blank"
           href="https://drive.google.com/file/d/1Odzu9Nil8eBWXJRgfy53kVeDQxFTvpva/view?usp=drive_link"
           download={"Tobiloba Adebisi Cv"}
         >
