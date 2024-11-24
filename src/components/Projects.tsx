@@ -24,7 +24,7 @@ const projects: Omit<ProjectType, "id">[] = [
       "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1718851629/blackboard_screenshot5_fxj963.jpg",
     ],
     video:
-      "https://res.cloudinary.com/de4vooekftest/video/upload/v1718852902/blackboard_showcase_a7ukkl.mp4",
+      "https://res.cloudinary.com/de4vooekftest/video/upload/f_auto:video,q_auto/v1718852902/blackboard_showcase_a7ukkl.mp4",
     badges: [
       { name: "ML", color: "#a52a2a" },
       { name: "Web", color: "#008000" },
@@ -70,7 +70,7 @@ const projects: Omit<ProjectType, "id">[] = [
       "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/sj6dp67gxf82nq5vnbhw",
     ],
     video:
-      "http://res.cloudinary.com/de4vooekftest/video/upload/v1732484287/dvlju0dxwwm6qkgp5nkk.mp4",
+      "http://res.cloudinary.com/de4vooekftest/video/upload/f_auto:video,q_auto/v1732484287/dvlju0dxwwm6qkgp5nkk.mp4",
     badges: [
       { name: "Network", color: "#af8608" },
       { name: "Web", color: "#008000" },
@@ -97,7 +97,7 @@ const projects: Omit<ProjectType, "id">[] = [
       "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1718851593/buysomething_screenshot6_fuamu8.jpg",
     ],
     video:
-      "https://res.cloudinary.com/de4vooekftest/video/upload/v1718852880/ecommerce_showcase_uva5tv.mp4",
+      "https://res.cloudinary.com/de4vooekftest/video/upload/f_auto:video,q_auto/v1718852880/ecommerce_showcase_uva5tv.mp4",
     badges: [{ name: "Web", color: "#008000" }],
   },
   {
@@ -123,7 +123,7 @@ const projects: Omit<ProjectType, "id">[] = [
       "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1718852909/xitterr_screenshot9_idjtby.jpg",
     ],
     video:
-      "https://res.cloudinary.com/de4vooekftest/video/upload/v1718851297/xitterr_showcase_ck77ad.mp4",
+      "https://res.cloudinary.com/de4vooekftest/video/upload/f_auto:video,q_auto/v1718851297/xitterr_showcase_ck77ad.mp4",
     badges: [{ name: "Web", color: "#008000" }],
   },
 ];

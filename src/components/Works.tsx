@@ -7,10 +7,11 @@ const experiences = [
     position: "Software Developer",
     date: "Jun 2024 - Present",
     points: [
-      "Built the site-wide search feature using typesense",
+      "Built the site's SEO-friendly blog with 100% audit score on lighthouse & pagespeed.web.dev",
+      "Increase the app's loading speed by 90% using code-splitting",
+      "Built the site-wide search feature using Typesense",
       "Launched a email feature that's used to onboard new users",
       "Worked on a user / company profile for the app",
-      "Built the site SEO-friendly blog with 100% audit score on lighthouse & Pagespeed.web.dev",
     ],
     technologies: [
       "React",
@@ -77,7 +78,7 @@ const experiencesComp = experiences.map((experience, i) => {
                   {experience.name}
                 </h3>
               </a>
-              <div className="my-4 flex justify-between w-full">
+              <div className="flex justify-between w-full my-4">
                 <p>{experience.position}</p>
                 <p>{experience.date}</p>
               </div>
@@ -97,7 +98,7 @@ const experiencesComp = experiences.map((experience, i) => {
               <img
                 src={experience.img}
                 alt="Showcase screenshot"
-                className="min-w-full size-full snap-center snap-mandatory snap-both object-contain"
+                className="object-contain min-w-full size-full snap-center snap-mandatory snap-both"
                 loading="eager"
               />
             </div>
@@ -112,7 +113,7 @@ const experiencesComp = experiences.map((experience, i) => {
 export default function Works() {
   return (
     <section className="bg-darkBg2">
-      <h6 className="text-textGoldLight text-2xl font-semibold mt-4 mb-10 leading-6">
+      <h6 className="mt-4 mb-10 text-2xl font-semibold leading-6 text-textGoldLight">
         Work Experiences
       </h6>
       {experiencesComp}
