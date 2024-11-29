@@ -1,9 +1,9 @@
 export default function Contact() {
   return (
     <section className="bg-darkBg2">
-      <h6 className="mt-4 mb-10 text-2xl font-semibold leading-6 text-textGold">
+      <h2 className="mt-4 mb-10 text-2xl font-semibold leading-6 text-textGold">
         Contact
-      </h6>
+      </h2>
       <div className="flex flex-wrap items-center max-w-full gap-3">
         <a
           target="_blank"
@@ -56,9 +56,13 @@ export default function Contact() {
           >
             LinkedIn
           </button>
-        </a>{" "}
-        aria-label="Tel. Link to my Number"
-        <a target="_blank" href="tel:+2348114779597" rel="noopener noreferrer">
+        </a>
+        <a
+          target="_blank"
+          href="tel:+2348114779597"
+          rel="noopener noreferrer"
+          aria-label="Tel. Link to my Number"
+        >
           <button
             className="flex py-4 pl-12 pr-16 text-sm border border-gray-700 rounded-xl bg-darkBgXl"
             aria-label="Tel. Number"

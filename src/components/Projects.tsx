@@ -26,8 +26,8 @@ const projects: Omit<ProjectType, "id">[] = [
     video:
       "https://res.cloudinary.com/de4vooekftest/video/upload/f_auto:video,q_auto/v1718852902/blackboard_showcase_a7ukkl.mp4",
     badges: [
-      { name: "ML", color: "#a52a2a" },
-      { name: "Web", color: "#008000" },
+      { name: "ML", bg: "#a52a2a", color: "white" },
+      { name: "Web", color: "#19ff00", bg: "#035103" },
     ],
   },
   // {
@@ -46,7 +46,7 @@ const projects: Omit<ProjectType, "id">[] = [
   //   video: "",
   //   badges: [
   //     { name: "ML/AI", color: "#a52a2a" },
-  //     { name: "Web", color: "#008000" },
+  //     { name: "Web", color: "#035103" },
   //   ],
   // },
   {
@@ -72,8 +72,8 @@ const projects: Omit<ProjectType, "id">[] = [
     video:
       "http://res.cloudinary.com/de4vooekftest/video/upload/f_auto:video,q_auto/v1732484287/dvlju0dxwwm6qkgp5nkk.mp4",
     badges: [
-      { name: "Network", color: "#af8608" },
-      { name: "Web", color: "#008000" },
+      { name: "Network", color: "black", bg: "#af8608" },
+      { name: "Web", color: "#19ff00", bg: "#035103" },
     ],
   },
   {
@@ -98,7 +98,7 @@ const projects: Omit<ProjectType, "id">[] = [
     ],
     video:
       "https://res.cloudinary.com/de4vooekftest/video/upload/f_auto:video,q_auto/v1718852880/ecommerce_showcase_uva5tv.mp4",
-    badges: [{ name: "Web", color: "#008000" }],
+    badges: [{ name: "Web", color: "#19ff00", bg: "#035103" }],
   },
   {
     name: "Heyyy",
@@ -124,7 +124,7 @@ const projects: Omit<ProjectType, "id">[] = [
     ],
     video:
       "https://res.cloudinary.com/de4vooekftest/video/upload/f_auto:video,q_auto/v1718851297/xitterr_showcase_ck77ad.mp4",
-    badges: [{ name: "Web", color: "#008000" }],
+    badges: [{ name: "Web", color: "#19ff00", bg: "#035103" }],
   },
 ];
 
@@ -135,9 +135,9 @@ const renderedProjects = projects.map((project, i) => (
 export default function Projects() {
   return (
     <section className="flex flex-col gap-5 bg-darkBg ">
-      <h6 className="mt-4 text-2xl font-semibold leading-6 text-textGoldLight">
+      <h2 className="mt-4 text-2xl font-semibold leading-6 text-textGoldLight">
         Projects
-      </h6>
+      </h2>
       {renderedProjects}
     </section>
   );

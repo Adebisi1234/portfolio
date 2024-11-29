@@ -15,6 +15,7 @@ export type ProjectType = {
   badges: {
     name: string;
     color: string;
+    bg: string;
   }[];
 };
 
@@ -25,7 +26,7 @@ export default function ProjectComp(prop: ProjectType) {
     </li>
   ));
   const badges = prop.badges?.map((badge, i) => (
-    <Badge key={i} name={badge.name} color={badge.color} />
+    <Badge key={i} name={badge.name} color={badge.color} bg={badge.bg} />
   ));
   const showcase = [];
   typeof prop.images !== "undefined" &&
@@ -94,7 +95,9 @@ export default function ProjectComp(prop: ProjectType) {
                 <strong>Tools:</strong> {prop.tools}
               </p>
 
-              <h5 className="mt-2 mb-3 font-bold text-left">Features</h5>
+              <strong className="inline-block mt-2 mb-3 font-bold text-left">
+                Features
+              </strong>
               <ul className="mb-6 text-base font-semibold">{features}</ul>
             </div>
           </div>
@@ -108,8 +111,10 @@ export default function ProjectComp(prop: ProjectType) {
                         {showcase.map((index, i) => (
                           <div
                             key={i}
-                            className={`flex py-2 justify-center items-center px-2 text-sm text-white border border-gray-700 cursor-pointer rounded-xl bg-darkBgL ${
-                              showcaseIndex === i ? "bg-textGold" : ""
+                            className={`flex py-2 justify-center items-center px-2 text-sm text-white font-semibold border border-gray-700 cursor-pointer rounded-xl bg-darkBgL ${
+                              showcaseIndex === i
+                                ? "bg-textGold text-black"
+                                : ""
                             } `}
                             onClick={() => setShowcaseIndex(i)}
                           >

@@ -1,14 +1,14 @@
 export default function Skills() {
   return (
     <section className="bg-darkBg2">
-      <h6 className="mt-4 mb-10 text-2xl font-semibold leading-6 text-textGold">
+      <h2 className="mt-4 mb-10 text-2xl font-semibold leading-6 text-textGold">
         Skills & Technologies
-      </h6>
+      </h2>
       <div className="flex flex-col flex-wrap w-full gap-2 gap-y-4">
         <div className="w-full h-fit">
-          <h5 className="mt-2 text-2xl font-bold tracking-wide text-start">
+          <h3 className="mt-2 text-2xl font-bold tracking-wide text-start">
             Frontend
-          </h5>
+          </h3>
           <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto flex-wrap">
             <li>React,</li>
             <li>Typescript,</li>
@@ -22,9 +22,9 @@ export default function Skills() {
           </ul>
         </div>
         <div className="w-full h-fit">
-          <h5 className="mt-2 text-2xl font-bold tracking-wide text-start">
+          <h3 className="mt-2 text-2xl font-bold tracking-wide text-start">
             Backend
-          </h5>
+          </h3>
           <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto flex-wrap">
             <li>CronJob,</li>
             <li>Node.js,</li>
@@ -35,9 +35,9 @@ export default function Skills() {
           </ul>
         </div>
         <div className="w-full h-fit">
-          <h5 className="mt-2 text-2xl font-bold tracking-wide text-start">
+          <h3 className="mt-2 text-2xl font-bold tracking-wide text-start">
             Testing
-          </h5>
+          </h3>
           <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto flex-wrap">
             <li>Vitest,</li>
             <li>Cypress,</li>
@@ -46,9 +46,9 @@ export default function Skills() {
         </div>
 
         <div className="w-full h-fit">
-          <h5 className="mt-2 text-2xl font-bold tracking-wide text-start">
+          <h3 className="mt-2 text-2xl font-bold tracking-wide text-start">
             Database
-          </h5>
+          </h3>
           <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto flex-wrap">
             <li>Prisma,</li>
             <li>Mongoose,</li>
@@ -64,9 +64,9 @@ export default function Skills() {
         </div>
 
         <div className="w-full h-fit">
-          <h5 className="flex items-start justify-start gap-1 mt-2 text-2xl font-bold tracking-wide text-start">
+          <h3 className="flex items-start justify-start gap-1 mt-2 text-2xl font-bold tracking-wide text-start">
             Cloud Technologies
-          </h5>
+          </h3>
           <ul className="*:list-none *:mt-1 text-start p-0 m-0 mt-4 mx-auto flex gap-1 items-start justify-start">
             <li>AWS,</li>
             <li>Azure,</li>
@@ -74,9 +74,9 @@ export default function Skills() {
           </ul>
         </div>
         <div className="w-full h-fit">
-          <h5 className="mt-2 text-2xl font-bold tracking-wide text-start">
+          <h3 className="mt-2 text-2xl font-bold tracking-wide text-start">
             Others
-          </h5>
+          </h3>
           <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto flex-wrap">
             <li>Docker,</li>
             <li>C++,</li>

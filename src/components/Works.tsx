@@ -117,9 +117,9 @@ const experiencesComp = experiences.map((experience, i) => {
 export default function Works() {
   return (
     <section className="bg-darkBg2">
-      <h6 className="mt-4 mb-10 text-2xl font-semibold leading-6 text-textGoldLight">
+      <h2 className="mt-4 mb-10 text-2xl font-semibold leading-6 text-textGoldLight">
         Work Experiences
-      </h6>
+      </h2>
       {experiencesComp}
     </section>
   );
