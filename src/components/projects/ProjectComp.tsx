@@ -113,7 +113,7 @@ export default function ProjectComp(prop: ProjectType) {
                             key={i}
                             className={`flex py-2 justify-center items-center px-2 text-sm text-white font-semibold border border-gray-700 cursor-pointer rounded-xl bg-darkBgL ${
                               showcaseIndex === i
-                                ? "bg-textGold text-black"
+                                ? "bg-textGold !text-black"
                                 : ""
                             } `}
                             onClick={() => setShowcaseIndex(i)}
