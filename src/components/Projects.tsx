@@ -70,7 +70,7 @@ const projects: Omit<ProjectType, "id">[] = [
       "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/sj6dp67gxf82nq5vnbhw",
     ],
     video:
-      "http://res.cloudinary.com/de4vooekftest/video/upload/f_auto:video,q_auto/v1732484287/dvlju0dxwwm6qkgp5nkk.mp4",
+      "https://res.cloudinary.com/de4vooekftest/video/upload/f_auto:video,q_auto/v1732484287/dvlju0dxwwm6qkgp5nkk.mp4",
     badges: [
       { name: "Network", color: "black", bg: "#af8608" },
       { name: "Web", color: "#19ff00", bg: "#035103" },

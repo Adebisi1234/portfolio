@@ -25,7 +25,7 @@ export default function Footer() {
           <a
             aria-label="link to my github"
             target="_blank"
-            href="http://www.github.com/adebisi1234"
+            href="https://www.github.com/adebisi1234"
             rel="noopener noreferrer"
           >
             <button
@@ -38,7 +38,7 @@ export default function Footer() {
           <a
             aria-label="link to my linkedin"
             target="_blank"
-            href="http://www.linkedin.com/in/tobiloba-adebisi"
+            href="https://www.linkedin.com/in/tobiloba-adebisi"
             rel="noopener noreferrer"
           >
             <button

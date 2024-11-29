@@ -33,7 +33,7 @@ export default function Contact() {
         </a>
         <a
           target="_blank"
-          href="http://www.github.com/adebisi1234"
+          href="https://www.github.com/adebisi1234"
           rel="noopener noreferrer"
           aria-label="Link to my Github"
         >
@@ -46,7 +46,7 @@ export default function Contact() {
         </a>
         <a
           target="_blank"
-          href="http://www.linkedin.com/in/tobiloba-adebisi"
+          href="https://www.linkedin.com/in/tobiloba-adebisi"
           rel="noopener noreferrer"
           aria-label="Link to my LinkedIn"
         >
