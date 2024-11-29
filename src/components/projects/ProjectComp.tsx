@@ -57,8 +57,12 @@ export default function ProjectComp(prop: ProjectType) {
                         target="_blank"
                         href={prop.github}
                         rel="noopener noreferrer"
+                        aria-label="Link to Github"
                       >
-                        <button className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
+                        <button
+                          className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL"
+                          aria-label="Github"
+                        >
                           <Github />
                         </button>
                       </a>
@@ -68,8 +72,12 @@ export default function ProjectComp(prop: ProjectType) {
                         target="_blank"
                         href={prop.link}
                         rel="noopener noreferrer"
+                        aria-label="Link to project"
                       >
-                        <button className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
+                        <button
+                          className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL"
+                          aria-label="Project link"
+                        >
                           <ExternalLink />
                         </button>
                       </a>
@@ -119,8 +127,12 @@ export default function ProjectComp(prop: ProjectType) {
                         target="_blank"
                         href={prop.github}
                         rel="noopener noreferrer"
+                        aria-label="Link to project"
                       >
-                        <button className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
+                        <button
+                          className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL"
+                          aria-label="Github"
+                        >
                           <Github />
                         </button>
                       </a>
@@ -130,8 +142,12 @@ export default function ProjectComp(prop: ProjectType) {
                         target="_blank"
                         href={prop.link}
                         rel="noopener noreferrer"
+                        aria-label="Link to project"
                       >
-                        <button className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
+                        <button
+                          className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL"
+                          aria-label="Project link"
+                        >
                           <ExternalLink />
                         </button>
                       </a>

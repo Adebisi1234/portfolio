@@ -73,7 +73,11 @@ const experiencesComp = experiences.map((experience, i) => {
             }`}
           >
             <div className="w-11/12 mx-auto sm:w-4/5 md:w-3/4 lg:w-unset">
-              <a target="_blank" href={experience.url}>
+              <a
+                target="_blank"
+                href={experience.url}
+                aria-label={`link to ${experience.name} main site`}
+              >
                 <h3 className="mt-6 text-4xl font-bold lg:text-5xl ">
                   {experience.name}
                 </h3>
