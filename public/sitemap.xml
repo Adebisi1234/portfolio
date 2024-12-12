@@ -9,13 +9,18 @@
 
 <url>
   <loc>https://tobiloba.me/</loc>
-  <lastmod>2024-07-12T13:14:35+00:00</lastmod>
-  <priority>1.00</priority>
+  <lastmod>2024-12-12T13:14:35+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tobiloba.me/portfolio/</loc>
-  <lastmod>2024-10-07T15:55:44+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2024-12-07T15:55:44+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://tobiloba.me/blackboard/</loc>
+  <lastmod>2024-12-07T15:55:44+00:00</lastmod>
+  <priority>1.00</priority>
 </url>
 
 
