@@ -10,7 +10,7 @@ export default {
         darkBgL: "#26272b",
         darkBg2: "#26272a",
         darkGrey: "#afb3b8",
-        textGold: "#dcbb57",
+        textGold: "#ffc71c",
         textGoldLight: "#fff0c5",
         greenDD: "#003e21",
         greenDDXL: "#003e21cc",

@@ -10,36 +10,55 @@ export default function Footer() {
           Tobiloba Isaiah Adebisi
         </h3>
         <div className="flex gap-1 mb-5 links size-fit">
-          <a href="mailto:ti.adebisi@gmail.com">
-            <button className="size-10 bg-darkBg  border border-gray-500 rounded-xl *:size-6 flex justify-center items-center">
+          <a
+            aria-label="link to my email"
+            target="_blank"
+            href="mailto:ti.adebisi@gmail.com"
+          >
+            <button
+              className="size-10 bg-darkBg  border border-gray-500 rounded-xl *:size-6 flex justify-center items-center"
+              aria-label="Email"
+            >
               <Email />
             </button>
           </a>
           <a
-            href="http://www.github.com/adebisi1234"
+            aria-label="link to my github"
             target="_blank"
+            href="https://www.github.com/adebisi1234"
             rel="noopener noreferrer"
           >
-            <button className="size-10 bg-darkBg  border border-gray-500 rounded-xl *:size-6 flex justify-center items-center">
+            <button
+              className="size-10 bg-darkBg  border border-gray-500 rounded-xl *:size-6 flex justify-center items-center"
+              aria-label="Github"
+            >
               <Github />
             </button>
           </a>
           <a
-            href="http://www.linkedin.com/in/tobiloba-adebisi"
+            aria-label="link to my linkedin"
             target="_blank"
+            href="https://www.linkedin.com/in/tobiloba-adebisi"
             rel="noopener noreferrer"
           >
-            <button className="size-10 bg-darkBg  border border-gray-500 rounded-xl *:size-6 flex justify-center items-center">
+            <button
+              className="size-10 bg-darkBg  border border-gray-500 rounded-xl *:size-6 flex justify-center items-center"
+              aria-label="LinkedIn"
+            >
               <LinkedIn />
             </button>
           </a>
           <a
-            href="https://drive.google.com/file/d/1Odzu9Nil8eBWXJRgfy53kVeDQxFTvpva/view?usp=drive_link"
+            aria-label="link to my resume"
             target="_blank"
+            href="https://drive.google.com/file/d/1Odzu9Nil8eBWXJRgfy53kVeDQxFTvpva/view?usp=drive_link"
             rel="noopener noreferrer"
             download={"Tobiloba Adebisi Cv"}
           >
-            <button className="size-10 bg-darkBg  border border-gray-500 rounded-xl *:size-6 flex justify-center items-center">
+            <button
+              className="size-10 bg-darkBg  border border-gray-500 rounded-xl *:size-6 flex justify-center items-center"
+              aria-label="Resume"
+            >
               <Resume />
             </button>
           </a>
@@ -48,7 +67,10 @@ export default function Footer() {
       <Hr />
       <p className="mt-10 mb-2 text-sm">
         Design greatly inspired by{" "}
-        <a href="https://road-to-next.com">road to next</a> by Robin Wieruch.
+        <a target="_blank" href="https://road-to-next.com">
+          road to next
+        </a>{" "}
+        by Robin Wieruch.
       </p>
       <p className="text-sm">
         Copyright © {fullYear} Tobiloba Adebisi. All rights reserved.

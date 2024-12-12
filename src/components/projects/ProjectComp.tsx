@@ -15,6 +15,7 @@ export type ProjectType = {
   badges: {
     name: string;
     color: string;
+    bg: string;
   }[];
 };
 
@@ -25,7 +26,7 @@ export default function ProjectComp(prop: ProjectType) {
     </li>
   ));
   const badges = prop.badges?.map((badge, i) => (
-    <Badge key={i} name={badge.name} color={badge.color} />
+    <Badge key={i} name={badge.name} color={badge.color} bg={badge.bg} />
   ));
   const showcase = [];
   typeof prop.images !== "undefined" &&
@@ -45,7 +46,7 @@ export default function ProjectComp(prop: ProjectType) {
             }`}
           >
             <div className="w-11/12 mx-auto sm:w-4/5 md:w-3/4 lg:w-unset">
-              <div className="flex justify-between items-center">
+              <div className="flex items-center justify-between">
                 <div className="flex gap-4 text-sm font-bold badge">
                   {badges}
                 </div>
@@ -54,22 +55,30 @@ export default function ProjectComp(prop: ProjectType) {
                     {" "}
                     {prop.github && (
                       <a
-                        href={prop.github}
                         target="_blank"
+                        href={prop.github}
                         rel="noopener noreferrer"
+                        aria-label="Link to Github"
                       >
-                        <button className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
+                        <button
+                          className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL"
+                          aria-label="Github"
+                        >
                           <Github />
                         </button>
                       </a>
                     )}
                     {prop.link && (
                       <a
-                        href={prop.link}
                         target="_blank"
+                        href={prop.link}
                         rel="noopener noreferrer"
+                        aria-label="Link to project"
                       >
-                        <button className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
+                        <button
+                          className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL"
+                          aria-label="Project link"
+                        >
                           <ExternalLink />
                         </button>
                       </a>
@@ -86,7 +95,9 @@ export default function ProjectComp(prop: ProjectType) {
                 <strong>Tools:</strong> {prop.tools}
               </p>
 
-              <h5 className="mt-2 mb-3 font-bold text-left">Features</h5>
+              <strong className="inline-block mt-2 mb-3 font-bold text-left">
+                Features
+              </strong>
               <ul className="mb-6 text-base font-semibold">{features}</ul>
             </div>
           </div>
@@ -100,8 +111,10 @@ export default function ProjectComp(prop: ProjectType) {
                         {showcase.map((index, i) => (
                           <div
                             key={i}
-                            className={`flex py-2 justify-center items-center px-2 text-sm text-white border border-gray-700 cursor-pointer rounded-xl bg-darkBgL ${
-                              showcaseIndex === i ? "bg-textGold" : ""
+                            className={`flex py-2 justify-center items-center px-2 text-sm text-white font-semibold border border-gray-700 cursor-pointer rounded-xl bg-darkBgL ${
+                              showcaseIndex === i
+                                ? "bg-textGold !text-black"
+                                : ""
                             } `}
                             onClick={() => setShowcaseIndex(i)}
                           >
@@ -116,22 +129,30 @@ export default function ProjectComp(prop: ProjectType) {
                   <div className="flex items-center justify-center gap-2">
                     {prop.github && (
                       <a
-                        href={prop.github}
                         target="_blank"
+                        href={prop.github}
                         rel="noopener noreferrer"
+                        aria-label="Link to project"
                       >
-                        <button className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
+                        <button
+                          className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL"
+                          aria-label="Github"
+                        >
                           <Github />
                         </button>
                       </a>
                     )}
                     {prop.link && (
                       <a
-                        href={prop.link}
                         target="_blank"
+                        href={prop.link}
                         rel="noopener noreferrer"
+                        aria-label="Link to project"
                       >
-                        <button className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL">
+                        <button
+                          className="flex items-center justify-center h-full p-2 text-sm text-white border border-gray-700 rounded-xl bg-darkBgL"
+                          aria-label="Project link"
+                        >
                           <ExternalLink />
                         </button>
                       </a>
@@ -157,7 +178,7 @@ export default function ProjectComp(prop: ProjectType) {
                     loop
                     controls
                     preload="eager"
-                    className="object-fill max-w-full w-full h-auto"
+                    className="object-fill w-full h-auto max-w-full"
                     onCanPlay={() => loading && setLoading(false)}
                   ></video>
                   <div
@@ -174,7 +195,7 @@ export default function ProjectComp(prop: ProjectType) {
                         src={image}
                         draggable="false"
                         alt="Showcase screenshot"
-                        className="min-w-full size-full object-contain snap-center snap-mandatory snap-both"
+                        className="object-contain min-w-full size-full snap-center snap-mandatory snap-both"
                         key={i}
                         loading="eager"
                         onLoad={() => loading && setLoading(false)}
