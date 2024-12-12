@@ -76,7 +76,7 @@ const projects: Omit<ProjectType, "id">[] = [
       { name: "Web", color: "#19ff00", bg: "#035103" },
     ],
   },
-  {
+/*  {
     name: "Buy Something",
     github: "https://github.com/adebisi1234/buyomething",
     desc: "A simple, efficient E-commerce store ",
@@ -99,7 +99,7 @@ const projects: Omit<ProjectType, "id">[] = [
     video:
       "https://res.cloudinary.com/de4vooekftest/video/upload/f_auto:video,q_auto/v1718852880/ecommerce_showcase_uva5tv.mp4",
     badges: [{ name: "Web", color: "#19ff00", bg: "#035103" }],
-  },
+  }, */
   {
     name: "Heyyy",
     github: "https://github.com/adebisi1234/twitter_project",
