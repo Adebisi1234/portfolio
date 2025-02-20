@@ -11,7 +11,7 @@ export default function Header() {
           href="https://drive.google.com/file/d/1Odzu9Nil8eBWXJRgfy53kVeDQxFTvpva/view?usp=drive_link"
           download={"Tobiloba Adebisi Cv"}
         >
-          <button className="flex py-2 pl-6 pr-8 text-sm border border-gray-700 rounded-xl bg-darkBgXl">
+          <button className="flex py-2 pl-6 pr-8 text-sm border bg-[#866504] border-gray-700 rounded-xl hover:bg-[#d3a92c]">
             Resume
           </button>
         </a>
