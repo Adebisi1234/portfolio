@@ -13,7 +13,7 @@ export default function Main() {
         <img
           src="me.jpg"
           alt="my image"
-          className="object-cover rounded-full size-40"
+          className="rounded-full size-40 sm:size-52 lg:size-[200px]"
         />
       </div>
       <div className="flex flex-col flex-wrap text-sm font-semibold sm:text-base xl:text-lg">
