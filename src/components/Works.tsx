@@ -31,7 +31,7 @@ const experiences = [
       "Jest",
     ],
     img: "thevalley.jpg",
-    url: "https://app.thevalley.live",
+    url: "",
   },
   {
     name: "Ticksevent",
