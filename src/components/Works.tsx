@@ -5,7 +5,7 @@ const experiences = [
   {
     name: "The Valley",
     position: "Software Developer",
-    date: "Jun 2024 - Present",
+    date: "Jun 2024 - Jan 2025",
     points: [
       "Built the site's SEO-friendly blog with 100% audit score on lighthouse & pagespeed.web.dev",
       "Increase the app's loading speed by 90% using code-splitting",
