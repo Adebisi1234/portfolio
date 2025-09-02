@@ -7,6 +7,21 @@ export default function Skills() {
       <div className="flex flex-col flex-wrap w-full gap-2 gap-y-4">
         <div className="w-full h-fit">
           <h3 className="mt-2 text-2xl font-bold tracking-wide text-start">
+            Cloud & Data Engineering:
+          </h3>
+          <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto flex-wrap">
+            <li>AWS (S3, Glue, Redshift, Kinesis, Lambda, Step Functions),</li>
+            <li>Python (Pandas, PySpark),</li>
+            <li>SQL,</li>
+            <li>Data Modeling,</li>
+            <li>ETL/ELT Design,</li>
+            <li>Apache Airflow,</li>
+            <li>Amazon QuickSight,</li>
+            <li>Tableau</li>
+          </ul>
+        </div>
+        <div className="w-full h-fit">
+          <h3 className="mt-2 text-2xl font-bold tracking-wide text-start">
             Frontend
           </h3>
           <ul className="*:list-none flex gap-1 items-start justify-start *:mt-1 text-center p-0 m-0 mt-4 mx-auto flex-wrap">

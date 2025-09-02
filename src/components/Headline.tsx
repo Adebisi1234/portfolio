@@ -1,4 +1,4 @@
-export default function Main() {
+export default function Headline() {
   return (
     <main
       id="home"
@@ -7,7 +7,7 @@ export default function Main() {
       <p className="text-base font-bold text-pretty ">Hello, I'm</p>
       <p className="text-lg font-bold text-pretty">Tobiloba Isaiah Adebisi</p>
       <h1 className="mt-2 text-4xl font-bold tracking-wide lg:text-7xl text-textGold">
-        A Software Developer
+        A Software Engineer (Data)
       </h1>
       <div className="flex items-center justify-center my-10 size-fit">
         <img
@@ -18,12 +18,12 @@ export default function Main() {
       </div>
       <div className="flex flex-col flex-wrap text-sm font-semibold sm:text-base xl:text-lg">
         <p>
-          I'm proficient in building, testing and maintaining user-facing
-          features,
-        </p>
-        <p>having worked within the SMB and tech startup space</p>
-        <p className="pt-2 mb-4 font-bold bg-gradient-to-r from-green-200 via-green-400 to-green-500 bg-clip-text">
-          With the introductions out of the way, let me showcase my skills...
+          An AWS Certified Data Engineer with a strong background in web
+          development and product design. I specialize in building scalable,
+          end-to-end data pipelines on the cloud, transforming raw data into
+          actionable insights. My unique skill set allows me to not only
+          architect robust data solutions but also to understand the end-user's
+          needs for clear and effective data presentation.
         </p>
       </div>
     </main>
