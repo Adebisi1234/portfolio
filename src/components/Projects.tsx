@@ -26,29 +26,42 @@ const projects: Omit<ProjectType, "id">[] = [
     video:
       "https://res.cloudinary.com/de4vooekftest/video/upload/f_auto:video,q_auto/v1718852902/blackboard_showcase_a7ukkl.mp4",
     badges: [
-      { name: "ML", bg: "#a52a2a", color: "white" },
-      { name: "Web", color: "#19ff00", bg: "#035103" },
+      { name: "ML", bg: "#7f1d1d", color: "#ffffff" },
+      { name: "Web", color: "#ffffff", bg: "#065f46" },
+      { name: "Real-time", color: "#ffffff", bg: "#b91c1c" },
+      { name: "Canvas", color: "#000000", bg: "#f59e0b" },
     ],
   },
-  // {
-  //   name: "Free City",
-  //   desc: "An open world full of possibilities ",
-  //   tools: "",
-  //   features: [
-  //     "Racing - Against AI",
-  //     "Multi-player",
-  //     "Multiple POV",
-  //     "Save state",
-  //     "Customization",
-  //   ],
-  //   link: "",
-  //   images: ["", "", "", ""],
-  //   video: "",
-  //   badges: [
-  //     { name: "ML/AI", color: "#a52a2a" },
-  //     { name: "Web", color: "#035103" },
-  //   ],
-  // },
+  {
+    name: "Serverless E-commerce Data & Analytics Pipeline",
+    github: "",
+    desc: "A fully automated, serverless data pipeline built on AWS to process raw e-commerce data and power a business intelligence dashboard.",
+    tools:
+      "AWS S3 • AWS Glue • SQL • AWS Step Functions • Amazon Redshift • Amazon QuickSight",
+    features: [
+      "Automated Data Ingestion",
+
+      "Serverless ETL Processing",
+
+      "Robust Data Modeling",
+
+      "Automated Workflow Orchestration",
+
+      "Interactive BI Dashboard",
+    ],
+    link: "",
+    images: [
+      "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1758735572/data-eng_jr32sx.png",
+    ],
+    video:
+      "https://res.cloudinary.com/de4vooekftest/video/upload/f_auto:video,q_auto/v1758735526/data-eng_ezjlnz.mp4",
+    badges: [
+      { name: "Data", color: "#ffffff", bg: "#0d9488" },
+      { name: "AWS", color: "#000000", bg: "#fbbf24" },
+      { name: "ETL", color: "#ffffff", bg: "#4f46e5" },
+      { name: "Analytics", color: "#ffffff", bg: "#7c3aed" },
+    ],
+  },
   {
     name: "Sweet Server",
     github: "https://github.com/adebisi1234/sserver",
@@ -72,59 +85,11 @@ const projects: Omit<ProjectType, "id">[] = [
     video:
       "https://res.cloudinary.com/de4vooekftest/video/upload/f_auto:video,q_auto/v1732484287/dvlju0dxwwm6qkgp5nkk.mp4",
     badges: [
-      { name: "Network", color: "black", bg: "#af8608" },
-      { name: "Web", color: "#19ff00", bg: "#035103" },
+      { name: "Network", color: "#ffffff", bg: "#92400e" },
+      { name: "Web", color: "#ffffff", bg: "#065f46" },
+      { name: "Node.js", color: "#ffffff", bg: "#16a34a" },
+      { name: "CLI", color: "#ffffff", bg: "#374151" },
     ],
-  },
-/*  {
-    name: "Buy Something",
-    github: "https://github.com/adebisi1234/buyomething",
-    desc: "A simple, efficient E-commerce store ",
-    tools: "React • Python • Paystack • Temporal",
-    features: [
-      "Wishlist products ",
-      "Buy products",
-      "Cart",
-      "Payment integration using paystack",
-    ],
-    link: "https://buysomething.vercel.app",
-    images: [
-      "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1718851602/buysomething_screenshot1_amnnqa.jpg",
-      "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1718851601/buysomething_screenshot2_ldtroy.jpg",
-      "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1718851626/buysomething_screenshot3_pcxfjk.jpg",
-      "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1718851597/buysomething_screenshot4_dn8ajp.jpg",
-      "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1718851622/buysomething_screenshot5_hzhehd.jpg",
-      "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1718851593/buysomething_screenshot6_fuamu8.jpg",
-    ],
-    video:
-      "https://res.cloudinary.com/de4vooekftest/video/upload/f_auto:video,q_auto/v1718852880/ecommerce_showcase_uva5tv.mp4",
-    badges: [{ name: "Web", color: "#19ff00", bg: "#035103" }],
-  }, */
-  {
-    name: "Heyyy",
-    github: "https://github.com/adebisi1234/twitter_project",
-    desc: "A social media app",
-    tools: "React • Socket.io • Node",
-    features: [
-      "Create Posts, Comments, Likes and Retweet",
-      "Upload Media",
-      "Follow feature",
-      "Theme customization",
-    ],
-    link: "https://xitterr.vercel.app",
-    images: [
-      "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1718851620/xitterr_screenshot1_mevids.jpg",
-      "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1718851619/xitterr_screenshot2_gbt3g1.jpg",
-      "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1718851618/xitterr_screenshot3_r4fy9a.jpg",
-      "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1718851616/xitterr_screenshot4_nziqti.jpg",
-      "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1718851614/xitterr_screenshot5_wthdka.jpg",
-      "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1718852910/xitterr_screenshot7_dste8m.jpg",
-      "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1718852553/xitterr_screenshot8_t02z0d.jpg",
-      "https://res.cloudinary.com/de4vooekftest/image/upload/f_auto,q_auto/v1718852909/xitterr_screenshot9_idjtby.jpg",
-    ],
-    video:
-      "https://res.cloudinary.com/de4vooekftest/video/upload/f_auto:video,q_auto/v1718851297/xitterr_showcase_ck77ad.mp4",
-    badges: [{ name: "Web", color: "#19ff00", bg: "#035103" }],
   },
 ];
 
@@ -142,16 +107,3 @@ export default function Projects() {
     </section>
   );
 }
-/* The Blackboard project's primary goals are to provide a fast, collaborative, and efficient digital drawing board that caters to the needs of users who require real-time collaboration, intuitive drawing tools, and seamless integration into their workflow.
-
-To achieve these goals, the project has implemented the following key features:
-
-Freehand to Shape using ML: By leveraging machine learning technology, the Blackboard drawing tool can automatically recognize and convert freehand sketches into clean, geometric shapes. This feature enhances the user's drawing experience by allowing them to quickly create precise shapes without the need for manual precision.
-Real-time Collaboration: The Blackboard platform enables multiple users to work on the same drawing board simultaneously, allowing for seamless real-time collaboration. This feature enables teams to brainstorm, ideate, and iterate on designs in a shared, interactive environment.
-Save to Image: Users can save their drawings as image files, allowing them to easily incorporate their work into presentations, documents, or other digital assets.
-Zoom and Minimap: The Blackboard interface provides robust zooming and panning capabilities, as well as a minimap view, which enables users to navigate large, detailed drawings with ease.
-Persistency: The Blackboard platform ensures that user drawings are persistently stored, allowing users to return to their work at any time and continue their creative process.
-Easy Customization: The Blackboard interface is highly customizable, allowing users to tailor the tool to their specific needs and preferences.
-Browser Extension: The Blackboard project is available as a browser extension, providing users with seamless integration into their existing workflows and easy access to the drawing tool.
-The impact of the Blackboard project is that it empowers users, particularly those engaged in collaborative design, ideation, and brainstorming activities, to work more efficiently and effectively. By providing a fast, intuitive, and feature-rich drawing tool, the Blackboard project aims to improve productivity, enhance creativity, and foster better communication and collaboration among teams.
-*/
