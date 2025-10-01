@@ -17,12 +17,12 @@ export default function Certifications() {
       title: "Datacamp Data Engineer - Associate",
     },
     {
-      src: "aws-educate-introduction-to-generative-ai.png",
-      alt: "AWS Educate: Introduction to Generative AI",
-      href: "https://www.credly.com/badges/33b1f19b-041c-48b6-8fe0-ebcef8c8a335/public_url",
+      src: "aws-certified-cloud-practitioner.png",
+      alt: "AWS Certified Cloud Practitioner",
+      href: "https://www.credly.com/badges/499be978-36df-4d54-9909-d71240621b10/public_url",
       description:
-        "This certification provides an introduction to generative AI concepts and their applications in various fields.",
-      title: "AWS Educate: Introduction to Generative AI",
+        "Earners of this certification have a fundamental understanding of IT services and their uses in the AWS Cloud. They demonstrated cloud fluency and foundational AWS knowledge. Badge owners are able to identify essential AWS services necessary to set up AWS-focused projects.",
+      title: "AWS Certified Cloud Practitioner",
     },
   ];
   return (
