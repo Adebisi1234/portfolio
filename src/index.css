@@ -39,17 +39,41 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-.hero-letter {
-  display: inline-block;
-}
-
-.hero-letter.animate {
+.hero-reveal {
   opacity: 0;
-  transform: translateY(28px);
-  animation: heroLetterRise 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  transform: translateY(20px);
+  animation: heroReveal 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
-@keyframes heroLetterRise {
+.hero-reveal-1 {
+  animation-delay: 0s;
+}
+
+.hero-reveal-2 {
+  animation-delay: 0.12s;
+}
+
+.hero-reveal-3 {
+  animation-delay: 0.24s;
+}
+
+@keyframes heroReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.scroll-reveal.in-view {
+  animation: scrollReveal 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes scrollReveal {
   to {
     opacity: 1;
     transform: translateY(0);

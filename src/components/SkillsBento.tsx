@@ -1,6 +1,62 @@
 import { useRoute } from "../hooks/useRoute";
 import { useSkills } from "../hooks/useSkills";
+import { useInView } from "../hooks/useInView";
 import Skeleton from "./Skeleton";
+
+function SkillCard({
+  category,
+  names,
+  isPrimary,
+  span,
+  delay,
+}: {
+  category: string;
+  names: string[];
+  isPrimary: boolean;
+  span: string;
+  delay: number;
+}) {
+  const { ref, inView } = useInView<HTMLDivElement>();
+
+  return (
+    <div
+      ref={ref}
+      style={{ animationDelay: inView ? `${delay}ms` : undefined }}
+      className={`rounded-2xl border-2 transition-colors duration-300 p-5 flex flex-col scroll-reveal ${inView ? "in-view" : ""} ${span} ${
+        isPrimary
+          ? "bg-accent border-accent text-white"
+          : "bg-card dark:bg-card-dark border-border-light dark:border-border-dark"
+      }`}
+    >
+      <h3
+        className={`font-semibold tracking-tight mb-4 ${
+          isPrimary ? "text-lg text-white" : "text-sm text-gray-900 dark:text-white"
+        }`}
+      >
+        {category}
+      </h3>
+      <div className="flex flex-wrap gap-2 content-start">
+        {names.map((name) =>
+          isPrimary ? (
+            <span
+              key={name}
+              className="font-mono text-[10px] uppercase tracking-wide px-2.5 py-1.5 rounded-lg bg-white/15 border border-white/30 text-white"
+            >
+              {name}
+            </span>
+          ) : (
+            <span
+              key={name}
+              className="font-mono text-[10px] uppercase tracking-wide px-2.5 py-1.5 rounded-lg border border-accent-border dark:border-accent-border-dark text-accent"
+            >
+              {name}
+            </span>
+          ),
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default function SkillsBento() {
   const { route } = useRoute();
@@ -47,43 +103,14 @@ export default function SkillsBento() {
                 : "md:col-span-1";
 
             return (
-              <div
+              <SkillCard
                 key={category}
-                className={`rounded-2xl border-2 transition-colors duration-300 p-5 flex flex-col ${span} ${
-                  isPrimary
-                    ? "bg-accent border-accent text-white"
-                    : "bg-card dark:bg-card-dark border-border-light dark:border-border-dark"
-                }`}
-              >
-                <h3
-                  className={`font-semibold tracking-tight mb-4 ${
-                    isPrimary
-                      ? "text-lg text-white"
-                      : "text-sm text-gray-900 dark:text-white"
-                  }`}
-                >
-                  {category}
-                </h3>
-                <div className="flex flex-wrap gap-2 content-start">
-                  {names.map((name) =>
-                    isPrimary ? (
-                      <span
-                        key={name}
-                        className="font-mono text-[10px] uppercase tracking-wide px-2.5 py-1.5 rounded-lg bg-white/15 border border-white/30 text-white"
-                      >
-                        {name}
-                      </span>
-                    ) : (
-                      <span
-                        key={name}
-                        className="font-mono text-[10px] uppercase tracking-wide px-2.5 py-1.5 rounded-lg border border-accent-border dark:border-accent-border-dark text-accent"
-                      >
-                        {name}
-                      </span>
-                    ),
-                  )}
-                </div>
-              </div>
+                category={category}
+                names={names}
+                isPrimary={isPrimary}
+                span={span}
+                delay={Math.min(i * 80, 320)}
+              />
             );
           })}
         </div>

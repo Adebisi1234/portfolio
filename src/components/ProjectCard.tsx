@@ -5,6 +5,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import type { Project } from "../types";
 import { urlFor } from "../data/imageUrl";
+import { useInView } from "../hooks/useInView";
 
 interface ProjectCardProps {
   project: Project;
@@ -15,6 +16,7 @@ export default function ProjectCard({ project, emphasized }: ProjectCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [videoActive, setVideoActive] = useState(false);
+  const { ref: revealRef, inView } = useInView<HTMLElement>();
 
   const imageSrc = project.coverImage
     ? urlFor(project.coverImage)
@@ -44,9 +46,10 @@ export default function ProjectCard({ project, emphasized }: ProjectCardProps) {
 
   return (
     <article
+      ref={revealRef}
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border-2 border-border-light dark:border-border-dark transition-colors duration-300"
+      className={`group relative flex flex-col overflow-hidden rounded-2xl border-2 border-border-light dark:border-border-dark transition-colors duration-300 scroll-reveal ${inView ? "in-view" : ""}`}
     >
       <div className="relative aspect-video overflow-hidden bg-card dark:bg-card-dark flex items-center justify-center">
         {imageSrc ? (
