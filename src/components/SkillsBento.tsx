@@ -24,13 +24,13 @@ function SkillCard({
       style={{ animationDelay: inView ? `${delay}ms` : undefined }}
       className={`rounded-2xl border-2 transition-colors duration-300 p-5 flex flex-col scroll-reveal ${inView ? "in-view" : ""} ${span} ${
         isPrimary
-          ? "bg-accent border-accent text-white"
+          ? "bg-gray-900 border-gray-900 text-white dark:bg-white dark:border-white dark:text-gray-900"
           : "bg-card dark:bg-card-dark border-border-light dark:border-border-dark"
       }`}
     >
       <h3
         className={`font-semibold tracking-tight mb-4 ${
-          isPrimary ? "text-lg text-white" : "text-sm text-gray-900 dark:text-white"
+          isPrimary ? "text-lg text-white dark:text-gray-900" : "text-sm text-gray-900 dark:text-white"
         }`}
       >
         {category}
@@ -40,14 +40,14 @@ function SkillCard({
           isPrimary ? (
             <span
               key={name}
-              className="font-mono text-[10px] uppercase tracking-wide px-2.5 py-1.5 rounded-lg bg-white/15 border border-white/30 text-white"
+              className="font-mono text-[10px] uppercase tracking-wide px-2.5 py-1.5 rounded-lg bg-white/15 border border-white/30 text-white dark:bg-gray-900/10 dark:border-gray-900/20 dark:text-gray-900"
             >
               {name}
             </span>
           ) : (
             <span
               key={name}
-              className="font-mono text-[10px] uppercase tracking-wide px-2.5 py-1.5 rounded-lg border border-accent-border dark:border-accent-border-dark text-accent"
+              className="font-mono text-[10px] uppercase tracking-wide px-2.5 py-1.5 rounded-lg border border-border-light dark:border-border-dark text-gray-600 dark:text-gray-400"
             >
               {name}
             </span>

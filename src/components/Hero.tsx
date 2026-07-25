@@ -65,9 +65,9 @@ export default function Hero() {
     shouldAnimate ? `hero-reveal hero-reveal-${step}` : "";
 
   return (
-    <section className="max-w-[1440px] mx-auto px-5 md:px-9 py-16 md:py-24 grid md:grid-cols-[0.65fr_1.35fr] gap-12 md:gap-16 items-start">
-      <div className={reveal(1)}>
-        <div className="group relative aspect-[3/4] rounded-2xl overflow-hidden border-2 border-border-light dark:border-border-dark bg-accent-tint dark:bg-accent-tint-dark hover:border-accent-border dark:hover:border-accent-border-dark transition-colors duration-300">
+    <section className="max-w-[1440px] mx-auto px-5 md:px-9 py-16 md:py-24 grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-start">
+      <div className={`w-full md:w-64 shrink-0 ${reveal(1)}`}>
+        <div className="group relative aspect-[3/4] rounded-2xl overflow-hidden border-2 border-border-light dark:border-border-dark bg-card dark:bg-card-dark hover:border-accent-border dark:hover:border-accent-border-dark transition-colors duration-300">
           {portraitUrl ? (
             <img
               src={portraitUrl}
@@ -75,21 +75,8 @@ export default function Hero() {
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center">
-              <span className="font-mono text-xs text-accent">
-                portrait placeholder
-              </span>
-            </div>
+            <div className="w-full h-full" />
           )}
-
-          <div className="absolute inset-x-4 bottom-4">
-            <a
-              href="#work"
-              className="flex items-center justify-center w-full rounded-xl bg-accent text-white text-sm font-semibold py-3 hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200"
-            >
-              {content.primaryCta}
-            </a>
-          </div>
         </div>
 
         <div className="mt-4 flex items-center justify-between gap-3">
