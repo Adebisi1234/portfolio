@@ -42,7 +42,7 @@ export default function Certifications() {
               href={cert.credentialUrl}
               target="_blank"
               rel="noreferrer"
-              className="group flex flex-col rounded-2xl border border-dashed border-border-light dark:border-border-dark hover:border-solid hover:border-accent transition-colors duration-300 p-5"
+              className="group flex flex-col rounded-2xl border-2 border-border-light dark:border-border-dark transition-colors duration-300 p-5"
             >
               {cert.badgeImage && (
                 <img

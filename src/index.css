@@ -2,6 +2,7 @@
 
 @theme {
   --font-sans: "Inter", sans-serif;
+  --font-heading: "Epilogue", sans-serif;
   --font-hero: "Big Shoulders Display", sans-serif;
   --font-mono: "Space Mono", monospace;
 
@@ -49,6 +50,21 @@
 }
 
 @keyframes heroLetterRise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.route-fade-in {
+  animation: routeFadeIn 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes routeFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);

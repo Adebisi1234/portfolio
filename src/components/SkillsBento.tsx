@@ -49,10 +49,10 @@ export default function SkillsBento() {
             return (
               <div
                 key={category}
-                className={`rounded-2xl border-2 border-dashed transition-colors duration-300 p-5 flex flex-col ${span} ${
+                className={`rounded-2xl border-2 transition-colors duration-300 p-5 flex flex-col ${span} ${
                   isPrimary
                     ? "bg-accent border-accent text-white"
-                    : "bg-card dark:bg-card-dark border-border-light dark:border-border-dark hover:border-accent"
+                    : "bg-card dark:bg-card-dark border-border-light dark:border-border-dark"
                 }`}
               >
                 <h3
