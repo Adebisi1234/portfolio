@@ -10,10 +10,10 @@ import { urlFor } from "../data/imageUrl";
 const FALLBACK_NAME = "Tobiloba Isaiah Adebisi";
 const FALLBACK_SOFTWARE_ROLE = "Software Engineer";
 const FALLBACK_SOFTWARE_DESCRIPTION =
-  "Building fast, reliable web applications, from real time collaboration tools to production backend systems.";
+  "I build fast, reliable software, from real-time collaboration tools to production backend systems.";
 const FALLBACK_DATA_ROLE = "Data Engineer";
 const FALLBACK_DATA_DESCRIPTION =
-  "Designing serverless pipelines and streaming systems that turn raw data into decisions.";
+  "I design serverless pipelines and streaming systems that turn raw data into decisions.";
 
 function StatValue({ value, active }: { value: string; active: boolean }) {
   const match = value.match(/^(\d+)(\D*)$/);
@@ -128,10 +128,16 @@ export default function Hero() {
       </div>
 
       <div>
-        <h1
-          className={`font-heading font-bold text-[clamp(1.9rem,3.4vw,2.75rem)] leading-[1.25] tracking-tight text-gray-900 dark:text-white ${reveal(2)}`}
+        <p
+          className={`font-heading font-medium text-[clamp(1.15rem,1.6vw,1.375rem)] text-gray-500 dark:text-gray-400 ${reveal(2)}`}
         >
-          Hi, I&apos;m {firstName}. {description}
+          Hi, I&apos;m {firstName}
+        </p>
+
+        <h1
+          className={`mt-2 font-heading font-bold text-[clamp(1.9rem,3.4vw,2.75rem)] leading-[1.25] tracking-tight text-gray-900 dark:text-white ${reveal(2)}`}
+        >
+          {description}
         </h1>
 
         {stats.length > 0 && (
