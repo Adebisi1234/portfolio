@@ -66,7 +66,8 @@ export default function Hero() {
       ? (settings?.dataHeroDescription ?? FALLBACK_DATA_DESCRIPTION)
       : (settings?.softwareHeroDescription ?? FALLBACK_SOFTWARE_DESCRIPTION);
 
-  const stats = (route === "data" ? settings?.dataStats : settings?.softwareStats) ?? [];
+  const stats =
+    (route === "data" ? settings?.dataStats : settings?.softwareStats) ?? [];
 
   const portraitUrl = settings?.portrait
     ? urlFor(settings.portrait)
@@ -86,7 +87,7 @@ export default function Hero() {
     shouldAnimate ? `hero-reveal hero-reveal-${step}` : "";
 
   return (
-    <section className="max-w-[1440px] mx-auto px-5 md:px-9 py-16 md:py-24 grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-start">
+    <section className="max-w-[1440px] mx-auto px-5 md:px-9 py-20 grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-start">
       <div className={`w-full md:w-64 shrink-0 ${reveal(1)}`}>
         <div className="group relative aspect-[3/4] rounded-2xl overflow-hidden border-2 border-border-light dark:border-border-dark bg-card dark:bg-card-dark hover:border-accent-border dark:hover:border-accent-border-dark transition-colors duration-300">
           {portraitUrl ? (
@@ -111,7 +112,7 @@ export default function Hero() {
           </div>
 
           {resumeUrl && (
-           <a 
+            <a
               href={resumeUrl}
               target="_blank"
               rel="noreferrer"
