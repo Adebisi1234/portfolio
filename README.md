@@ -40,15 +40,3 @@ All content is managed in Sanity and filtered by a `role` field (`"software"` | 
 Deployment is fully automated. Any push to `main` triggers a GitHub Actions workflow (`.github/workflows/deploy.yml`) that builds the app and publishes it to GitHub Pages. No manual build or upload steps are needed.
 
 GitHub Pages is configured to deploy from **GitHub Actions** (not a branch), under the repo's Settings → Pages.
-
-## Roadmap
-
-- [x] Project scaffold, routing skeleton, Tailwind v4 config
-- [x] Sanity schema and studio setup
-- [x] Content entry (projects, experience, skills, site settings)
-- [x] Design system (color, type, layout direction)
-- [x] CI/CD pipeline
-- [ ] Software section — full component build
-- [ ] Data section — structural build
-- [ ] Resume download/view button
-- [ ] Polish, responsive pass, and final deploy
