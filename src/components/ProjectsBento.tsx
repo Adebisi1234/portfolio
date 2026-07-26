@@ -2,6 +2,7 @@ import { useRoute } from "../hooks/useRoute";
 import { useProjects } from "../hooks/useProjects";
 import ProjectCard from "./ProjectCard";
 import Skeleton from "./Skeleton";
+import ErrorState from "./ErrorState";
 
 export default function ProjectsBento() {
   const { route } = useRoute();
@@ -28,11 +29,7 @@ export default function ProjectsBento() {
         </div>
       )}
 
-      {!loading && error && (
-        <p className="font-mono text-sm text-gray-500 dark:text-gray-400">
-          Couldn't load projects right now, {error}.
-        </p>
-      )}
+      {!loading && error && <ErrorState resource="projects" />}
 
       {!loading && !error && projects.length === 0 && (
         <p className="font-mono text-sm text-gray-500 dark:text-gray-400">

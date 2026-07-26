@@ -5,6 +5,7 @@ import { useExperience } from "../hooks/useExperience";
 import { useInView } from "../hooks/useInView";
 import type { Experience as ExperienceEntry } from "../types";
 import Skeleton from "./Skeleton";
+import ErrorState from "./ErrorState";
 
 function formatDate(dateStr?: string) {
   if (!dateStr) return "Present";
@@ -77,11 +78,7 @@ export default function Experience() {
         </div>
       )}
 
-      {!loading && error && (
-        <p className="font-mono text-sm text-gray-500 dark:text-gray-400">
-          Couldn't load experience right now, {error}.
-        </p>
-      )}
+      {!loading && error && <ErrorState resource="experience" />}
 
       {!loading && !error && experience.length > 0 && (
         <div>

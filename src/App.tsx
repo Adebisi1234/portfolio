@@ -7,6 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 
 const SoftwareLayout = lazy(() => import("./routes/SoftwareLayout"));
 const DataLayout = lazy(() => import("./routes/DataLayout"));
@@ -37,6 +38,7 @@ export default function App() {
       <Suspense fallback={<div className="min-h-screen" />}>
         <RouteContent />
       </Suspense>
+      <Footer />
     </BrowserRouter>
   );
 }

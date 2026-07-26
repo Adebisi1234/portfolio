@@ -8,6 +8,7 @@ import {
 import { useInView } from "../hooks/useInView";
 import { urlFor } from "../data/imageUrl";
 import Skeleton from "./Skeleton";
+import ErrorState from "./ErrorState";
 
 function CertCard({ cert, delay }: { cert: Certification; delay: number }) {
   const { ref, inView } = useInView<HTMLAnchorElement>();
@@ -74,11 +75,7 @@ export default function Certifications() {
         </div>
       )}
 
-      {!loading && error && (
-        <p className="font-mono text-sm text-gray-500 dark:text-gray-400">
-          Couldn't load certifications right now, {error}.
-        </p>
-      )}
+      {!loading && error && <ErrorState resource="certifications" />}
 
       {!loading && !error && certifications.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">

@@ -4,6 +4,7 @@ import {
   faPhone,
   faEnvelope,
   faDownload,
+  faPaperPlane,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
@@ -103,9 +104,9 @@ export default function Contact() {
     return (
       <section
         id="contact"
-        className="max-w-[1440px] mx-auto px-5 md:px-9 py-20"
+        className="max-w-[1440px] mx-auto px-5 md:px-9 py-28"
       >
-        <Skeleton className="h-72" />
+        <Skeleton className="h-96" />
       </section>
     );
   }
@@ -139,10 +140,14 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="max-w-[1440px] mx-auto px-5 md:px-9 py-20">
-      <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-12 md:gap-16">
-        <div>
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">
+    <section id="contact" className="max-w-[1440px] mx-auto px-5 md:px-9 py-28">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-8 md:gap-10">
+        <div className="rounded-2xl border-2 border-border-light dark:border-border-dark p-8 md:p-10 flex flex-col justify-center">
+          <h2 className="flex items-center gap-2.5 text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <FontAwesomeIcon
+              icon={faPaperPlane}
+              className="text-2xl text-gray-400 dark:text-gray-600"
+            />
             Let's build something together
           </h2>
           <p className="mt-4 text-base text-gray-600 dark:text-gray-400 leading-relaxed max-w-sm">

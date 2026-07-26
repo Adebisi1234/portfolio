@@ -2,6 +2,7 @@ import { useRoute } from "../hooks/useRoute";
 import { useSkills } from "../hooks/useSkills";
 import { useInView } from "../hooks/useInView";
 import Skeleton from "./Skeleton";
+import ErrorState from "./ErrorState";
 
 function SkillCard({
   category,
@@ -86,11 +87,7 @@ export default function SkillsBento() {
         </div>
       )}
 
-      {!loading && error && (
-        <p className="font-mono text-sm text-gray-500 dark:text-gray-400">
-          Couldn't load skills right now, {error}.
-        </p>
-      )}
+      {!loading && error && <ErrorState resource="skills" />}
 
       {!loading && !error && categories.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[minmax(8rem,auto)] gap-5">
