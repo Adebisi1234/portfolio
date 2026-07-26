@@ -36,26 +36,15 @@ export default function Nav() {
 
   return (
     <nav className="sticky top-0 z-30 border-b border-border-light dark:border-border-dark bg-surface/90 dark:bg-surface-dark/90 backdrop-blur-md">
-      <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4 px-5 md:px-9 py-3">
+      <div className="flex items-center justify-between gap-4 px-5 md:px-9 py-3">
         <Link
           to="/"
-          className="justify-self-start font-hero text-2xl font-extrabold tracking-tight"
+          className="font-hero text-2xl font-extrabold tracking-tight"
         >
           TA
         </Link>
 
-        <div className="justify-self-center">
-          <Link
-            to={route === "software" ? "/data/" : "/software/"}
-            className="text-sm font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-          >
-            {route === "software"
-              ? "Data Engineering →"
-              : "Software Engineering →"}
-          </Link>
-        </div>
-
-        <div className="justify-self-end hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-6">
           <a
             href="#work"
             className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
@@ -134,7 +123,7 @@ export default function Nav() {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-expanded={mobileMenuOpen}
           aria-label="Open menu"
-          className="justify-self-end md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-border-light dark:border-border-dark text-gray-600 dark:text-gray-400"
+          className="md:hidden w-9 h-9 flex items-center justify-center rounded-full border border-border-light dark:border-border-dark text-gray-600 dark:text-gray-400"
         >
           <FontAwesomeIcon icon={mobileMenuOpen ? faXmark : faBars} size="sm" />
         </button>
