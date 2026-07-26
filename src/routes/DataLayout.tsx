@@ -1,7 +1,9 @@
 import Hero from "../components/Hero";
 import ProjectsBento from "../components/ProjectsBento";
+import Experience from "../components/Experience";
 import SkillsBento from "../components/SkillsBento";
 import Certifications from "../components/Certifications";
+import Contact from "../components/Contact";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
 export default function DataLayout() {
@@ -14,8 +16,10 @@ export default function DataLayout() {
     <>
       <Hero />
       <ProjectsBento />
+      <Experience />
       <SkillsBento />
       <Certifications />
+      <Contact />
     </>
   );
 }

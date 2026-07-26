@@ -1,7 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { useRoute } from "../hooks/useRoute";
-import { useCertifications, type Certification } from "../hooks/useCertifications";
+import {
+  useCertifications,
+  type Certification,
+} from "../hooks/useCertifications";
 import { useInView } from "../hooks/useInView";
 import { urlFor } from "../data/imageUrl";
 import Skeleton from "./Skeleton";
@@ -38,7 +41,10 @@ function CertCard({ cert, delay }: { cert: Certification; delay: number }) {
         </p>
       )}
       <div className="mt-auto flex items-center gap-1.5 font-mono text-[11px] text-gray-500 dark:text-gray-500 group-hover:text-accent transition-colors">
-        <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="text-[10px]" />
+        <FontAwesomeIcon
+          icon={faArrowUpRightFromSquare}
+          className="text-[10px]"
+        />
         Verify credential
       </div>
     </a>
@@ -56,7 +62,7 @@ export default function Certifications() {
       id="certifications"
       className="max-w-[1440px] mx-auto px-5 md:px-9 py-20"
     >
-      <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-10">
+      <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-10 text-center">
         Certifications
       </h2>
 
@@ -77,7 +83,11 @@ export default function Certifications() {
       {!loading && !error && certifications.length > 0 && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {certifications.map((cert, i) => (
-            <CertCard key={cert._id} cert={cert} delay={Math.min(i * 80, 320)} />
+            <CertCard
+              key={cert._id}
+              cert={cert}
+              delay={Math.min(i * 80, 320)}
+            />
           ))}
         </div>
       )}

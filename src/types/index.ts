@@ -25,6 +25,7 @@ export interface Project {
 export interface Experience {
   _id: string;
   company: string;
+  title?: string;
   roles: Role[];
   startDate: string;
   endDate?: string;

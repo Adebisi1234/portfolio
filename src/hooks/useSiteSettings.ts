@@ -2,17 +2,29 @@ import { useEffect, useState } from "react";
 import { sanityClient } from "../data/sanityClient";
 import { siteSettingsQuery } from "../data/queries";
 
+interface HeroStat {
+  value: string;
+  label: string;
+}
+
 interface SiteSettings {
   name?: string;
   tagline?: string;
   portrait?: { asset?: { url?: string } };
   softwareRoleLabel?: string;
   softwareHeroDescription?: string;
+  softwareStats?: HeroStat[];
   dataRoleLabel?: string;
   dataHeroDescription?: string;
+  dataStats?: HeroStat[];
   softwareResume?: { asset?: { url?: string } };
   dataResume?: { asset?: { url?: string } };
   contactEmail?: string;
+  location?: string;
+  phone?: string;
+  githubUrl?: string;
+  linkedinUrl?: string;
+  xUrl?: string;
   certifications?: string[];
 }
 

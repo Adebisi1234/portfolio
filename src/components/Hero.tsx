@@ -5,8 +5,15 @@ import { useRoute } from "../hooks/useRoute";
 import { useHeroAnimation } from "../hooks/useHeroAnimation";
 import { useSiteSettings } from "../hooks/useSiteSettings";
 import { useInView } from "../hooks/useInView";
-import { getHeroContent } from "../data/heroContent";
 import { urlFor } from "../data/imageUrl";
+
+const FALLBACK_NAME = "Tobiloba Isaiah Adebisi";
+const FALLBACK_SOFTWARE_ROLE = "Software Engineer";
+const FALLBACK_SOFTWARE_DESCRIPTION =
+  "Building fast, reliable web applications, from real time collaboration tools to production backend systems.";
+const FALLBACK_DATA_ROLE = "Data Engineer";
+const FALLBACK_DATA_DESCRIPTION =
+  "Designing serverless pipelines and streaming systems that turn raw data into decisions.";
 
 function StatValue({ value, active }: { value: string; active: boolean }) {
   const match = value.match(/^(\d+)(\D*)$/);
@@ -44,8 +51,22 @@ export default function Hero() {
   const { route } = useRoute();
   const shouldAnimate = useHeroAnimation();
   const { settings } = useSiteSettings();
-  const content = getHeroContent(route);
   const { ref: statsRef, inView: statsInView } = useInView<HTMLDivElement>();
+
+  const fullName = settings?.name ?? FALLBACK_NAME;
+  const firstName = fullName.split(" ")[0];
+
+  const roleLabel =
+    route === "data"
+      ? (settings?.dataRoleLabel ?? FALLBACK_DATA_ROLE)
+      : (settings?.softwareRoleLabel ?? FALLBACK_SOFTWARE_ROLE);
+
+  const description =
+    route === "data"
+      ? (settings?.dataHeroDescription ?? FALLBACK_DATA_DESCRIPTION)
+      : (settings?.softwareHeroDescription ?? FALLBACK_SOFTWARE_DESCRIPTION);
+
+  const stats = (route === "data" ? settings?.dataStats : settings?.softwareStats) ?? [];
 
   const portraitUrl = settings?.portrait
     ? urlFor(settings.portrait)
@@ -71,7 +92,7 @@ export default function Hero() {
           {portraitUrl ? (
             <img
               src={portraitUrl}
-              alt={content.fullName}
+              alt={fullName}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           ) : (
@@ -82,15 +103,15 @@ export default function Hero() {
         <div className="mt-4 flex items-center justify-between gap-3">
           <div className="min-w-0">
             <p className="font-heading font-semibold text-gray-900 dark:text-white truncate">
-              {content.fullName}
+              {fullName}
             </p>
             <p className="font-mono text-[10px] uppercase tracking-wide text-gray-500 dark:text-gray-500 mt-0.5">
-              {content.role}
+              {roleLabel}
             </p>
           </div>
 
           {resumeUrl && (
-            <a
+           <a 
               href={resumeUrl}
               target="_blank"
               rel="noreferrer"
@@ -100,7 +121,7 @@ export default function Hero() {
                 icon={faArrowUpRightFromSquare}
                 className="text-[10px]"
               />
-              {content.secondaryCta}
+              Resume
             </a>
           )}
         </div>
@@ -110,27 +131,29 @@ export default function Hero() {
         <h1
           className={`font-heading font-bold text-[clamp(1.9rem,3.4vw,2.75rem)] leading-[1.25] tracking-tight text-gray-900 dark:text-white ${reveal(2)}`}
         >
-          Hi, I&apos;m {content.firstName}. {content.description}
+          Hi, I&apos;m {firstName}. {description}
         </h1>
 
-        <div
-          ref={statsRef}
-          className={`mt-10 grid grid-cols-2 gap-4 ${reveal(3)}`}
-        >
-          {content.stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-2xl border-2 border-border-light dark:border-border-dark p-5 hover:border-accent-border dark:hover:border-accent-border-dark transition-colors duration-300"
-            >
-              <p className="font-heading text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-                <StatValue value={stat.value} active={statsInView} />
-              </p>
-              <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
+        {stats.length > 0 && (
+          <div
+            ref={statsRef}
+            className={`mt-10 grid grid-cols-2 gap-4 ${reveal(3)}`}
+          >
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-2xl border-2 border-border-light dark:border-border-dark p-5 hover:border-accent-border dark:hover:border-accent-border-dark transition-colors duration-300"
+              >
+                <p className="font-heading text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
+                  <StatValue value={stat.value} active={statsInView} />
+                </p>
+                <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
