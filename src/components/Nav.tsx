@@ -16,7 +16,7 @@ import { useSiteSettings } from "../hooks/useSiteSettings";
 
 export default function Nav() {
   const { dark, setDark, hue, setHue, accentHues } = useTheme();
-  const { route, setRoute } = useRoute();
+  const { route } = useRoute();
   const { settings } = useSiteSettings();
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -44,37 +44,15 @@ export default function Nav() {
           TA
         </Link>
 
-        <div className="justify-self-center flex items-center gap-8">
-          <button
-            onClick={() => setRoute("software")}
-            className={`relative pb-1 text-sm font-semibold transition-colors ${
-              route === "software"
-                ? "text-gray-900 dark:text-white"
-                : "text-gray-500 dark:text-gray-400"
-            }`}
+        <div className="justify-self-center">
+          <Link
+            to={route === "software" ? "/data/" : "/software/"}
+            className="text-sm font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
-            Software
-            <span
-              className={`absolute left-0 right-0 -bottom-0.5 h-0.5 rounded-full bg-accent transition-opacity duration-300 ${
-                route === "software" ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          </button>
-          <button
-            onClick={() => setRoute("data")}
-            className={`relative pb-1 text-sm font-semibold transition-colors ${
-              route === "data"
-                ? "text-gray-900 dark:text-white"
-                : "text-gray-500 dark:text-gray-400"
-            }`}
-          >
-            Data
-            <span
-              className={`absolute left-0 right-0 -bottom-0.5 h-0.5 rounded-full bg-accent transition-opacity duration-300 ${
-                route === "data" ? "opacity-100" : "opacity-0"
-              }`}
-            />
-          </button>
+            {route === "software"
+              ? "Data Engineering →"
+              : "Software Engineering →"}
+          </Link>
         </div>
 
         <div className="justify-self-end hidden md:flex items-center gap-6">
