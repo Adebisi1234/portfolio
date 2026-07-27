@@ -2,8 +2,6 @@
 
 A two-in-one portfolio site for Tobiloba Adebisi — software engineer and AWS-certified data engineer — with routed sections for each role, backed by a headless CMS.
 
-Live at [tobiloba.me](https://tobiloba.me)
-
 ## Overview
 
 The site is split into two routed experiences from a single codebase:
