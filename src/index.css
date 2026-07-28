@@ -29,15 +29,20 @@
 }
 
 :root {
-  --accent-hue: 217deg;
+  --accent-hue: 224deg;
   scroll-behavior: smooth;
 }
 
-.route-data {
-  --accent-hue: 195deg;
+@custom-variant dark (&:where(.dark, .dark *));
+
+:focus-visible {
+  outline: 2px solid hsl(var(--accent-hue) 90% 58%);
+  outline-offset: 2px;
 }
 
-@custom-variant dark (&:where(.dark, .dark *));
+.dark :focus-visible {
+  outline-color: hsl(var(--accent-hue) 85% 68%);
+}
 
 .hero-reveal {
   opacity: 0;

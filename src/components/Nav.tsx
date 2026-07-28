@@ -15,8 +15,8 @@ import { useEscapeKey } from "../hooks/useEscapeKey";
 import { useSiteSettings } from "../hooks/useSiteSettings";
 
 export default function Nav() {
-  const { dark, setDark, hue, setHue, accentHues } = useTheme();
   const { route } = useRoute();
+  const { dark, setDark, hue, setHue, accentHues } = useTheme(route);
   const { settings } = useSiteSettings();
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
