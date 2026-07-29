@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faPalette,
   faSun,
   faMoon,
   faBars,
@@ -10,22 +8,16 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from "../hooks/useTheme";
 import { useRoute } from "../hooks/useRoute";
-import { useClickOutside } from "../hooks/useClickOutside";
 import { useEscapeKey } from "../hooks/useEscapeKey";
 import { useSiteSettings } from "../hooks/useSiteSettings";
 
 export default function Nav() {
   const { route } = useRoute();
-  const { dark, setDark, hue, setHue, accentHues } = useTheme(route);
+  const { dark, setDark } = useTheme();
   const { settings } = useSiteSettings();
-  const [settingsOpen, setSettingsOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const settingsRef = useClickOutside<HTMLDivElement>(() =>
-    setSettingsOpen(false),
-  );
   useEscapeKey(() => {
-    setSettingsOpen(false);
     setMobileMenuOpen(false);
   });
 
@@ -34,15 +26,21 @@ export default function Nav() {
       ? settings?.dataResume?.asset?.url
       : settings?.softwareResume?.asset?.url;
 
+  const scrollToTop = () => {
+    setMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <nav className="sticky top-0 z-30 border-b border-border-light dark:border-border-dark bg-surface/90 dark:bg-surface-dark/90 backdrop-blur-md">
       <div className="flex items-center justify-between gap-4 px-5 md:px-9 py-3">
-        <Link
-          to="/"
+        <button
+          type="button"
+          onClick={scrollToTop}
           className="font-hero text-2xl font-extrabold tracking-tight"
         >
           TA
-        </Link>
+        </button>
 
         <div className="hidden md:flex items-center gap-6">
           <a
@@ -67,56 +65,13 @@ export default function Nav() {
             Resume
           </a>
 
-          <div className="relative" ref={settingsRef}>
-            <button
-              onClick={() => setSettingsOpen(!settingsOpen)}
-              aria-expanded={settingsOpen}
-              aria-haspopup="true"
-              aria-label="Display settings"
-              className="w-9 h-9 flex items-center justify-center rounded-full border border-border-light dark:border-border-dark text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-600 transition-colors"
-            >
-              <FontAwesomeIcon icon={faPalette} size="sm" />
-            </button>
-
-            {settingsOpen && (
-              <div
-                role="menu"
-                className="absolute right-0 mt-2 w-52 bg-surface dark:bg-surface-dark border border-border-light dark:border-border-dark rounded-xl p-3.5 shadow-lg z-20"
-              >
-                <div className="text-[10px] font-mono text-gray-400 dark:text-gray-500 mb-2 tracking-wide">
-                  APPEARANCE
-                </div>
-                <div className="flex gap-2 mb-4">
-                  <button
-                    onClick={() => setDark(false)}
-                    className={`flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-xs font-semibold transition-colors ${!dark ? "bg-card dark:bg-card-dark text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400"}`}
-                  >
-                    <FontAwesomeIcon icon={faSun} size="xs" /> Light
-                  </button>
-                  <button
-                    onClick={() => setDark(true)}
-                    className={`flex-1 flex items-center justify-center gap-1.5 py-2 rounded-lg text-xs font-semibold transition-colors ${dark ? "bg-card dark:bg-card-dark text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400"}`}
-                  >
-                    <FontAwesomeIcon icon={faMoon} size="xs" /> Dark
-                  </button>
-                </div>
-                <div className="text-[10px] font-mono text-gray-400 dark:text-gray-500 mb-2 tracking-wide">
-                  ACCENT
-                </div>
-                <div className="flex gap-2">
-                  {accentHues.map((h) => (
-                    <button
-                      key={h}
-                      onClick={() => setHue(h)}
-                      className={`w-6 h-6 rounded-full border-2 transition-colors ${hue === h ? "border-gray-900 dark:border-white" : "border-transparent"}`}
-                      style={{ background: `hsl(${h}deg 88% 52%)` }}
-                      aria-label={`Set accent hue ${h}`}
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
+          <button
+            onClick={() => setDark(!dark)}
+            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+            className="w-9 h-9 flex items-center justify-center rounded-full border border-border-light dark:border-border-dark text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-600 transition-colors"
+          >
+            <FontAwesomeIcon icon={dark ? faSun : faMoon} size="sm" />
+          </button>
         </div>
 
         <button
@@ -173,20 +128,6 @@ export default function Nav() {
               >
                 <FontAwesomeIcon icon={faMoon} size="xs" /> Dark
               </button>
-            </div>
-            <div className="text-[10px] font-mono text-gray-400 dark:text-gray-500 mb-2 tracking-wide">
-              ACCENT
-            </div>
-            <div className="flex gap-2">
-              {accentHues.map((h) => (
-                <button
-                  key={h}
-                  onClick={() => setHue(h)}
-                  className={`w-6 h-6 rounded-full border-2 transition-colors ${hue === h ? "border-gray-900 dark:border-white" : "border-transparent"}`}
-                  style={{ background: `hsl(${h}deg 88% 52%)` }}
-                  aria-label={`Set accent hue ${h}`}
-                />
-              ))}
             </div>
           </div>
         </div>

@@ -8,18 +8,18 @@
 
   --color-navy: #111c33;
   --color-navy-dark: #0b1424;
-  --color-accent: hsl(var(--accent-hue) 90% 58%);
-  --color-accent-dark: hsl(var(--accent-hue) 85% 68%);
+  --color-accent: hsl(224deg 90% 58%);
+  --color-accent-dark: hsl(224deg 85% 68%);
 
   --color-surface: #f4f2ed;
   --color-surface-dark: #0d0d10;
   --color-card: #ebe8e1;
   --color-card-dark: #18181c;
 
-  --color-accent-tint: hsl(var(--accent-hue) 70% 94%);
-  --color-accent-tint-dark: hsl(var(--accent-hue) 40% 14%);
-  --color-accent-border: hsl(var(--accent-hue) 60% 82%);
-  --color-accent-border-dark: hsl(var(--accent-hue) 40% 28%);
+  --color-accent-tint: hsl(224deg 70% 94%);
+  --color-accent-tint-dark: hsl(224deg 40% 14%);
+  --color-accent-border: hsl(224deg 60% 82%);
+  --color-accent-border-dark: hsl(224deg 40% 28%);
 
   --color-border-light: #dcd8ce;
   --color-border-dark: #35353d;
@@ -29,19 +29,18 @@
 }
 
 :root {
-  --accent-hue: 224deg;
   scroll-behavior: smooth;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 :focus-visible {
-  outline: 2px solid hsl(var(--accent-hue) 90% 58%);
+  outline: 2px solid hsl(224deg 90% 58%);
   outline-offset: 2px;
 }
 
 .dark :focus-visible {
-  outline-color: hsl(var(--accent-hue) 85% 68%);
+  outline-color: hsl(224deg 85% 68%);
 }
 
 .hero-reveal {

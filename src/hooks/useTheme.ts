@@ -1,34 +1,21 @@
-import { useEffect, useLayoutEffect, useState } from "react";
-import type { Route } from "./useRoute";
+import { useEffect, useState } from "react";
 
-const ACCENT_HUES = [224, 178];
-
-const ROUTE_DEFAULT_HUE: Record<Route, number> = {
-  software: 224,
-  data: 178,
-};
-
-export function useTheme(route: Route) {
+export function useTheme() {
   const [dark, setDark] = useState(() => {
     if (typeof window === "undefined") return false;
     return window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
-  const [hue, setHue] = useState(() => ROUTE_DEFAULT_HUE[route]);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
   }, [dark]);
 
-  useLayoutEffect(() => {
-    document.documentElement.style.setProperty("--accent-hue", `${hue}deg`);
-  }, [hue]);
-
   useEffect(() => {
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) {
-      meta.setAttribute("content", `hsl(${hue}deg 35% 14%)`);
+      meta.setAttribute("content", dark ? "#0d0d10" : "#f4f2ed");
     }
-  }, [hue]);
+  }, [dark]);
 
-  return { dark, setDark, hue, setHue, accentHues: ACCENT_HUES };
+  return { dark, setDark };
 }
