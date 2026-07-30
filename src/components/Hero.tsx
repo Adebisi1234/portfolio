@@ -1,49 +1,44 @@
-import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGithub,
+  faLinkedin,
+  faXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { useRoute } from "../hooks/useRoute";
 import { useHeroAnimation } from "../hooks/useHeroAnimation";
 import { useSiteSettings } from "../hooks/useSiteSettings";
-import { useInView } from "../hooks/useInView";
 import { urlFor } from "../data/imageUrl";
 
 const FALLBACK_NAME = "Tobiloba Isaiah Adebisi";
 const FALLBACK_SOFTWARE_ROLE = "Software Engineer";
 const FALLBACK_SOFTWARE_DESCRIPTION =
-  "I build fast, reliable software, from real-time collaboration tools to production backend systems.";
+  "I build fast, reliable software, from interactive frontends to scalable backend systems.";
 const FALLBACK_DATA_ROLE = "Data Engineer";
 const FALLBACK_DATA_DESCRIPTION =
-  "I design serverless pipelines and streaming systems that turn raw data into decisions.";
+  "I build cloud-native data pipelines, from real-time ETL/ELT workflows to scalable data warehouses.";
+const FALLBACK_GITHUB = "https://github.com/adebisi1234";
+const FALLBACK_LINKEDIN = "https://www.linkedin.com/in/tobiloba-adebisi";
 
-function StatValue({ value, active }: { value: string; active: boolean }) {
-  const match = value.match(/^(\d+)(\D*)$/);
-  const target = match ? parseInt(match[1], 10) : null;
-  const suffix = match ? match[2] : "";
-  const [display, setDisplay] = useState(target === null ? 0 : 0);
-
-  useEffect(() => {
-    if (!active || target === null) return;
-    const duration = 900;
-    const start = performance.now();
-    let frame: number;
-
-    function tick(now: number) {
-      const progress = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setDisplay(Math.round(eased * (target as number)));
-      if (progress < 1) frame = requestAnimationFrame(tick);
-    }
-
-    frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
-  }, [active, target]);
-
-  if (target === null) return <>{value}</>;
+function HeroSocialLink({
+  href,
+  icon,
+  label,
+}: {
+  href: string;
+  icon: IconDefinition;
+  label: string;
+}) {
   return (
-    <>
-      {display}
-      {suffix}
-    </>
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={label}
+      className="text-lg text-gray-500 dark:text-gray-500 hover:text-accent dark:hover:text-accent-dark transition-colors"
+    >
+      <FontAwesomeIcon icon={icon} />
+    </a>
   );
 }
 
@@ -51,10 +46,8 @@ export default function Hero() {
   const { route } = useRoute();
   const shouldAnimate = useHeroAnimation();
   const { settings } = useSiteSettings();
-  const { ref: statsRef, inView: statsInView } = useInView<HTMLDivElement>();
 
   const fullName = settings?.name ?? FALLBACK_NAME;
-  const firstName = fullName.split(" ")[0];
 
   const roleLabel =
     route === "data"
@@ -66,9 +59,6 @@ export default function Hero() {
       ? (settings?.dataHeroDescription ?? FALLBACK_DATA_DESCRIPTION)
       : (settings?.softwareHeroDescription ?? FALLBACK_SOFTWARE_DESCRIPTION);
 
-  const stats =
-    (route === "data" ? settings?.dataStats : settings?.softwareStats) ?? [];
-
   const portraitUrl = settings?.portrait
     ? urlFor(settings.portrait)
         .width(800)
@@ -78,16 +68,15 @@ export default function Hero() {
         .url()
     : null;
 
-  const resumeUrl =
-    route === "data"
-      ? settings?.dataResume?.asset?.url
-      : settings?.softwareResume?.asset?.url;
+  const github = settings?.githubUrl ?? FALLBACK_GITHUB;
+  const linkedin = settings?.linkedinUrl ?? FALLBACK_LINKEDIN;
+  const x = settings?.xUrl;
 
-  const reveal = (step: 1 | 2 | 3) =>
+  const reveal = (step: 1 | 2) =>
     shouldAnimate ? `hero-reveal hero-reveal-${step}` : "";
 
   return (
-    <section className="max-w-[1440px] mx-auto px-5 md:px-9 py-20 grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-start">
+    <section className="max-w-[1440px] mx-auto px-5 md:px-9 pt-20 pb-10 grid md:grid-cols-[auto_1fr] gap-12 md:gap-16 items-center">
       <div className={`w-full md:w-64 shrink-0 ${reveal(1)}`}>
         <div className="group relative aspect-[3/4] rounded-2xl overflow-hidden border-2 border-border-light dark:border-border-dark bg-card dark:bg-card-dark hover:border-accent-border dark:hover:border-accent-border-dark transition-colors duration-300">
           {portraitUrl ? (
@@ -101,66 +90,28 @@ export default function Hero() {
           )}
         </div>
 
-        <div className="mt-4 flex items-center justify-between gap-3">
-          <div className="min-w-0">
-            <p className="font-heading font-semibold text-gray-900 dark:text-white truncate">
-              {fullName}
-            </p>
-            <p className="font-mono text-[10px] uppercase tracking-wide text-gray-500 dark:text-gray-500 mt-0.5">
-              {roleLabel}
-            </p>
-          </div>
-
-          {resumeUrl && (
-            <a
-              href={resumeUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-1.5 font-mono text-[11px] text-gray-600 dark:text-gray-400 hover:text-accent transition-colors shrink-0"
-            >
-              <FontAwesomeIcon
-                icon={faArrowUpRightFromSquare}
-                className="text-[10px]"
-              />
-              Resume
-            </a>
-          )}
+        <div className="mt-4 min-w-0">
+          <p className="font-heading font-semibold text-gray-900 dark:text-white truncate">
+            {fullName}
+          </p>
+          <p className="font-mono text-[10px] uppercase tracking-wide text-gray-500 dark:text-gray-500 mt-0.5">
+            {roleLabel}
+          </p>
         </div>
       </div>
 
       <div>
-        <p
-          className={`font-heading font-medium text-[clamp(1.15rem,1.6vw,1.375rem)] text-gray-500 dark:text-gray-400 ${reveal(2)}`}
-        >
-          Hi, I&apos;m {firstName}
-        </p>
-
         <h1
-          className={`mt-2 font-heading font-bold text-[clamp(1.9rem,3.4vw,2.75rem)] leading-[1.25] tracking-tight text-gray-900 dark:text-white ${reveal(2)}`}
+          className={`font-hero font-extrabold text-[clamp(2.3rem,4vw,3.5rem)] leading-[1.18] tracking-tight text-gray-900 dark:text-white max-w-2xl ${reveal(2)}`}
         >
           {description}
         </h1>
 
-        {stats.length > 0 && (
-          <div
-            ref={statsRef}
-            className={`mt-10 grid grid-cols-2 gap-4 ${reveal(3)}`}
-          >
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-2xl border-2 border-border-light dark:border-border-dark p-5 hover:border-accent-border dark:hover:border-accent-border-dark transition-colors duration-300"
-              >
-                <p className="font-heading text-3xl md:text-4xl font-bold text-gray-900 dark:text-white">
-                  <StatValue value={stat.value} active={statsInView} />
-                </p>
-                <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        )}
+        <div className={`mt-8 flex items-center gap-5 ${reveal(2)}`}>
+          <HeroSocialLink href={github} icon={faGithub} label="GitHub" />
+          <HeroSocialLink href={linkedin} icon={faLinkedin} label="LinkedIn" />
+          {x && <HeroSocialLink href={x} icon={faXTwitter} label="X" />}
+        </div>
       </div>
     </section>
   );
