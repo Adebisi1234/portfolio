@@ -104,7 +104,7 @@ export default function Contact() {
     return (
       <section
         id="contact"
-        className="max-w-[1440px] mx-auto px-5 md:px-9 py-28"
+        className="section-shell py-28"
       >
         <Skeleton className="h-96" />
       </section>
@@ -140,7 +140,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="max-w-[1440px] mx-auto px-5 md:px-9 py-28">
+    <section id="contact" className="section-shell py-28">
       <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-8 md:gap-10">
         <div className="rounded-2xl border-2 border-border-light dark:border-border-dark p-8 md:p-10 flex flex-col justify-center">
           <h2 className="font-heading flex items-center gap-2.5 text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">

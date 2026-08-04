@@ -60,12 +60,12 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="max-w-[1440px] mx-auto px-5 md:px-9 py-20"
+     className="section-shell py-20"
     >
-      <h2 className="font-heading flex items-center justify-end gap-2.5 text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-10 text-right">
+      <h2 className="font-heading flex items-center justify-end gap-2.5 text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-10 text-right">
         <FontAwesomeIcon
           icon={faBuildingColumns}
-          className="text-2xl text-gray-400 dark:text-gray-600"
+          className="text-3xl text-gray-400 dark:text-gray-600"
         />
         Experience
       </h2>

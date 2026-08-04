@@ -39,37 +39,13 @@ export default function ThemeToggle({
   }
 
   return (
-    <div
-      role="group"
-      aria-label="Theme"
-      className="flex items-center gap-0.5 rounded-full border border-border-light dark:border-border-dark p-1"
+    <button
+      type="button"
+      onClick={() => setDark(!dark)}
+      aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+      className="w-8 h-8 flex items-center justify-center rounded-full border border-border-light dark:border-border-dark text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:border-gray-400 dark:hover:border-gray-500 transition-colors"
     >
-      <button
-        type="button"
-        onClick={() => setDark(false)}
-        aria-label="Switch to light mode"
-        aria-pressed={!dark}
-        className={`w-7 h-7 flex items-center justify-center rounded-full transition-colors ${
-          !dark
-            ? "bg-card dark:bg-card-dark text-gray-900 dark:text-white"
-            : "text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
-        }`}
-      >
-        <FontAwesomeIcon icon={faSun} size="xs" />
-      </button>
-      <button
-        type="button"
-        onClick={() => setDark(true)}
-        aria-label="Switch to dark mode"
-        aria-pressed={dark}
-        className={`w-7 h-7 flex items-center justify-center rounded-full transition-colors ${
-          dark
-            ? "bg-card dark:bg-card-dark text-gray-900 dark:text-white"
-            : "text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300"
-        }`}
-      >
-        <FontAwesomeIcon icon={faMoon} size="xs" />
-      </button>
-    </div>
+      <FontAwesomeIcon icon={dark ? faMoon : faSun} size="xs" />
+    </button>
   );
 }
