@@ -30,8 +30,10 @@ function SkillCard({
       }`}
     >
       <h3
-        className={`font-semibold tracking-tight mb-4 ${
-          isPrimary ? "text-lg text-white dark:text-gray-900" : "text-sm text-gray-900 dark:text-white"
+        className={`font-heading font-semibold tracking-tight mb-4 ${
+          isPrimary
+            ? "text-lg text-white dark:text-gray-900"
+            : "text-sm text-gray-900 dark:text-white"
         }`}
       >
         {category}
@@ -75,7 +77,7 @@ export default function SkillsBento() {
 
   return (
     <section id="skills" className="max-w-[1440px] mx-auto px-5 md:px-9 py-20">
-      <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-10">
+      <h2 className="font-heading text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-10">
         Skills
       </h2>
 

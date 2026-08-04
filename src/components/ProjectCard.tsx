@@ -100,7 +100,7 @@ export default function ProjectCard({ project, emphasized }: ProjectCardProps) {
 
       <div className="flex flex-col p-5 flex-1 min-h-0">
         <h3
-          className={`font-semibold tracking-tight text-gray-900 dark:text-white ${
+          className={`font-heading font-semibold tracking-tight text-gray-900 dark:text-white ${
             emphasized ? "text-xl" : "text-base"
           }`}
         >

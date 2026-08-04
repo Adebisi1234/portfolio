@@ -30,7 +30,7 @@ function CertCard({ cert, delay }: { cert: Certification; delay: number }) {
           loading="lazy"
         />
       )}
-      <h3 className="text-base font-semibold tracking-tight text-gray-900 dark:text-white mb-1">
+      <h3 className="font-heading text-base font-semibold tracking-tight text-gray-900 dark:text-white mb-1">
         {cert.title}
       </h3>
       <p className="font-mono text-[10px] uppercase tracking-wide text-gray-500 dark:text-gray-500 mb-3">
@@ -63,7 +63,7 @@ export default function Certifications() {
       id="certifications"
       className="max-w-[1440px] mx-auto px-5 md:px-9 py-20"
     >
-      <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-10 text-center">
+      <h2 className="font-heading text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-10 text-center">
         Certifications
       </h2>
 

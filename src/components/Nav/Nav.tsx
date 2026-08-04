@@ -38,7 +38,7 @@ export default function Nav() {
 
   return (
     <nav className="sticky top-0 z-30 border-b border-border-light dark:border-border-dark bg-surface/90 dark:bg-surface-dark/90 backdrop-blur-md">
-      <div className="flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] gap-4 px-5 md:px-9 py-3">
+      <div className="section-shell flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] gap-4 py-3">
         <NavBrand onClick={scrollToTop} />
 
         <NavLinksDesktop links={navLinks} />

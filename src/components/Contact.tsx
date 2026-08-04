@@ -57,7 +57,7 @@ function InfoCard({ item, delay }: { item: InfoItem; delay: number }) {
       className={`scroll-reveal ${inView ? "in-view" : ""}`}
     >
       {item.href ? (
-        <a
+         <a
           href={item.href}
           target={item.href.startsWith("http") ? "_blank" : undefined}
           rel={item.href.startsWith("http") ? "noreferrer" : undefined}
@@ -84,7 +84,7 @@ function SocialButton({
   label: string;
 }) {
   return (
-    <a
+     <a
       href={href}
       target="_blank"
       rel="noreferrer"
@@ -143,7 +143,7 @@ export default function Contact() {
     <section id="contact" className="max-w-[1440px] mx-auto px-5 md:px-9 py-28">
       <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-8 md:gap-10">
         <div className="rounded-2xl border-2 border-border-light dark:border-border-dark p-8 md:p-10 flex flex-col justify-center">
-          <h2 className="flex items-center gap-2.5 text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h2 className="font-heading flex items-center gap-2.5 text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
             <FontAwesomeIcon
               icon={faPaperPlane}
               className="text-2xl text-gray-400 dark:text-gray-600"
@@ -156,7 +156,7 @@ export default function Contact() {
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <a
+             <a
               href={`mailto:${email}`}
               className="text-sm font-semibold text-white bg-accent px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
             >

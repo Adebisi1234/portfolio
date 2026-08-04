@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-border-light dark:border-border-dark">
-      <div className="max-w-[1440px] mx-auto px-5 md:px-9 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="section-shell py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-gray-500 dark:text-gray-500">
           © {year} Tobiloba Adebisi. All rights reserved.
         </p>

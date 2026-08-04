@@ -17,7 +17,7 @@ export default function ProjectsBento() {
 
   return (
     <section id="work" className="max-w-[1440px] mx-auto px-5 md:px-9 py-20">
-      <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-10">
+      <h2 className="font-heading text-3xl font-bold tracking-tight text-gray-900 dark:text-white mb-10">
         Projects
       </h2>
 

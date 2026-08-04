@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", sans-serif;
-  --font-heading: "Epilogue", sans-serif;
-  --font-hero: "Big Shoulders Display", sans-serif;
-  --font-mono: "Space Mono", monospace;
+  --font-sans: "Geist", sans-serif;
+  --font-heading: "Bricolage Grotesque", sans-serif;
+  --font-hero: "Bricolage Grotesque", sans-serif;
+  --font-mono: "Geist Mono", monospace;
 
   --color-navy: #111c33;
   --color-navy-dark: #0b1424;
