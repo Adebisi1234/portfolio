@@ -1,5 +1,5 @@
 import Hero from "../components/Hero";
-import ProjectsBento from "../components/ProjectsBento";
+import ProjectsGrid from "../components/ProjectsGrid";
 import Experience from "../components/Experience";
 import SkillsBento from "../components/SkillsBento";
 import Certifications from "../components/Certifications";
@@ -17,7 +17,7 @@ export default function SoftwareLayout() {
     <>
       <Nav />
       <Hero />
-      <ProjectsBento />
+      <ProjectsGrid />
       <Experience />
       <SkillsBento />
       <Certifications />
