@@ -107,11 +107,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         {/* darken-on-hover so the case study cue below stays legible */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
-        {/* single click-through cue for the whole image, top right. the
-            explicit "Case study" text link below is the other cue, this
-            doesn't need its own duplicate text on top of it. */}
-        <div className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white text-gray-900 flex items-center justify-center text-sm opacity-0 -translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
-          <FontAwesomeIcon icon={faArrowRight} className="-rotate-45 text-xs" />
+        {/* single click-through cue for the whole image, now a text+arrow
+            pill instead of a bare icon, placed bottom-left so it reads
+            naturally rather than sitting in a corner as an icon only */}
+        <div className="absolute bottom-4 left-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white text-gray-900 text-xs font-medium pl-3.5 pr-3 py-1.5">
+            Case study
+            <FontAwesomeIcon icon={faArrowRight} className="-rotate-45 text-[10px]" />
+          </span>
         </div>
       </Link>
 
