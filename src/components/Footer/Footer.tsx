@@ -58,47 +58,50 @@ export default function Footer() {
   ];
 
   return (
-    <footer
-      id="contact"
-      className="border-t border-border-light dark:border-border-dark"
+  <footer className="min-h-[calc(100vh-80px)] flex flex-col">
+    <div
+      ref={stackRef}
+      className={`section-shell flex-1 flex flex-col items-center justify-center text-center scroll-reveal ${
+        stackInView ? "in-view" : ""
+      }`}
     >
-      <div
-        ref={stackRef}
-        className={`section-shell py-20 md:py-28 text-center scroll-reveal ${
-          stackInView ? "in-view" : ""
-        }`}
+      <p className="text-lg text-gray-500 dark:text-gray-400">
+        Say hi or talk about your next project
+      </p>
+
+      <a
+        href={`mailto:${email}`}
+        className="font-hero font-bold text-[clamp(2rem,6vw,3.75rem)] tracking-tight text-gray-900 dark:text-white hover:text-accent dark:hover:text-accent-dark transition-colors break-all"
       >
-        <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 mb-4">
-          Say hi or talk about your next project
-        </p>
+        {email}
+      </a>
 
-        <a
-          href={`mailto:${email}`}
-          className="font-hero font-extrabold text-[clamp(1.8rem,5vw,3.25rem)] tracking-tight text-gray-900 dark:text-white hover:text-accent dark:hover:text-accent-dark transition-colors break-all"
-        >
-          {email}
-        </a>
-
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-          {pills.map((pill, i) => (
-            <span
-              key={pill.key}
-              className={`inline-block scroll-reveal ${stackInView ? "in-view" : ""}`}
-              style={{
-                animationDelay: stackInView ? `${200 + i * 60}ms` : undefined,
-              }}
-            >
-              {pill.node}
-            </span>
-          ))}
-        </div>
+      <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+        {pills.map((pill, i) => (
+          <span
+            key={pill.key}
+            className={`inline-block scroll-reveal ${
+              stackInView ? "in-view" : ""
+            }`}
+            style={{
+              animationDelay: stackInView ? `${200 + i * 60}ms` : undefined,
+            }}
+          >
+            {pill.node}
+          </span>
+        ))}
       </div>
 
-      <div className="border-t border-border-light dark:border-border-dark py-6">
-        <p className="section-shell text-center text-xs text-gray-500 dark:text-gray-500">
-          © {year} Tobiloba Adebisi. Based in {location}.
-        </p>
-      </div>
-    </footer>
-  );
+      <p className="mt-8 text-sm md:text-base text-gray-500 dark:text-gray-400">
+        Open to freelance collaborations and full-time frontend roles.
+      </p>
+    </div>
+
+    <div className="border-t border-border-light dark:border-border-dark py-6">
+      <p className="section-shell text-center text-xs text-gray-500 dark:text-gray-500">
+        © {year} Tobiloba Adebisi. Based in {location}.
+      </p>
+    </div>
+  </footer>
+);
 }
