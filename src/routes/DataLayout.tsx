@@ -3,7 +3,6 @@ import ProjectsBento from "../components/ProjectsBento";
 import Experience from "../components/Experience";
 import SkillsBento from "../components/SkillsBento";
 import Certifications from "../components/Certifications";
-import Contact from "../components/Contact";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
@@ -22,7 +21,6 @@ export default function DataLayout() {
       <Experience />
       <SkillsBento />
       <Certifications />
-      <Contact />
       <Footer />
     </>
   );
