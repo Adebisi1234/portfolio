@@ -25,6 +25,8 @@ interface SiteSettings {
   contactEmail?: string;
   softwareContactHeadline?: string;
   dataContactHeadline?: string;
+  softwareContactAvailability?: string;
+  dataContactAvailability?: string;
   location?: string;
   phone?: string;
   githubUrl?: string;

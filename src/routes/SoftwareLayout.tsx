@@ -20,10 +20,10 @@ export default function SoftwareLayout() {
       <Nav />
       <Hero />
       <ProjectsGrid />
-      <Experience />
       <SkillsBento />
+       <Certifications />
       <About />
-      <Certifications />
+       <Experience />
       <Contact />
       <Footer />
     </>

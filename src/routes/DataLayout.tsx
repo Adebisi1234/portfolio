@@ -20,10 +20,10 @@ export default function DataLayout() {
       <Nav />
       <Hero />
       <ProjectsGrid />
-      <Experience />
       <SkillsBento />
+       <Certifications />
       <About />
-      <Certifications />
+       <Experience />
       <Contact />
       <Footer />
     </>
