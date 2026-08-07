@@ -59,11 +59,8 @@ export default function Certifications() {
   if (!loading && !error && certifications.length === 0) return null;
 
   return (
-    <section
-      id="certifications"
-      className="section-shell py-20"
-    >
-      <h2 className="font-heading text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-10 text-center">
+    <section id="certifications" className="section-shell py-20">
+      <h2 className="font-heading text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-10">
         Certifications
       </h2>
 

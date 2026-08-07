@@ -14,9 +14,12 @@ interface SiteSettings {
   softwareRoleLabel?: string;
   softwareHeroDescription?: string;
   softwareStats?: HeroStat[];
+  softwareAboutBio?: string;
   dataRoleLabel?: string;
   dataHeroDescription?: string;
   dataStats?: HeroStat[];
+  dataAboutBio?: string;
+  aboutPersonalDetail?: string;
   softwareResume?: { asset?: { url?: string } };
   dataResume?: { asset?: { url?: string } };
   contactEmail?: string;

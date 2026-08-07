@@ -2,6 +2,7 @@ import Hero from "../components/Hero";
 import ProjectsGrid from "../components/ProjectsGrid";
 import Experience from "../components/Experience";
 import SkillsBento from "../components/SkillsBento";
+import About from "../components/About";
 import Certifications from "../components/Certifications";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
@@ -20,6 +21,7 @@ export default function DataLayout() {
       <ProjectsGrid />
       <Experience />
       <SkillsBento />
+      <About />
       <Certifications />
       <Footer />
     </>
