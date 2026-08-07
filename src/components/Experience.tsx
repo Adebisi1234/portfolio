@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBuildingColumns } from "@fortawesome/free-solid-svg-icons";
 import { useRoute } from "../hooks/useRoute";
 import { useExperience } from "../hooks/useExperience";
 import { useInView } from "../hooks/useInView";
@@ -62,7 +60,7 @@ export default function Experience() {
       id="experience"
      className="section-shell py-20"
     >
-      <h2 className="font-heading flex items-center justify-end gap-2.5 text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-10 text-right">
+      <h2 className="font-heading flex items-center justify-end text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-10 text-right">
         Experience
       </h2>
 
