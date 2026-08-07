@@ -37,12 +37,12 @@ function ExperienceRow({
           {entry.company}
         </h3>
         {entry.title && (
-          <p className="mt-0.5 text-sm text-gray-500 dark:text-gray-400">
+          <p className="mt-0.5 text-sm text-gray-600 dark:text-gray-400">
             {entry.title}
           </p>
         )}
       </div>
-      <span className="font-mono text-[11px] text-gray-500 dark:text-gray-500 whitespace-nowrap">
+      <span className="font-mono text-[11px] text-gray-600 dark:text-gray-500 whitespace-nowrap">
         {formatDate(entry.startDate)} — {formatDate(entry.endDate)}
       </span>
     </div>
@@ -56,10 +56,7 @@ export default function Experience() {
   if (!loading && !error && experience.length === 0) return null;
 
   return (
-    <section
-      id="experience"
-     className="section-shell py-20"
-    >
+    <section id="experience" className="section-shell py-20">
       <h2 className="font-heading flex items-center justify-end text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-10 text-right">
         Experience
       </h2>

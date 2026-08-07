@@ -28,7 +28,7 @@ function SkillCard({
         {names.map((name) => (
           <span
             key={name}
-            className="font-mono text-[10px] uppercase tracking-wide px-2.5 py-1.5 rounded-lg border border-border-light dark:border-border-dark text-gray-600 dark:text-gray-400"
+            className="font-mono text-[10px] uppercase tracking-wide px-2.5 py-1.5 rounded-lg bg-black/[0.04] dark:bg-white/[0.06] text-gray-700 dark:text-gray-300"
           >
             {name}
           </span>
@@ -55,7 +55,7 @@ export default function SkillsBento() {
   return (
     <section id="skills" className="section-shell py-20">
       <h2 className="font-heading text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-10">
-        Skills
+        Tool stack
       </h2>
 
       {loading && (

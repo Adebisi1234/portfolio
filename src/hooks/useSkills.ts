@@ -10,15 +10,27 @@ export function useSkills(route: Route) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    setLoading(true);
-    sanityClient
-      .fetch<Skill[]>(skillsByRole(route))
-      .then((data) => {
+    let ignore = false;
+
+    async function loadSkills() {
+      setLoading(true);
+      try {
+        const data = await sanityClient.fetch<Skill[]>(skillsByRole(route));
+        if (ignore) return;
         setSkills(data);
         setError(null);
-      })
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
+      } catch (err) {
+        if (ignore) return;
+        setError(err instanceof Error ? err.message : String(err));
+      } finally {
+        if (!ignore) setLoading(false);
+      }
+    }
+
+    loadSkills();
+    return () => {
+      ignore = true;
+    };
   }, [route]);
 
   return { skills, loading, error };

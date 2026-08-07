@@ -25,7 +25,7 @@ export default function ProjectsGrid() {
       {!loading && error && <ErrorState resource="projects" />}
 
       {!loading && !error && projects.length === 0 && (
-        <p className="font-mono text-sm text-gray-500 dark:text-gray-400">
+        <p className="font-mono text-sm text-gray-600 dark:text-gray-400">
           No projects added yet.
         </p>
       )}

@@ -27,7 +27,7 @@ export default function NavLink({
     <a
       href={href}
       onClick={onClick}
-      className="group relative text-xs font-semibold uppercase tracking-[0.14em] text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+      className="group relative text-xs font-semibold uppercase tracking-[0.14em] text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
     >
       {label}
       <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-300 ease-out group-hover:scale-x-100" />

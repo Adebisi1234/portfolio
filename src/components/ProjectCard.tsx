@@ -1,7 +1,12 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe, faArrowRight, faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGlobe,
+  faArrowRight,
+  faPlay,
+  faPause,
+} from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import type { Project } from "../types";
 import { urlFor } from "../data/imageUrl";
@@ -65,7 +70,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             loading="lazy"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center font-mono text-[10px] uppercase tracking-wide text-gray-400 dark:text-gray-600">
+          <div className="w-full h-full flex items-center justify-center font-mono text-[10px] uppercase tracking-wide text-gray-600 dark:text-gray-600">
             no preview
           </div>
         )}
@@ -90,7 +95,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <button
             type="button"
             onClick={togglePlayback}
-            aria-label={videoActive ? "Pause preview video" : "Play preview video, with sound"}
+            aria-label={
+              videoActive
+                ? "Pause preview video"
+                : "Play preview video, with sound"
+            }
             className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
               videoActive ? "opacity-0 pointer-events-none" : "opacity-100"
             }`}
@@ -113,7 +122,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <div className="absolute bottom-4 left-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
           <span className="inline-flex items-center gap-2 rounded-full bg-white text-gray-900 text-xs font-medium pl-3.5 pr-3 py-1.5">
             Case study
-            <FontAwesomeIcon icon={faArrowRight} className="-rotate-45 text-[10px]" />
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              className="-rotate-45 text-[10px]"
+            />
           </span>
         </div>
       </Link>
@@ -138,7 +150,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               </span>
             ))}
             {project.focusArea && (
-              <span className="font-mono text-[10px] uppercase tracking-wide px-2 py-1 text-gray-400 dark:text-gray-500">
+              <span className="font-mono text-[10px] uppercase tracking-wide px-2 py-1 text-gray-600 dark:text-gray-500">
                 {project.focusArea}
               </span>
             )}

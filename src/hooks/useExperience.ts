@@ -10,15 +10,29 @@ export function useExperience(route: Route) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    setLoading(true);
-    sanityClient
-      .fetch<Experience[]>(experienceByRole(route))
-      .then((data) => {
+    let ignore = false;
+
+    async function loadExperience() {
+      setLoading(true);
+      try {
+        const data = await sanityClient.fetch<Experience[]>(
+          experienceByRole(route),
+        );
+        if (ignore) return;
         setExperience(data);
         setError(null);
-      })
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
+      } catch (err) {
+        if (ignore) return;
+        setError(err instanceof Error ? err.message : String(err));
+      } finally {
+        if (!ignore) setLoading(false);
+      }
+    }
+
+    loadExperience();
+    return () => {
+      ignore = true;
+    };
   }, [route]);
 
   return { experience, loading, error };

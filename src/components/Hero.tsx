@@ -33,7 +33,7 @@ function HeroSocialLink({
       target="_blank"
       rel="noreferrer"
       aria-label={label}
-      className="text-lg text-gray-500 dark:text-gray-500 hover:text-accent dark:hover:text-accent-dark transition-colors"
+      className="text-lg text-gray-600 dark:text-gray-500 hover:text-accent dark:hover:text-accent-dark transition-colors"
     >
       <FontAwesomeIcon icon={icon} />
     </a>
@@ -52,9 +52,11 @@ export default function Hero() {
       ? (settings?.dataRoleLabel ?? FALLBACK_DATA_ROLE)
       : (settings?.softwareRoleLabel ?? FALLBACK_SOFTWARE_ROLE);
 
-  const stats = route === "data" ? settings?.dataStats : settings?.softwareStats;
+  const stats =
+    route === "data" ? settings?.dataStats : settings?.softwareStats;
   const yearsStat = stats?.find((stat) => /year/i.test(stat.label));
-  const yearsActive = yearsStat?.value ?? stats?.[0]?.value ?? FALLBACK_YEARS_ACTIVE;
+  const yearsActive =
+    yearsStat?.value ?? stats?.[0]?.value ?? FALLBACK_YEARS_ACTIVE;
   const location = settings?.location ?? FALLBACK_LOCATION;
 
   const portraitUrl = settings?.portrait
@@ -86,7 +88,11 @@ export default function Hero() {
 
           <div className="mt-6 flex items-center gap-5">
             <HeroSocialLink href={github} icon={faGithub} label="GitHub" />
-            <HeroSocialLink href={linkedin} icon={faLinkedin} label="LinkedIn" />
+            <HeroSocialLink
+              href={linkedin}
+              icon={faLinkedin}
+              label="LinkedIn"
+            />
             {x && <HeroSocialLink href={x} icon={faXTwitter} label="X" />}
           </div>
         </div>
@@ -110,7 +116,7 @@ export default function Hero() {
         className={`mt-12 pt-6 border-t border-border-light dark:border-border-dark flex flex-wrap gap-10 ${reveal(3)}`}
       >
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-wide text-gray-500 dark:text-gray-500 mb-1">
+          <p className="font-mono text-[10px] uppercase tracking-wide text-gray-600 dark:text-gray-500 mb-1">
             Years active
           </p>
           <p className="font-heading font-semibold text-lg text-gray-900 dark:text-white">
@@ -118,7 +124,7 @@ export default function Hero() {
           </p>
         </div>
         <div>
-          <p className="font-mono text-[10px] uppercase tracking-wide text-gray-500 dark:text-gray-500 mb-1">
+          <p className="font-mono text-[10px] uppercase tracking-wide text-gray-600 dark:text-gray-500 mb-1">
             Based in
           </p>
           <p className="font-heading font-semibold text-lg text-gray-900 dark:text-white">

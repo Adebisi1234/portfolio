@@ -23,6 +23,8 @@ interface SiteSettings {
   softwareResume?: { asset?: { url?: string } };
   dataResume?: { asset?: { url?: string } };
   contactEmail?: string;
+  softwareContactHeadline?: string;
+  dataContactHeadline?: string;
   location?: string;
   phone?: string;
   githubUrl?: string;

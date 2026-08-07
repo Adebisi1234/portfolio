@@ -9,6 +9,9 @@ export interface Certification {
   badgeImage?: string;
   credentialUrl?: string;
   description?: string;
+  issuedDate?: string;
+  expiryDate?: string;
+  credentialId?: string;
   role: Route[];
 }
 
@@ -18,17 +21,29 @@ export function useCertifications(route: Route) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    setLoading(true);
-    sanityClient
-      .fetch<Certification[]>(
-        `*[_type == "certification" && "${route}" in role] | order(issuedDate desc)`,
-      )
-      .then((data) => {
+    let ignore = false;
+
+    async function loadCertifications() {
+      setLoading(true);
+      try {
+        const data = await sanityClient.fetch<Certification[]>(
+          `*[_type == "certification" && "${route}" in role] | order(issuedDate desc)`,
+        );
+        if (ignore) return;
         setCertifications(data);
         setError(null);
-      })
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
+      } catch (err) {
+        if (ignore) return;
+        setError(err instanceof Error ? err.message : String(err));
+      } finally {
+        if (!ignore) setLoading(false);
+      }
+    }
+
+    loadCertifications();
+    return () => {
+      ignore = true;
+    };
   }, [route]);
 
   return { certifications, loading, error };
