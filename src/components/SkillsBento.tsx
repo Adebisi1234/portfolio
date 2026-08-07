@@ -7,14 +7,10 @@ import ErrorState from "./ErrorState";
 function SkillCard({
   category,
   names,
-  isPrimary,
-  span,
   delay,
 }: {
   category: string;
   names: string[];
-  isPrimary: boolean;
-  span: string;
   delay: number;
 }) {
   const { ref, inView } = useInView<HTMLDivElement>();
@@ -23,39 +19,20 @@ function SkillCard({
     <div
       ref={ref}
       style={{ animationDelay: inView ? `${delay}ms` : undefined }}
-      className={`rounded-2xl border-2 transition-colors duration-300 p-5 flex flex-col scroll-reveal ${inView ? "in-view" : ""} ${span} ${
-        isPrimary
-          ? "bg-gray-900 border-gray-900 text-white dark:bg-white dark:border-white dark:text-gray-900"
-          : "bg-card dark:bg-card-dark border-border-light dark:border-border-dark"
-      }`}
+      className={`break-inside-avoid mb-5 rounded-2xl border-2 border-border-light dark:border-border-dark bg-card dark:bg-card-dark p-5 flex flex-col scroll-reveal ${inView ? "in-view" : ""}`}
     >
-      <h3
-        className={`font-heading font-semibold tracking-tight mb-4 ${
-          isPrimary
-            ? "text-lg text-white dark:text-gray-900"
-            : "text-sm text-gray-900 dark:text-white"
-        }`}
-      >
+      <h3 className="font-heading text-sm font-semibold tracking-tight text-gray-900 dark:text-white mb-4">
         {category}
       </h3>
       <div className="flex flex-wrap gap-2 content-start">
-        {names.map((name) =>
-          isPrimary ? (
-            <span
-              key={name}
-              className="font-mono text-[10px] uppercase tracking-wide px-2.5 py-1.5 rounded-lg bg-white/15 border border-white/30 text-white dark:bg-gray-900/10 dark:border-gray-900/20 dark:text-gray-900"
-            >
-              {name}
-            </span>
-          ) : (
-            <span
-              key={name}
-              className="font-mono text-[10px] uppercase tracking-wide px-2.5 py-1.5 rounded-lg border border-border-light dark:border-border-dark text-gray-600 dark:text-gray-400"
-            >
-              {name}
-            </span>
-          ),
-        )}
+        {names.map((name) => (
+          <span
+            key={name}
+            className="font-mono text-[10px] uppercase tracking-wide px-2.5 py-1.5 rounded-lg border border-border-light dark:border-border-dark text-gray-600 dark:text-gray-400"
+          >
+            {name}
+          </span>
+        ))}
       </div>
     </div>
   );
@@ -77,7 +54,7 @@ export default function SkillsBento() {
 
   return (
     <section id="skills" className="section-shell py-20">
-     <h2 className="font-heading text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-10">
+      <h2 className="font-heading text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-10">
         Skills
       </h2>
 
@@ -92,26 +69,15 @@ export default function SkillsBento() {
       {!loading && error && <ErrorState resource="skills" />}
 
       {!loading && !error && categories.length > 0 && (
-        <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[minmax(8rem,auto)] gap-5">
-          {categories.map(([category, names], i) => {
-            const isPrimary = i === 0;
-            const span = isPrimary
-              ? "md:col-span-2 md:row-span-2"
-              : names.length > 5
-                ? "md:col-span-2"
-                : "md:col-span-1";
-
-            return (
-              <SkillCard
-                key={category}
-                category={category}
-                names={names}
-                isPrimary={isPrimary}
-                span={span}
-                delay={Math.min(i * 80, 320)}
-              />
-            );
-          })}
+        <div className="columns-1 sm:columns-2 xl:columns-3 gap-5">
+          {categories.map(([category, names], i) => (
+            <SkillCard
+              key={category}
+              category={category}
+              names={names}
+              delay={Math.min(i * 80, 320)}
+            />
+          ))}
         </div>
       )}
     </section>
