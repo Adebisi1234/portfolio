@@ -120,7 +120,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             pill instead of a bare icon, placed bottom-left so it reads
             naturally rather than sitting in a corner as an icon only */}
         <div className="absolute bottom-4 left-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white text-gray-900 text-xs font-medium pl-3.5 pr-3 py-1.5">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white text-gray-900 text-xs font-medium pl-3.5 pr-3 py-1.5 pointer-events-auto">
             Case study
             <FontAwesomeIcon
               icon={faArrowRight}

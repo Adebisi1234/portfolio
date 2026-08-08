@@ -1,10 +1,6 @@
-import Hero from "../components/Hero";
-import ProjectsGrid from "../components/ProjectsGrid";
-import Experience from "../components/Experience";
-import SkillsBento from "../components/SkillsBento";
-import About from "../components/About";
-import Certifications from "../components/Certifications";
-import Contact from "../components/Contact";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import CaseStudy from "./CaseStudy";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
@@ -18,13 +14,10 @@ export default function DataLayout() {
   return (
     <>
       <Nav />
-      <Hero />
-      <ProjectsGrid />
-      <SkillsBento />
-       <Certifications />
-      <About />
-       <Experience />
-      <Contact />
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="work/:slug" element={<CaseStudy />} />
+      </Routes>
       <Footer />
     </>
   );

@@ -20,6 +20,13 @@ export interface Project {
   techStack: string[];
   summary: string;
   order: number;
+  problem?: string;
+  approach?: string;
+  outcome?: string;
+  results?: string;
+  /** Additional case study screenshots. Same loose typing as coverImage: each
+   * entry is really a Sanity image object, passed straight to urlFor(). */
+  gallery?: string[];
 }
 
 export interface Experience {
