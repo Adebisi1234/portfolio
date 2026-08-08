@@ -5,8 +5,11 @@ import SkillsBento from "../components/SkillsBento";
 import About from "../components/About";
 import Certifications from "../components/Certifications";
 import Contact from "../components/Contact";
+import { useScrollToHash } from "../hooks/useScrollToHash";
 
 export default function Home() {
+  useScrollToHash();
+
   return (
     <>
       <Hero />

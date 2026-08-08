@@ -20,8 +20,7 @@ import ErrorState from "../components/ErrorState";
 function BackLink({ route }: { route: Route }) {
   return (
     <Link
-      to={`/${route}/`}
-      onClick={() => window.scrollTo({ top: 0 })}
+      to={`/${route}/#work`}
       className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wide text-gray-600 dark:text-gray-400 hover:text-accent dark:hover:text-accent-dark transition-colors"
     >
       <FontAwesomeIcon icon={faArrowLeft} className="text-[10px]" />
@@ -88,7 +87,9 @@ function CaseStudyMedia({ project }: { project: Project }) {
           type="button"
           onClick={togglePlayback}
           aria-label={
-            videoActive ? "Pause preview video" : "Play preview video, with sound"
+            videoActive
+              ? "Pause preview video"
+              : "Play preview video, with sound"
           }
           className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
             videoActive ? "opacity-0 pointer-events-none" : "opacity-100"

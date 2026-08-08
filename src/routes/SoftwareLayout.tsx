@@ -3,6 +3,7 @@ import Home from "./Home";
 import CaseStudy from "./CaseStudy";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import RouteTransition from "../components/RouteTransition";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
 
 export default function SoftwareLayout() {
@@ -14,10 +15,12 @@ export default function SoftwareLayout() {
   return (
     <>
       <Nav />
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="work/:slug" element={<CaseStudy />} />
-      </Routes>
+      <RouteTransition>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="work/:slug" element={<CaseStudy />} />
+        </Routes>
+      </RouteTransition>
       <Footer />
     </>
   );

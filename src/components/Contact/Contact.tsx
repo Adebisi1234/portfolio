@@ -7,13 +7,9 @@ import CopyEmailPill from "./CopyEmailPill";
 import SocialPill from "./SocialPill";
 
 const FALLBACK_SOFTWARE_CONTACT_HEADLINE =
-  "Building something and need another engineer? Let's talk.";
+  "Open to new engineering roles and collaborations.";
 const FALLBACK_DATA_CONTACT_HEADLINE =
-  "Hiring for cloud or data infrastructure? Let's talk.";
-const FALLBACK_SOFTWARE_AVAILABILITY =
-  "Open to freelance collaborations and full-time software engineering roles.";
-const FALLBACK_DATA_AVAILABILITY =
-  "Open to freelance collaborations and full-time data engineering roles.";
+  "Open to cloud and data infrastructure roles.";
 const FALLBACK_EMAIL = "ti.adebisi@gmail.com";
 const FALLBACK_GITHUB = "https://github.com/adebisi1234";
 const FALLBACK_LINKEDIN = "https://www.linkedin.com/in/tobiloba-adebisi";
@@ -41,12 +37,6 @@ export default function Contact() {
       ? (settings?.dataContactHeadline ?? FALLBACK_DATA_CONTACT_HEADLINE)
       : (settings?.softwareContactHeadline ??
         FALLBACK_SOFTWARE_CONTACT_HEADLINE);
-
-  const availability =
-    route === "data"
-      ? (settings?.dataContactAvailability ?? FALLBACK_DATA_AVAILABILITY)
-      : (settings?.softwareContactAvailability ??
-        FALLBACK_SOFTWARE_AVAILABILITY);
 
   const email = settings?.contactEmail ?? FALLBACK_EMAIL;
   const github = settings?.githubUrl ?? FALLBACK_GITHUB;
@@ -105,10 +95,6 @@ export default function Contact() {
             </span>
           ))}
         </div>
-
-        <p className="mt-8 text-sm md:text-base text-gray-600 dark:text-gray-400">
-          {availability}
-        </p>
       </div>
     </section>
   );
