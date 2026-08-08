@@ -1,9 +1,9 @@
-import { useRoute } from "../hooks/useRoute";
-import { useExperience } from "../hooks/useExperience";
-import { useInView } from "../hooks/useInView";
-import type { Experience as ExperienceEntry } from "../types";
-import Skeleton from "./Skeleton";
-import ErrorState from "./ErrorState";
+import { useRoute } from "../../hooks/useRoute";
+import { useExperience } from "../../hooks/useExperience";
+import { useInView } from "../../hooks/useInView";
+import type { Experience as ExperienceEntry } from "../../types";
+import Skeleton from "../Skeleton";
+import ErrorState from "../ErrorState";
 
 function formatDate(dateStr?: string) {
   if (!dateStr) return "Present";

@@ -8,10 +8,10 @@ import {
   faPause,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import type { Project } from "../types";
-import { urlFor } from "../data/imageUrl";
-import { useInView } from "../hooks/useInView";
-import { useRoute } from "../hooks/useRoute";
+import type { Project } from "../../types";
+import { urlFor } from "../../data/imageUrl";
+import { useInView } from "../../hooks/useInView";
+import { useRoute } from "../../hooks/useRoute";
 
 interface ProjectCardProps {
   project: Project;

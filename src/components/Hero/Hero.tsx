@@ -5,10 +5,10 @@ import {
   faXTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { useRoute } from "../hooks/useRoute";
-import { useHeroAnimation } from "../hooks/useHeroAnimation";
-import { useSiteSettings } from "../hooks/useSiteSettings";
-import { urlFor } from "../data/imageUrl";
+import { useRoute } from "../../hooks/useRoute";
+import { useHeroAnimation } from "../../hooks/useHeroAnimation";
+import { useSiteSettings } from "../../hooks/useSiteSettings";
+import { urlFor } from "../../data/imageUrl";
 
 const FALLBACK_NAME = "Tobiloba Isaiah Adebisi";
 const FALLBACK_SOFTWARE_ROLE = "Software Engineer";

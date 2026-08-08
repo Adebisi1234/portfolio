@@ -1,7 +1,7 @@
-import { useRoute } from "../hooks/useRoute";
-import { useSiteSettings } from "../hooks/useSiteSettings";
-import { useInView } from "../hooks/useInView";
-import { urlFor } from "../data/imageUrl";
+import { useRoute } from "../../hooks/useRoute";
+import { useSiteSettings } from "../../hooks/useSiteSettings";
+import { useInView } from "../../hooks/useInView";
+import { urlFor } from "../../data/imageUrl";
 
 const FALLBACK_NAME = "Tobiloba Isaiah Adebisi";
 

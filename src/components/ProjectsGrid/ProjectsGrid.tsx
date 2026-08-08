@@ -1,8 +1,8 @@
-import { useRoute } from "../hooks/useRoute";
-import { useProjects } from "../hooks/useProjects";
+import { useRoute } from "../../hooks/useRoute";
+import { useProjects } from "../../hooks/useProjects";
 import ProjectCard from "./ProjectCard";
-import Skeleton from "./Skeleton";
-import ErrorState from "./ErrorState";
+import Skeleton from "../Skeleton";
+import ErrorState from "../ErrorState";
 
 export default function ProjectsGrid() {
   const { route } = useRoute();

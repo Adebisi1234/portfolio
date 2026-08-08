@@ -1,8 +1,8 @@
-import { useRoute } from "../hooks/useRoute";
-import { useSkills } from "../hooks/useSkills";
-import { useInView } from "../hooks/useInView";
-import Skeleton from "./Skeleton";
-import ErrorState from "./ErrorState";
+import { useRoute } from "../../hooks/useRoute";
+import { useSkills } from "../../hooks/useSkills";
+import { useInView } from "../../hooks/useInView";
+import Skeleton from "../Skeleton";
+import ErrorState from "../ErrorState";
 
 function SkillCard({
   category,

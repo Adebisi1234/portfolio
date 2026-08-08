@@ -1,14 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
-import { useRoute } from "../hooks/useRoute";
+import { useRoute } from "../../hooks/useRoute";
 import {
   useCertifications,
   type Certification,
-} from "../hooks/useCertifications";
-import { useInView } from "../hooks/useInView";
-import { urlFor } from "../data/imageUrl";
-import Skeleton from "./Skeleton";
-import ErrorState from "./ErrorState";
+} from "../../hooks/useCertifications";
+import { useInView } from "../../hooks/useInView";
+import { urlFor } from "../../data/imageUrl";
+import Skeleton from "../Skeleton";
+import ErrorState from "../ErrorState";
 
 function formatDate(value?: string) {
   if (!value) return null;
