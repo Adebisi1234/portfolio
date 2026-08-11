@@ -38,6 +38,18 @@
   padding-inline: clamp(1.5rem, 5vw, 4rem);
 }
 
+@media (min-width: 1920px) {
+  .section-shell {
+    max-width: 1880px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .section-shell {
+    max-width: 2100px;
+  }
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 :focus-visible {
