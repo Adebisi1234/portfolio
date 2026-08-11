@@ -12,8 +12,11 @@ export default function Home() {
 
   return (
     <>
-      <Hero />
-      <ProjectsGrid />
+      <div className="relative">
+        <div className="ambient-glow" aria-hidden="true" />
+        <Hero />
+        <ProjectsGrid />
+      </div>
       <SkillsBento />
       <Certifications />
       <About />

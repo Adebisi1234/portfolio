@@ -26,7 +26,8 @@ export default function About() {
       ? (settings?.dataAboutBio ?? FALLBACK_DATA_ABOUT_BIO)
       : (settings?.softwareAboutBio ?? FALLBACK_SOFTWARE_ABOUT_BIO);
 
-  const personalDetail = settings?.aboutPersonalDetail ?? FALLBACK_PERSONAL_DETAIL;
+  const personalDetail =
+    settings?.aboutPersonalDetail ?? FALLBACK_PERSONAL_DETAIL;
 
   const portraitUrl = settings?.portrait
     ? urlFor(settings.portrait)
@@ -39,7 +40,11 @@ export default function About() {
 
   return (
     <section id="about" className="section-shell py-20">
-      <h2 className="font-heading flex items-center justify-end gap-2.5 text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-10 text-right">
+      <h2 className="font-heading flex items-center gap-3 text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-10">
+        <span
+          className="h-px w-8 bg-accent dark:bg-accent-dark md:w-10"
+          aria-hidden="true"
+        />
         About
       </h2>
 

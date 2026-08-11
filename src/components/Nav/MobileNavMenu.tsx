@@ -4,6 +4,7 @@ import ThemeToggle from "./ThemeToggle";
 
 interface MobileNavMenuProps {
   links: { href: string; label: string }[];
+  activeHref?: string;
   resumeUrl?: string;
   dark: boolean;
   setDark: (dark: boolean) => void;
@@ -12,6 +13,7 @@ interface MobileNavMenuProps {
 
 export default function MobileNavMenu({
   links,
+  activeHref,
   resumeUrl,
   dark,
   setDark,
@@ -25,6 +27,7 @@ export default function MobileNavMenu({
           href={link.href}
           label={link.label}
           variant="mobile"
+          active={link.href === activeHref}
           onClick={onLinkClick}
         />
       ))}

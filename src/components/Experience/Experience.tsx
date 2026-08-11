@@ -57,7 +57,11 @@ export default function Experience() {
 
   return (
     <section id="experience" className="section-shell py-20">
-      <h2 className="font-heading flex items-center justify-end text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-10 text-right">
+      <h2 className="font-heading flex items-center gap-3 text-4xl md:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-10">
+        <span
+          className="h-px w-8 bg-accent dark:bg-accent-dark md:w-10"
+          aria-hidden="true"
+        />
         Experience
       </h2>
 

@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { useTheme } from "../../hooks/useTheme";
 import { useRoute } from "../../hooks/useRoute";
 import { useEscapeKey } from "../../hooks/useEscapeKey";
 import { useSiteSettings } from "../../hooks/useSiteSettings";
+import { useScrollSpy } from "../../hooks/useScrollSpy";
 import NavBrand from "./NavBrand";
 import NavLinksDesktop from "./NavLinksDesktop";
 import NavActions from "./NavActions";
@@ -16,10 +18,14 @@ const navLinks = [
   { href: "#contact", label: "Contact" },
 ];
 
+const sectionIds = navLinks.map((link) => link.href.slice(1));
+
 export default function Nav() {
   const { route } = useRoute();
   const { dark, setDark } = useTheme();
   const { settings } = useSiteSettings();
+  const location = useLocation();
+  const activeId = useScrollSpy(sectionIds, location.pathname);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEscapeKey(() => {
@@ -41,7 +47,7 @@ export default function Nav() {
       <div className="section-shell flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] gap-4 py-3">
         <NavBrand onClick={scrollToTop} />
 
-        <NavLinksDesktop links={navLinks} />
+        <NavLinksDesktop links={navLinks} activeHref={`#${activeId}`} />
 
         <NavActions resumeUrl={resumeUrl} dark={dark} setDark={setDark} />
 
@@ -54,6 +60,7 @@ export default function Nav() {
       {mobileMenuOpen && (
         <MobileNavMenu
           links={navLinks}
+          activeHref={`#${activeId}`}
           resumeUrl={resumeUrl}
           dark={dark}
           setDark={setDark}
