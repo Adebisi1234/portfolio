@@ -49,29 +49,6 @@
   outline-color: hsl(224deg 85% 68%);
 }
 
-.ambient-glow {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background: radial-gradient(
-    65% 45% at 50% 0%,
-    var(--color-accent-tint) 0%,
-    transparent 72%
-  );
-  -webkit-mask-image: linear-gradient(to bottom, black, transparent);
-  mask-image: linear-gradient(to bottom, black, transparent);
-}
-
-.dark .ambient-glow {
-  background: radial-gradient(
-    65% 45% at 50% 0%,
-    var(--color-accent-tint-dark) 0%,
-    transparent 72%
-  );
-  opacity: 0.7;
-}
-
 .scroll-reveal {
   opacity: 0;
   transform: translateY(24px);

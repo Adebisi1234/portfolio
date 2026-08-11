@@ -13,7 +13,6 @@ export default function Home() {
   return (
     <>
       <div className="relative">
-        <div className="ambient-glow" aria-hidden="true" />
         <Hero />
         <ProjectsGrid />
       </div>
