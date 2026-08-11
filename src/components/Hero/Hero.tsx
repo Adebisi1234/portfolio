@@ -29,39 +29,66 @@ export default function Hero() {
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
-    if (reduceMotion) {
+    let split: SplitText | null = null;
+    let tl: gsap.core.Timeline | null = null;
+    let cancelled = false;
+
+    const play = () => {
+      if (cancelled) return;
+
+      if (reduceMotion) {
+        gsap.set(heading, { opacity: 1 });
+        gsap.set(roleRow, { opacity: 1, y: 0 });
+        const lines = roleRow.querySelectorAll<HTMLElement>(".hero-rule");
+        gsap.set(lines, { scaleX: 1 });
+        return;
+      }
+
+      // Only split/measure characters once the real webfont has swapped in.
+      // Splitting against the fallback font's metrics and letting the swap
+      // happen mid-animation is what causes the horizontal "fling".
+      split = SplitText.create(heading, {
+        type: "chars",
+        charsClass: "hero-char",
+      });
+
       gsap.set(heading, { opacity: 1 });
-      gsap.set(roleRow, { opacity: 1, y: 0 });
+      gsap.set(roleRow, { opacity: 0, y: 16 });
+
       const lines = roleRow.querySelectorAll<HTMLElement>(".hero-rule");
-      gsap.set(lines, { scaleX: 1 });
-      return;
+      gsap.set(lines, { scaleX: 0 });
+
+      tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      tl.from(split.chars, {
+        yPercent: 110,
+        opacity: 0,
+        duration: 0.85,
+        stagger: 0.025,
+      })
+        .to(roleRow, { opacity: 1, y: 0, duration: 0.6 }, "-=0.35")
+        .to(
+          lines,
+          { scaleX: 1, duration: 0.5, ease: "power2.inOut" },
+          "-=0.4",
+        );
+    };
+
+    // Wait for webfonts to finish loading (and swapping in) before we
+    // measure characters or reveal the heading at all. Until then the
+    // heading stays hidden via the opacity-0 class on the element.
+    if (typeof document !== "undefined" && "fonts" in document) {
+      document.fonts.ready.then(() => {
+        requestAnimationFrame(play);
+      });
+    } else {
+      play();
     }
 
-    const split = SplitText.create(heading, {
-      type: "chars",
-      charsClass: "hero-char",
-    });
-
-    gsap.set(heading, { opacity: 1 });
-    gsap.set(roleRow, { opacity: 0, y: 16 });
-
-    const lines = roleRow.querySelectorAll<HTMLElement>(".hero-rule");
-    gsap.set(lines, { scaleX: 0 });
-
-    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-    tl.from(split.chars, {
-      yPercent: 110,
-      opacity: 0,
-      duration: 0.85,
-      stagger: 0.025,
-    })
-      .to(roleRow, { opacity: 1, y: 0, duration: 0.6 }, "-=0.35")
-      .to(lines, { scaleX: 1, duration: 0.5, ease: "power2.inOut" }, "-=0.4");
-
     return () => {
-      tl.kill();
-      split.revert();
+      cancelled = true;
+      tl?.kill();
+      split?.revert();
     };
   }, [fullName, roleLabel]);
 
