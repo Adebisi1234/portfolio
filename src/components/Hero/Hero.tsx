@@ -81,7 +81,12 @@ export default function Hero() {
       cancelled = true;
       tl?.kill();
     };
-  }, [fullName, roleLabel]);
+    // Intentionally mount-only: `fullName`/`roleLabel` start as fallback
+    // text and get swapped in-place once the async Sanity fetch in
+    // useSiteSettings resolves. The JSX below already reflects that update
+    // reactively — re-running this effect on that change would replay the
+    // whole entrance (including the role row) a second time.
+  }, []);
 
   return (
     <section className="section-shell flex min-h-[calc(100svh-4.25rem)] flex-col items-center justify-end pt-12 pb-24 text-center md:pb-32">
@@ -99,13 +104,13 @@ export default function Hero() {
       </h1>
       <div
         ref={roleRowRef}
-        className="mt-6 flex items-center justify-center gap-4"
+        className="mt-6 flex items-center justify-center gap-4 opacity-0"
       >
-        <span className="hero-rule h-px w-8 origin-center bg-accent dark:bg-accent-dark md:w-12" />
+        <span className="hero-rule h-px w-8 origin-center scale-x-0 bg-accent dark:bg-accent-dark md:w-12" />
         <p className="font-mono text-sm uppercase tracking-[0.25em] text-accent dark:text-accent-dark md:text-base">
           {roleLabel}
         </p>
-        <span className="hero-rule h-px w-8 origin-center bg-accent dark:bg-accent-dark md:w-12" />
+        <span className="hero-rule h-px w-8 origin-center scale-x-0 bg-accent dark:bg-accent-dark md:w-12" />
       </div>
     </section>
   );
