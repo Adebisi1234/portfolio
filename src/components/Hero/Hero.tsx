@@ -97,7 +97,7 @@ export default function Hero() {
       >
         <span
           ref={nameInnerRef}
-          className="font-hero inline-block font-extrabold leading-[0.85] tracking-tight whitespace-nowrap text-[clamp(3.25rem,11.5vw,9rem)] text-gray-900 dark:text-white"
+          className="font-hero inline-block font-extrabold leading-[0.85] tracking-tight text-[clamp(2.5rem,12vw,9rem)] text-gray-900 dark:text-white sm:whitespace-nowrap"
         >
           {fullName}
         </span>

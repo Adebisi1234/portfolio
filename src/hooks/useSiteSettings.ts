@@ -36,8 +36,11 @@ interface SiteSettings {
 export function useSiteSettings() {
   const [settings, setSettings] = useState<SiteSettings | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    let cancelled = false;
+
     sanityClient
       .fetch<SiteSettings>(
         `${siteSettingsQuery}{
@@ -47,9 +50,30 @@ export function useSiteSettings() {
           dataResume{asset->{url}}
         }`,
       )
-      .then(setSettings)
-      .finally(() => setLoading(false));
+      .then((data) => {
+        if (cancelled) return;
+        setSettings(data);
+      })
+      .catch((err: unknown) => {
+        if (cancelled) return;
+        const message =
+          err instanceof Error ? err.message : "Failed to load site settings";
+        // Hero/About/Contact/Nav/Footer all fall back to hardcoded copy when
+        // `settings` is null, so a failed fetch here is invisible in the UI
+        // by design. Log it loudly so a CORS/config issue doesn't go
+        // unnoticed just because the fallback text still looks complete.
+        console.error("useSiteSettings: Sanity fetch failed —", message);
+        setError(message);
+      })
+      .finally(() => {
+        if (cancelled) return;
+        setLoading(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
-  return { settings, loading };
+  return { settings, loading, error };
 }
