@@ -89,7 +89,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="section-shell flex min-h-[calc(100svh-4.25rem)] flex-col items-center justify-end pt-12 pb-24 text-center md:pb-32">
+    <section className="section-shell flex min-h-[calc(100svh-4.25rem)] flex-col items-center justify-center pt-12 pb-24 text-center md:justify-end md:pb-32">
       <h1
         ref={maskRef}
         className="overflow-hidden pb-[0.1em] opacity-0"

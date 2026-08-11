@@ -61,7 +61,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="min-h-[calc(100vh-80px)] flex flex-col justify-center"
+      className="flex flex-col justify-center py-24 md:min-h-[calc(100vh-80px)] md:py-0"
     >
       <div
         ref={stackRef}
