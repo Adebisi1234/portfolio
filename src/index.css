@@ -51,8 +51,8 @@
 
 .hero-reveal {
   opacity: 0;
-  transform: translateY(20px);
-  animation: heroReveal 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  transform: translateY(32px);
+  animation: heroReveal 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 .hero-reveal-1 {
@@ -60,11 +60,8 @@
 }
 
 .hero-reveal-2 {
-  animation-delay: 0.12s;
-}
-
-.hero-reveal-3 {
-  animation-delay: 0.24s;
+  transform: translateY(24px);
+  animation-delay: 0.28s;
 }
 
 @keyframes heroReveal {
