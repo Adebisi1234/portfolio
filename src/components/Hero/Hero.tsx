@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useRoute } from "../../hooks/useRoute";
 import { useSiteSettings } from "../../hooks/useSiteSettings";
-import { gsap, SplitText } from "../../lib/gsap";
+import { gsap } from "../../lib/gsap";
 
 const FALLBACK_NAME = "Tobiloba Adebisi";
 const FALLBACK_SOFTWARE_ROLE = "Software Engineer";
@@ -10,7 +10,8 @@ const FALLBACK_DATA_ROLE = "Data Engineer";
 export default function Hero() {
   const { route } = useRoute();
   const { settings } = useSiteSettings();
-  const headingRef = useRef<HTMLHeadingElement>(null);
+  const maskRef = useRef<HTMLHeadingElement>(null);
+  const nameInnerRef = useRef<HTMLSpanElement>(null);
   const roleRowRef = useRef<HTMLDivElement>(null);
 
   const fullName = settings?.name ?? FALLBACK_NAME;
@@ -21,52 +22,43 @@ export default function Hero() {
       : (settings?.softwareRoleLabel ?? FALLBACK_SOFTWARE_ROLE);
 
   useEffect(() => {
-    const heading = headingRef.current;
+    const mask = maskRef.current;
+    const nameInner = nameInnerRef.current;
     const roleRow = roleRowRef.current;
-    if (!heading || !roleRow) return;
+    if (!mask || !nameInner || !roleRow) return;
 
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
-    let split: SplitText | null = null;
     let tl: gsap.core.Timeline | null = null;
     let cancelled = false;
 
     const play = () => {
       if (cancelled) return;
 
+      const lines = roleRow.querySelectorAll<HTMLElement>(".hero-rule");
+
       if (reduceMotion) {
-        gsap.set(heading, { opacity: 1 });
+        gsap.set(mask, { opacity: 1 });
+        gsap.set(nameInner, { yPercent: 0 });
         gsap.set(roleRow, { opacity: 1, y: 0 });
-        const lines = roleRow.querySelectorAll<HTMLElement>(".hero-rule");
         gsap.set(lines, { scaleX: 1 });
         return;
       }
 
-      // Only split/measure characters once the real webfont has swapped in.
-      // Splitting against the fallback font's metrics and letting the swap
-      // happen mid-animation is what causes the horizontal "fling".
-      split = SplitText.create(heading, {
-        type: "chars",
-        charsClass: "hero-char",
-      });
-
-      gsap.set(heading, { opacity: 1 });
+      // The name slides up as a single solid block inside the overflow-hidden
+      // mask (no per-character split) — reads as one deliberate reveal rather
+      // than the text "typing itself out".
+      gsap.set(mask, { opacity: 1 });
+      gsap.set(nameInner, { yPercent: 110 });
       gsap.set(roleRow, { opacity: 0, y: 16 });
-
-      const lines = roleRow.querySelectorAll<HTMLElement>(".hero-rule");
       gsap.set(lines, { scaleX: 0 });
 
-      tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      tl = gsap.timeline({ defaults: { ease: "power4.out" } });
 
-      tl.from(split.chars, {
-        yPercent: 110,
-        opacity: 0,
-        duration: 0.85,
-        stagger: 0.025,
-      })
-        .to(roleRow, { opacity: 1, y: 0, duration: 0.6 }, "-=0.35")
+      tl.to(nameInner, { yPercent: 0, duration: 0.9 })
+        .to(roleRow, { opacity: 1, y: 0, duration: 0.6 }, "-=0.4")
         .to(
           lines,
           { scaleX: 1, duration: 0.5, ease: "power2.inOut" },
@@ -74,9 +66,9 @@ export default function Hero() {
         );
     };
 
-    // Wait for webfonts to finish loading (and swapping in) before we
-    // measure characters or reveal the heading at all. Until then the
-    // heading stays hidden via the opacity-0 class on the element.
+    // Wait for webfonts to finish loading (and swapping in) before revealing
+    // the heading, so the mask animation isn't running against fallback-font
+    // metrics that then jump when the real font swaps in mid-animation.
     if (typeof document !== "undefined" && "fonts" in document) {
       document.fonts.ready.then(() => {
         requestAnimationFrame(play);
@@ -88,17 +80,22 @@ export default function Hero() {
     return () => {
       cancelled = true;
       tl?.kill();
-      split?.revert();
     };
   }, [fullName, roleLabel]);
 
   return (
     <section className="section-shell flex min-h-[calc(100svh-4.25rem)] flex-col items-center justify-end pt-12 pb-24 text-center md:pb-32">
       <h1
-        ref={headingRef}
-        className="font-hero font-extrabold leading-[0.85] tracking-tight whitespace-nowrap text-[clamp(3.25rem,11.5vw,9rem)] text-gray-900 opacity-0 dark:text-white"
+        ref={maskRef}
+        className="overflow-hidden pb-[0.1em] opacity-0"
+        style={{ marginBottom: "-0.1em" }}
       >
-        {fullName}
+        <span
+          ref={nameInnerRef}
+          className="font-hero inline-block font-extrabold leading-[0.85] tracking-tight whitespace-nowrap text-[clamp(3.25rem,11.5vw,9rem)] text-gray-900 dark:text-white"
+        >
+          {fullName}
+        </span>
       </h1>
       <div
         ref={roleRowRef}
