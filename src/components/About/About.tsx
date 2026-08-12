@@ -14,6 +14,8 @@ const FALLBACK_DATA_ABOUT_BIO =
 const FALLBACK_PERSONAL_DETAIL =
   "Outside of shipping code, I'm usually exploring a new tool, going down a rabbit hole on something that has nothing to do with work, or resetting with a game of chess.";
 
+const UTC_OFFSET = "UTC+1";
+
 export default function About() {
   const { route } = useRoute();
   const { settings } = useSiteSettings();
@@ -28,6 +30,9 @@ export default function About() {
 
   const personalDetail =
     settings?.aboutPersonalDetail ?? FALLBACK_PERSONAL_DETAIL;
+
+  const stats =
+    (route === "data" ? settings?.dataStats : settings?.softwareStats) ?? [];
 
   const portraitUrl = settings?.portrait
     ? urlFor(settings.portrait)
@@ -65,9 +70,29 @@ export default function About() {
           <p className="text-base md:text-lg leading-relaxed text-gray-600 dark:text-gray-400 mb-5 max-w-[52ch]">
             {bio}
           </p>
-          <p className="text-base md:text-lg leading-relaxed text-gray-600 dark:text-gray-400 max-w-[52ch]">
+          <p className="text-base md:text-lg leading-relaxed text-gray-600 dark:text-gray-400 max-w-[52ch] mb-10">
             {personalDetail}
           </p>
+
+          {stats.length > 0 && (
+            <div className="flex flex-wrap gap-x-10 gap-y-6 pt-8 border-t border-border-light dark:border-border-dark">
+              {stats.map((stat) => (
+                <div key={`${stat.value}-${stat.label}`} className="flex flex-col gap-1.5 min-w-[7rem]">
+                  <span className="font-hero font-extrabold leading-none text-[clamp(1.6rem,2.6vw,2.25rem)] text-gray-900 dark:text-white">
+                    {stat.value}
+                  </span>
+                  <span className="text-sm leading-snug text-gray-600 dark:text-gray-400 max-w-[20ch]">
+                    {stat.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
+
+          <div className="flex items-center gap-2.5 font-mono text-xs tracking-[0.04em] text-gray-600 dark:text-gray-400 mt-6">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent dark:bg-accent-dark" />
+            <span>Based in {UTC_OFFSET}</span>
+          </div>
         </div>
       </div>
     </section>
