@@ -58,10 +58,10 @@ export function useSiteSettings() {
         if (cancelled) return;
         const message =
           err instanceof Error ? err.message : "Failed to load site settings";
-        // Hero/About/Contact/Nav/Footer all fall back to hardcoded copy when
-        // `settings` is null, so a failed fetch here is invisible in the UI
-        // by design. Log it loudly so a CORS/config issue doesn't go
-        // unnoticed just because the fallback text still looks complete.
+        // Hero/Contact/Nav still fall back to hardcoded copy when `settings`
+        // is null, but About no longer does — it renders nothing for a
+        // missing field rather than fake placeholder text. Log loudly either
+        // way so a CORS/config issue doesn't go unnoticed.
         console.error("useSiteSettings: Sanity fetch failed —", message);
         setError(message);
       })

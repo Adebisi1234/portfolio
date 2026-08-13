@@ -14,12 +14,12 @@ export default function Home() {
     <>
       <div className="relative">
         <Hero />
-        <ProjectsGrid />
       </div>
+      <Experience />
       <SkillsBento />
       <Certifications />
       <About />
-      <Experience />
+      <ProjectsGrid />
       <Contact />
     </>
   );
