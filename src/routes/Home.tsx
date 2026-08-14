@@ -17,11 +17,12 @@ export default function Home() {
       <div className="relative">
         <Hero />
       </div>
+
+      <About />
+      <ProjectsGrid />
       <Experience />
       <SkillsBento />
       {route === "data" && <Certifications />}
-      <About />
-      <ProjectsGrid />
       <Contact />
     </>
   );
