@@ -12,9 +12,9 @@ import MobileMenuButton from "./MobileMenuButton";
 import MobileNavMenu from "./MobileNavMenu";
 
 const navLinks = [
-  { href: "#experience", label: "Experience" },
   { href: "#about", label: "About" },
   { href: "#work", label: "Work" },
+  { href: "#experience", label: "Experience" },
   { href: "#contact", label: "Contact" },
 ];
 
