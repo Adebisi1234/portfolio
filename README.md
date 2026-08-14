@@ -1,40 +1,80 @@
-# Tobiloba Portfolio
+# Oluwatobiloba Adebisi — Portfolio
 
-A two-in-one portfolio site for Tobiloba Adebisi — software engineer and AWS-certified data engineer — with routed sections for each role, backed by a headless CMS.
+A personal portfolio for **Oluwatobiloba Adebisi**, built around two engineering disciplines: **Software Engineering** and **Data Engineering**.
+
+The portfolio uses separate routes to present each area of expertise, allowing the projects, experience, skills, and certifications shown to be tailored to the selected discipline.
 
 ## Overview
 
-The site is split into two routed experiences from a single codebase:
+The portfolio is designed to showcase Oluwatobiloba's work across full-stack software development, cloud engineering, data engineering, and analytics.
 
-- `/software/` — software engineering projects, experience, and skills
-- `/data/` — data engineering projects, experience, and skills
+The Software Engineering route focuses on full-stack applications, product development, and software systems.
 
-Both sides pull from one shared Sanity dataset, with content tagged by role so shared skills (AWS, MongoDB, Docker, etc.) and dual-framed work experience (the same job described differently depending on audience) don't need to be duplicated in code.
+The Data Engineering route focuses on cloud-native data pipelines, ETL/ELT workflows, analytics infrastructure, real-time processing, and AWS-based solutions.
 
-## Tech stack
+Content such as project information, experience, skills, certifications, and site settings is managed through **Sanity**, allowing the portfolio to be updated without modifying the application code.
 
-- **Vite + React + TypeScript** — build tooling and app framework
-- **Tailwind CSS v4** — styling, theme tokens defined in `src/index.css` via `@theme`
-- **Sanity** — headless CMS for projects, experience, skills, and site settings
-- **React Router** — client-side routing between the software and data sections
-- **GitHub Pages** — hosting, served from the custom domain `tobiloba.me`
-- **GitHub Actions** — CI/CD, auto-deploys on every push to `main`
+## Features
 
-The Sanity Studio lives in a separate sibling project, `tobiloba-portfolio-studio`, with its own repo and its own `schemaTypes/` folder (`project`, `experience`, `skill`, `siteSettings`).
+* Dual portfolio routes for Software Engineering and Data Engineering
+* Dynamic content powered by Sanity CMS
+* Project and case study pages
+* Experience and skills sections
+* Data Engineering certifications section
+* Responsive design across desktop and mobile
+* Dark mode support
+* Scroll-based reveal animations
+* Sanity-powered image management
+* Dynamic project filtering by engineering discipline
+* Contact section with direct communication links
 
-## Content model
+## Tech Stack
 
-All content is managed in Sanity and filtered by a `role` field (`"software"` | `"data"`), or a `role` array for entries that apply to both sides.
+### Frontend
 
-| Type | Fields |
-|---|---|
-| `project` | title, slug, coverImage, liveUrl, repoUrl, role, techStack, summary, order |
-| `experience` | company, roles (array), startDate, endDate, description, techStack |
-| `skill` | name, category, role (array) |
-| `siteSettings` | name, tagline, resumeUrl, contactEmail, certifications |
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
 
-## Deployment
+### CMS & Content
 
-Deployment is fully automated. Any push to `main` triggers a GitHub Actions workflow (`.github/workflows/deploy.yml`) that builds the app and publishes it to GitHub Pages. No manual build or upload steps are needed.
+* Sanity
+* Sanity Image API
 
-GitHub Pages is configured to deploy from **GitHub Actions** (not a branch), under the repo's Settings → Pages.
+### Development
+
+* ESLint
+* Git
+* GitHub
+
+
+## Content Management
+
+Portfolio content is managed through Sanity rather than being hardcoded into the React components.
+
+This includes:
+
+* Personal information
+* About content for each route
+* Portrait and other images
+* Experience
+* Skills
+* Projects
+* Certifications
+* Contact information
+* Site settings
+
+The frontend retrieves this content through custom React hooks and renders it according to the active portfolio route.
+
+## Routes
+
+The portfolio supports two primary experiences:
+
+### Software Engineering
+
+Focused on full-stack software development, including frontend interfaces, backend systems, APIs, databases, and complete web applications.
+
+### Data Engineering
+
+Focused on data infrastructure, cloud architecture, ETL/ELT pipelines, analytics, data warehousing, real-time processing, and AWS solutions.
