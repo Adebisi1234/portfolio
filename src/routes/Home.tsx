@@ -5,10 +5,12 @@ import SkillsBento from "../components/SkillsBento";
 import About from "../components/About";
 import Certifications from "../components/Certifications";
 import Contact from "../components/Contact";
+import { useRoute } from "../hooks/useRoute";
 import { useScrollToHash } from "../hooks/useScrollToHash";
 
 export default function Home() {
   useScrollToHash();
+  const { route } = useRoute();
 
   return (
     <>
@@ -17,7 +19,7 @@ export default function Home() {
       </div>
       <Experience />
       <SkillsBento />
-      <Certifications />
+      {route === "data" && <Certifications />}
       <About />
       <ProjectsGrid />
       <Contact />
