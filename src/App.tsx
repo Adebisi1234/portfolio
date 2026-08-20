@@ -12,7 +12,9 @@ const DataLayout = lazy(() => import("./routes/DataLayout"));
 
 function RouteContent() {
   const location = useLocation();
-  const routeKey = location.pathname.startsWith("/data") ? "data" : "software";
+  const routeKey = location.pathname.startsWith("/data")
+    ? "data"
+    : "software";
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -31,7 +33,7 @@ function RouteContent() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio">
       <Suspense fallback={<div className="min-h-screen" />}>
         <RouteContent />
       </Suspense>
