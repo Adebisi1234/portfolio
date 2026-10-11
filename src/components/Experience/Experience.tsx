@@ -47,11 +47,23 @@ function ExperienceRow({
           {formatDate(entry.startDate)} – {formatDate(entry.endDate)}
         </span>
       </div>
+      
       {entry.description && (
         <p className="mt-4 max-w-[60ch] text-base leading-relaxed text-gray-600 dark:text-gray-400 whitespace-pre-line">
           {entry.description}
         </p>
       )}
+
+      {entry.keyContributions && entry.keyContributions.length > 0 && (
+        <ul className="mt-4 max-w-[60ch] list-disc space-y-2 pl-5 text-sm leading-relaxed text-gray-600 dark:text-gray-400 marker:text-gray-400 dark:marker:text-gray-500">
+          {entry.keyContributions.map((contribution, index) => (
+            <li key={`${entry._id}-contribution-${index}`}>
+              {contribution}
+            </li>
+          ))}
+        </ul>
+      )}
+
     </div>
   );
 }

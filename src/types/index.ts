@@ -29,6 +29,7 @@ export interface Project {
   gallery?: string[];
 }
 
+
 export interface Experience {
   _id: string;
   company: string;
@@ -37,9 +38,11 @@ export interface Experience {
   startDate: string;
   endDate?: string;
   description?: string;
+  keyContributions?: string[];
   techStack: string[];
   order: number;
 }
+
 
 export interface Skill {
   _id: string;
